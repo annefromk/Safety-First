@@ -1,10 +1,12 @@
-html {
-  background-color: white;
-  color: black;
+html, body {
+	line-height: 1;
+	min-height:100%;
+	font-family:Artial, Verdana, sans-serif;
 }
-body {
-  width: auto; height: auto;
-  background-color: whitesmoke;
-  padding: 0 20px 20px 20px;
-  border: 5px solid black;
+
+#progress {
+	height:2%;
+	background:#444;
+	bottom:0;
+	z-index:200;
 }
