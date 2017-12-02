@@ -8,59 +8,62 @@
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <h1>서울은 성범죄로부터 안전한가</h1>
-    <main class="skrollable skrollable-between"
-    data-top="background-color: rgba(244,244,244,0);"
-    data-center-bottom="background-color: rgba(244,244,244,1);"
-    data--200p-top="background-color: rgba(0,0,0,1);"
-    data-anchor-target="#page-1" style="background-color: rgb(244,244,244);">
-      <section id="page-1" class="homeSlide" style="height:1528px">
-        <div class="bcg skrollable skrollable-between"
-        data-top="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
-        data-center="opacity: 0; width: 156%; height: 156%; top: -28%; left: -28%;"
-        data-anchor-target="#page-1"
-        style="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"></div>
-        <div class="plaxEl skrollable skrollable-between"
-        data-0p-top="opacity: 0;" data-center="opacity: 1;"
-        data-100p-top="opacity: 1; position: fixed; top: 206px; width: 100%; left: 0;"
-        data--25p-bottom="opacity:0;" data--20p-bottom="opacity;1;"
-        data-anchor-target="#page-1"
-        style="opacity: 0; position: fixed; top: 206px; width: 100%; left: 0px;">
-        <h2>
-          First Page
-        </h2>
-        <p>
-          insert first page here
-        </p>
-      </div>
-      </section>
-      <section id="page-2" class="homeSlide" style="height:1528px">
-        <div class="bcg skrollable skrollable-between"
-        data-top="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
-        data-center="opacity: 0; width: 156%; height: 156%; top: -28%; left: -28%;"
-        data-anchor-target="#page-1"
-        style="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"></div>
-        <div class="plaxEl skrollable skrollable-between"
-        data-0p-top="opacity: 0;" data-center="opacity: 1;"
-        data-100p-top="opacity: 1; position: fixed; top: 206px; width: 100%; left: 0;"
-        data--25p-bottom="opacity:0;" data--20p-bottom="opacity;1;"
-        data-anchor-target="#page-1"
-        style="opacity: 0; position: fixed; top: 206px; width: 100%; left: 0px;">
-        <h2>
-          Second Page
-        </h2>
-        <p>
-          insert second page here
-        </p>
-      </div>
-      </section>
-    </main>
+    <div id="bg1" class="skrollable skrollable-between"
+    data-0="background-position:0px 0px;"
+    data-end="background-position:-500px -10000px;"
+    style="background-position: 0px 0px;"></div>
+    <div id="bg2" class="skrollable skrollable-between"
+    data-0="background-position:0px 0px;"
+    data-end="background-position:-500px -8000px;"
+    style="background-position: 0px 0px;"></div>
+    <div id="bg3" class="skrollable skrollable-between"
+    data-0="background-position:0px 0px;"
+    data-end="background-position:-500px -6000px;"
+    style="background-position: 0px 0px;"></div>
 
-    <script type="text/javascript">
-    var s = skrollr.init();
-    </script>
+    <div id="progress" class="skrollable skrollable-between"
+    data-0="width:0px;background:hsl(200, 100%, 50%);"
+    data-end="width:100%;background:hsl(920, 100%, 50%);"
+    style="width:0%; background:rgb(0, 170, 255) none repeat scroll 0% 0%;"></div>
+
+    <div id="intro" class="skrollable skrollable-between"
+    data-0="width:0%;background:hsl(200, 100%, 50%);"
+    data-end="width:100%;background:hsl(920, 100%, 50%);"
+    style="width:0%;background:rgb(0, 170, 255) none repeat scroll 0% 0%;">
+      <h1>당신이 성범죄의 피해자가 될 확률은</h1>
+      <h2>당신은 별로 안전하지 않을지도 모릅니다</h2>
+      <p>더 많은 정보를 알고싶으면 스크롤을 내리십시오</p>
+      <p class="arrows">▼ ▼ ▼</p>
+    </div>
+
+    <div id="transform" class="skrollable skrollable-before"
+    data-500="transform:scale(0) rotate(0deg);"
+    data-1000="transform=:scale(1) rotate(1440deg);opacity:1;"
+    data-1600=""
+    data-1700="transform:scale(5) rotate(3240deg);opacity:0;"
+    style="transform:scale(0) rotate(0deg); opacity(1);">
+      <h2>Transform</h2>
+      <p>transforming into something new ;)</p>
+    </div>
+
+
+    <div id="scrollbar" class="skrollable skrollable-between"
+    data-0="top:0%;margin-top:2px;" data-end="top:100%;margin-top:-52px;"
+    style="top:0%;margin-top:2px;"></div>
     <script type="text/javascript" src="scripts/skrollr.min.js"></script>
-    <script src="scripts/main.js"></script>
+    <script type="text/javascript">
+
+      var s = skrollr.init({
+        		edgeStrategy: 'set',
+            		easing: {
+                  WTF: Math.random,
+                  inverted: function(p) {
+                    return 1-p;
+                  }
+                }
+              });
+
+    </script>
   </body>
 
 </html>
