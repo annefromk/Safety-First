@@ -9,7 +9,11 @@
   </head>
   <body>
     <h1>서울은 성범죄로부터 안전한가</h1>
-    <main class="skrolling to zoomin">
+    <main class="skrollable skrollable-between"
+    data-top="background-color: rgba(244,244,244,0);"
+    data-center-bottom="background-color: rgba(244,244,244,1);"
+    data--200p-top="background-color: rgba(0,0,0,1);"
+    data-anchor-target="#page-1" style="background-color: rgb(244,244,244);">
       <section id="page-1" class="homeSlide" style="height:1528px">
         <div class="bcg skrollable skrollable-between"
         data-top="opacity: 1; width: 100%; height: 100%; top: 0%; left: 0%;"
@@ -52,10 +56,11 @@
       </section>
     </main>
 
-    <script type="text/javascript" src="files-to-ignore/skrollr.min.js"></script>
     <script type="text/javascript">
     var s = skrollr.init();
     </script>
+    <script type="text/javascript" src="scripts/skrollr.min.js"></script>
+    <script src="scripts/main.js"></script>
   </body>
 
 </html>
