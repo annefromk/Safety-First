@@ -6,7 +6,7 @@ html, body {
 
 #progress {
 	height:2%;
-	background:#444;
+	background:#FFF;
 	bottom:0;
 	z-index:200;
 }
