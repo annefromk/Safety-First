@@ -3,14 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
-  <title>Horizontal Scroll | sweet-scroll.js</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
-  <link rel="stylesheet" href="icomoon_style.css">
-  <link rel="stylesheet" href="scripts/tomorrow-night.css">
-  <link rel="stylesheet" href="scripts/style.css">
+  <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
   <style>
     #wrapper > div {
-      width: 500vw;
+      width: 600vw;
     }
     .section {
       float: left;
@@ -31,12 +27,12 @@
         <div class="container">
           <div class="section__container">
             <div class="section__header">
-              <h2 class="section__title">Horizontal scroll</h2>
-              <p class="section__lead">Horizontal scrolling can also be easily achieved.</p>
+              <h2 class="section__title">intro</h2>
+              <p class="section__lead">서울은 성범죄로부터 안전한가의 첫 화면을 삽입할 것</p>
             </div>
             <div class="section__body">
               <ul class="list--inline">
-                <li><button class="btn btn--ghost" data-scroll="#second">Next page<i class="icon-angle-right"></i></button></li>
+                <li><button class="btn btn--ghost" data-scroll="#second">page 1</button></li>
               </ul>
             </div>
           </div>
@@ -47,13 +43,12 @@
         <div class="container">
           <div class="section__container">
             <div class="section__header">
-              <h2 class="section__title">2. Second</h2>
-              <p class="section__lead">This is second content.</p>
+              <h2 class="section__title">시각화 1</h2>
+              <p class="section__lead">데이터 분석 시각화 페이지로 링크??</p>
             </div>
             <div class="section__body">
               <ul class="list--inline">
-                <li><button class="btn btn--ghost" data-scroll="#first"><i class="icon-angle-left"></i>Prev page</button></li>
-                <li><button class="btn btn--ghost" data-scroll="#third">Next page<i class="icon-angle-right"></i></button></li>
+                <li><button class="btn btn--ghost" data-scroll="#third">page 2</button></li>
               </ul>
             </div>
           </div>
@@ -64,30 +59,12 @@
         <div class="container">
           <div class="section__container">
             <div class="section__header">
-              <h2 class="section__title">3. Third</h2>
-              <p class="section__lead">This is third content.</p>
+              <h2 class="section__title">시각화 2</h2>
+              <p class="section__lead">데이터 시각화 2로 링크할 것</p>
             </div>
             <div class="section__body">
               <ul class="list--inline">
-                <li><button class="btn btn--ghost" data-scroll="#second"><i class="icon-angle-left"></i>Prev page</button></li>
-                <li><button class="btn btn--ghost" data-scroll="#fourth">Next page<i class="icon-angle-right"></i></button></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="fourth">
-        <div class="container">
-          <div class="section__container">
-            <div class="section__header">
-              <h2 class="section__title">4. Fourth</h2>
-              <p class="section__lead">This is fourth content.</p>
-            </div>
-            <div class="section__body">
-              <ul class="list--inline">
-                <li><button class="btn btn--ghost" data-scroll="#third"><i class="icon-angle-left"></i>Prev page</button></li>
-                <li><button class="btn btn--ghost" data-scroll="#fifth">Next page<i class="icon-angle-right"></i></button></li>
+                <li><button class="btn btn--ghost" data-scroll="#fourth">page 3</button></li>
               </ul>
             </div>
           </div>
@@ -98,12 +75,12 @@
         <div class="container">
           <div class="section__container">
             <div class="section__header">
-              <h2 class="section__title">5. Fifth</h2>
-              <p class="section__lead">This is fifth content.</p>
+              <h2 class="section__title">마지막 장</h2>
+              <p class="section__lead">팀원 설명? 해놓기</p>
             </div>
             <div class="section__body">
               <ul class="list--inline">
-                <li><button class="btn btn--ghost" data-scroll="#first"><i class="icon-angle-left"></i>First page</button></li>
+                <li><button class="btn btn--ghost" data-scroll="#first"><i class="icon-angle-left"></i>Last page</button></li>
               </ul>
             </div>
           </div>
@@ -118,7 +95,7 @@
     <label class="quick-mode__control" for="quick-mode"></label>
   </div>
 
-  <script src="sweet-scroll.js"></script>
+  <script src="scripts/sweet-scroll.js"></script>
   <script>
     var sweetScroll = new SweetScroll({
       horizontalScroll: true
