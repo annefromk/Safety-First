@@ -4,23 +4,18 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
+  <link rel="stylesheet" href="scripts/style.css">
   <style>
     #wrapper > div {
       width: 600vw;
     }
     .section {
       float: left;
-      width: 20%;
+      width: 24%;
     }
   </style>
 </head>
 <body>
-  <header class="header" data-scroll-header>
-    <a class="header__back" href="./#examples"><i class="icon-angle-left"></i><span>Back</span></a>
-    <h1 class="header__logo"><img src="./images/icon-logo.svg" width="32" height="32" alt="sweet-scroll.js"></h1>
-    <a class="header__code" href="https://github.com/tsuyoshiwada/sweet-scroll/blob/master/docs/horizontal.html"><i class="icon-code"></i><span>Source</span></a>
-  </header>
-
   <div id="wrapper">
     <div>
       <section class="section" id="first">
@@ -71,7 +66,7 @@
         </div>
       </section>
 
-      <section class="section" id="fifth">
+      <section class="section" id="fourth">
         <div class="container">
           <div class="section__container">
             <div class="section__header">
@@ -80,7 +75,7 @@
             </div>
             <div class="section__body">
               <ul class="list--inline">
-                <li><button class="btn btn--ghost" data-scroll="#first"><i class="icon-angle-left"></i>Last page</button></li>
+                <li><button class="btn btn--ghost"><i class="icon-angle-left"></i>Last page</button></li>
               </ul>
             </div>
           </div>
@@ -89,21 +84,11 @@
     </div>
   </div>
 
-  <div class="quick-mode">
-    <span class="quick-mode__label">QuickMode!!</span>
-    <input type="checkbox" id="quick-mode">
-    <label class="quick-mode__control" for="quick-mode"></label>
-  </div>
-
   <script src="scripts/sweet-scroll.js"></script>
   <script>
     var sweetScroll = new SweetScroll({
       horizontalScroll: true
     }, "#wrapper");
-    // Toggle quickMode
-    document.querySelector("#quick-mode").addEventListener("change", function(e) {
-      sweetScroll.update({ quickMode: this.checked });
-    }, false);
   </script>
 </body>
 </html>
