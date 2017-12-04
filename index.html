@@ -7,15 +7,10 @@
     <title>서울은 성범죄로부터 안전한 곳인가</title>
     <script src="scripts/d3.min.js"></script>
     <!-- <script src="//d3js.org/d3.v4.min.js"></script> -->
-    <script src="scripts/scrollMagic.min.js"></script>
-    <!-- <script src="js/scrollmagic/minified/ScrollMagic.min.js"></script> -->
-    <!-- <script src="scripts/animation.gsap.js"></script> -->
-    <script src="scripts/TweenMax.min.js"></script>
-    <script src="scripts/TweenLite.min.js"></script>
     <link href="style.css" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <!-- <div id="content-wrapper" style="">
+    <div id="content-wrapper" style="">
       <span id="overlay" style="opacity:1;"></span>
       <script type="text/javascript">
       var controller;
@@ -84,17 +79,7 @@
                 $("<pre>").text(cdnCode).appendTo("#get-it-now code.cdn");
             });
       </script>
-      <section class="demo1" style="">
-        <div id="progress">
-          <p>S<br>C<br>R<br>O<br>L<br>L</p>
-          <p>S<br>C<br>R<br>O<br>L<br>L</p>
-          <p>S<br>C<br>R<br>O<br>L<br>L</p>
-          <p>S<br>C<br>R<br>O<br>L<br>L</p>
-          <p>S<br>C<br>R<br>O<br>L<br>L</p>
-          <p>S<br>C<br>R<br>O<br>L<br>L</p>
-          <p>S<br>C<br>R<br>O<br>L<br>L</p>
-        </div>
-      </section> -->
+
       <section class="demo2" style="">
         <div class="spacer s2"></div>
         <div id="trigger" class="spacer s0"></div>
@@ -103,13 +88,17 @@
         </div>
         <div class="spacer s2"></div>
         <script>
-        // initialize controller
-        var controller = new ScrollMagic.Controller({vertical: false});
-        // build tween
-        var tween = TweenMax.to("#target", 0.5, {backgroundColor: "green", width: "+=400"});
-        // build scene
-        var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500})
-        .setTween(tween).addIndicators().addTo(controller);
+            // init controller
+						var controller = new ScrollMagic.Controller({vertical: false});
+
+						// build tween
+						var tween = TweenMax.to("#target", 0.5, {backgroundColor: "green", width: "+=400"});
+
+						// build scene
+						var scene = new ScrollMagic.Scene({triggerElement: "#trigger", duration: 500})
+										.setTween(tween)
+										.addIndicators() // add indicators (requires plugin)
+										.addTo(controller);
         </script>
       </section>
 
