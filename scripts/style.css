@@ -24,6 +24,12 @@ button{
   transition:800ms ease all;
   outline:none;
 }
+.left {
+  border-bottom-left-radius: 30px;
+}
+.right {
+  border-bottom-right-radius: 30px;
+}
 button:hover{
   background:#faffa0;
   color:#444444;
