@@ -2,35 +2,27 @@ body {
   margin:0;
   font-family:Georgia;
 }
-#container {
+#layer1 {
   /*making the scroll move horizontally*/
   overflow-y:scroll;
   overflow-x:hidden;
   transform: rotate(270deg) translateX(-100%);
   transform-origin: left top;
-  background-color:#999;
   position:absolute;
   /*just making sure no "hidden" scrolls show up... *yuck**/
   width:99.99vh;
   height:99.99vw;
-}
-#container .box {
+} .box {
+  /*this is where each slide goes*/
   width:100vw;
   height:100vh;
   display:inline-block;
   position:relative;
-}
-#container .gradient {
-  /*color of the night sky*/
-  background: linear-gradient(#2c0763, pink);
-
-}
-#container .box > div {
+} .box > div {
   /*all the words that go into each page*/
   width:100px;
   height:100px;
   font-size:96px;
-  color:#FFF;
   position:absolute;
   top:50%;
   left:50%;
@@ -38,8 +30,8 @@ body {
   line-height:.7;
   font-weight:bold;
 }
-#container2 {
-  /*putting the words back in position*/
+#container {
+  /*putting the words in position*/
   transform: rotate(90deg) translateY(-100vh);
   transform-origin: top left;
   white-space:nowrap;
