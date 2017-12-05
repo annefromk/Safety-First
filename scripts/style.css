@@ -19,8 +19,11 @@ body {
   height:100vh;
   display:inline-block;
   position:relative;
+}
+#container .gradient {
   /*color of the night sky*/
-  background-color: #2c0763;
+  background: linear-gradient(#2c0763, pink);
+
 }
 #container .box > div {
   /*all the words that go into each page*/
