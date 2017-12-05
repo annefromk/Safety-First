@@ -4,31 +4,108 @@
   <meta charset="utf-8">
   <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
   <link rel="stylesheet" href="scripts/style.css">
-  <link rel="stylesheet" href="scripts/background.css">
+  <link rel="stylesheet" href="scripts/horizontal.css">
 </head>
 <body>
-  <section id="base" class="background">
+  <div class="background">
     <svg id="moon" class="circle" />
     <svg id="sky"/>
     <svg id="skyline" />
-  </section>
-  <section id="layer1">
-    <div id="container">
-      <div class="box">
-        <div>1</div></div>
-      <div class="box">
-        <div>2</div></div>
-      <div class="box">
-        <div>3</div></div>
-      <div class="box">
-        <div>4</div></div>
-      <div class="box">
-        <div>5</div></div>
-      <div class="box">
-        <div>Last</div></div>
   </div>
-</section>
+  <div id="wrapper">
+    <div>
+      <section class="section" id="first">
+        <div class="container">
+          <div class="section__container">
+            <div class="section__header">
+              <h2 class="section__title">Title here</h2>
+              <p class="section__lead">Text here.</p>
+            </div>
+            <div class="section__body">
+              <ul class="list--inline">
+                <li><button data-scroll="#second">Next page</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-  <script type="text/javascript"></script>
+      <section class="section" id="second">
+        <div class="container">
+          <div class="section__container">
+            <div class="section__header">
+              <h2 class="section__title">Title here</h2>
+              <p class="section__lead">Text here.</p>
+            </div>
+            <div class="section__body">
+              <ul class="list--inline">
+                <li><button data-scroll="#first">Prev page</button></li>
+                <li><button data-scroll="#third">Next page</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="third">
+        <div class="container">
+          <div class="section__container">
+            <div class="section__header">
+              <h2 class="section__title">Title here</h2>
+              <p class="section__lead">Text here.</p>
+            </div>
+            <div class="section__body">
+              <ul class="list--inline">
+                <li><button data-scroll="#second">Prev page</button></li>
+                <li><button data-scroll="#fourth">Next page</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="fourth">
+        <div class="container">
+          <div class="section__container">
+            <div class="section__header">
+              <h2 class="section__title">Title here</h2>
+              <p class="section__lead">Text here.</p>
+            </div>
+            <div class="section__body">
+              <ul class="list--inline">
+                <li><button data-scroll="#third">Prev page</button></li>
+                <li><button data-scroll="#last">Next page</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="last">
+        <div class="container">
+          <div class="section__container">
+            <div class="section__header">
+              <h2 class="section__title">Title here</h2>
+              <p class="section__lead">Text here.</p>
+            </div>
+            <div class="section__body">
+              <ul class="list--inline">
+                <li><button data-scroll="#fourth">Prev page</button></li>
+                <li><button data-scroll="#first">First page</button></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+    <script src="scripts/sweet-scroll.js"></script>
+    <script>
+    var sweetScroll = new SweetScroll({
+      horizontalScroll: true
+    }, "#wrapper");
+    sweetScroll.update({ quickMode: this.checked });
+    </script>
 </body>
 </html>
