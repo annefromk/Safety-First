@@ -1,78 +1,62 @@
 /*for the horizontallity and buttons*/
+/*change min / max width later according to the parts that need to be insert*/
+body {
+  padding: 0;
+  margin: 0;
+}
 #wrapper > div {
-  width: 500vw;
+  padding: 0;
+  margin: 0;
+  width: 600%;
+  height: 100%;
 }
 .section {
-  float:left;
-  width:20%;
-}
-
-/*Buttons!*/
-button{
-  background:#7a794a;
-  color:#444444;
-  border:none;
-  /*the position of all buttons*/
-  z-index: 3;
-  transform: translateX(20vw) translateY(10vh);
-  width:120px;
-  height:30px;
-  /*shape of button*/
-  font-size:2em;
-  padding:0 2em;
-  cursor:pointer;
-  transition:800ms ease all;
-  outline:none;
-}
-.left {
-  border-bottom-left-radius: 30px;
-}
-.right {
-  border-bottom-right-radius: 30px;
-}
-button:hover{
-  background:#faffa0;
-  color:#444444;
+  padding: 0;
+  margin: 0;
+  float: left;
+  width: 20%;
 }
 
 /*Title & Text colors*/
 .section__title {
   color: whitesmoke;
+  position: absolute;
 }
 
 /*the background content*/
 #moon {
   z-index: 0;
-  position:absolute;
+  position:fixed;
   transform: translateX(125px) translateY(100px);
-  width: 80px;
-  height: 80px;
+  width: 40px;
+  height: 40px;
   background: whitesmoke;
-  -moz-border-radius: 40px;
-  -webkit-border-radius: 40px;
-  border-radius: 40px;
+  -moz-border-radius: 20px;
+  -webkit-border-radius: 20px;
+  border-radius: 20px;
 }
 #sky {
   z-index: -3;
-  position: absolute;
+  position: fixed;
   background: linear-gradient(#0a0763, #d8b2ff);
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
 }
 #skyline {
   /*will be modified later on*/
   z-index: 2;
-  position:absolute;
+  position:fixed;
   transform: translateY(85vh);
-  width:100vw;
-  height:15vh;
+  width:100%;
+  height:15%;
   background-color: black;
 }
 #section_for_slides {
-  z-index: -1;
+  z-index: -5;
   position:absolute;
   transform: translatex(-70vw) translateY(-8vh);
-  width:65em;
-  height:35em;
+  width:90%;
+  height:86%;
   background-color: black;
 }
+/*buttons*/

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
-  <link rel="stylesheet" href="scripts/style.css">
-  <link rel="stylesheet" href="scripts/horizontal.css">
+  <link rel="stylesheet" href="scripts/style.css" />
+  <link rel="stylesheet" href="scripts/horizontal.css" />
 </head>
 <body>
   <div class="background">
@@ -21,12 +21,6 @@
               <h2 class="section__title">Title here</h2>
               <p class="section__lead">Text here.</p>
             </div>
-            <div class="section__body">
-              <ul class="list--inline">
-                <li><button class="left" href="pdfFile.pdf" download>PDF</button></li>
-                <li><button class="right" data-scroll="#second">NEXT</button></li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
@@ -38,14 +32,9 @@
               <h2 class="section__title">Title here</h2>
               <p class="section__lead">Text here.</p>
             </div>
-            <div class="section__body">
-              <ul class="list--inline">
-                <li><button class="left" data-scroll="#first">PREV</button></li>
-                <li><button class="right" data-scroll="#third">NEXT</button></li>
-              </ul>
-            </div>
             <div>
-            <svg id="section_for_slides" />
+            <svg id="section_for_slides">
+            </svg>
           </div>
           </div>
         </div>
@@ -57,12 +46,6 @@
             <div class="section__header">
               <h2 class="section__title">Title here</h2>
               <p class="section__lead">Text here.</p>
-            </div>
-            <div class="section__body">
-              <ul class="list--inline">
-                <li><button class="left" data-scroll="#second">PREV</button></li>
-                <li><button class="right" data-scroll="#fourth">NEXT</button></li>
-              </ul>
             </div>
             <div>
             <svg id="section_for_slides" />
@@ -78,12 +61,6 @@
               <h2 class="section__title">Title here</h2>
               <p class="section__lead">Text here.</p>
             </div>
-            <div class="section__body">
-              <ul class="list--inline">
-                <li><button class="left" data-scroll="#third">PREV</button></li>
-                <li><button class="right" data-scroll="#last">NEXT</button></li>
-              </ul>
-            </div>
             <div>
             <svg id="section_for_slides" />
           </div>
@@ -98,12 +75,6 @@
               <h2 class="section__title">Last page</h2>
               <p class="section__lead">Text here.</p>
             </div>
-            <div class="section__body">
-              <ul class="list--inline">
-                <li><button class="left" data-scroll="#fourth">PREV</button></li>
-                <li><button class="right" data-scroll="#first">HOME</button></li>
-              </ul>
-            </div>
           </div>
         </div>
       </section>
@@ -117,5 +88,4 @@
     }, "#wrapper");
     sweetScroll.update({ quickMode: this.checked });
     </script>
-</body>
 </html>
