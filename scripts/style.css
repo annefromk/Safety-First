@@ -7,8 +7,8 @@ body {
 #wrapper > div {
   padding: 0;
   margin: 0;
-  width: 600%;
-  height: 100%;
+  width: 500vw;
+  height: 100vh;
 }
 .section {
   padding: 0;
@@ -18,23 +18,53 @@ body {
 }
 
 /*Title & Text colors*/
+.section__header{
+  padding:0;
+  margin: 10px;
+}
 .section__title {
   color: whitesmoke;
   position: absolute;
 }
-
 /*the background content*/
-#moon {
+#moon_stars{
+  padding: 0;
+  margin: 0;
+  color:rgba(0,0,0,0);
+  background-color: rgba(0,0,0,0);
+  transform: translateX(6vw) translateY(6vh);
+}
+.moon {
   z-index: 0;
   position:fixed;
-  transform: translateX(125px) translateY(100px);
-  width: 40px;
-  height: 40px;
+  width: 4vw;
+  height: 4vw;
   background: whitesmoke;
-  -moz-border-radius: 20px;
-  -webkit-border-radius: 20px;
-  border-radius: 20px;
+  -moz-border-radius: 2vw;
+  -webkit-border-radius: 2vw;
+  border-radius: 2vw;
 }
+.star {
+  margin: 2vw;
+  z-index: 0;
+  position: fixed;
+  background: yellow;
+  width: 4px;
+  height: 4px;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+  } #second {
+  transform: translateX(10vw);
+  } #third {
+  transform: translateX(18vw);
+  } #fourth {
+  transform: translateX(26vw);
+  } #last {
+  transform: translateX(34vw);
+  }
+
+
 #sky {
   z-index: -3;
   position: fixed;
@@ -51,12 +81,12 @@ body {
   height:15%;
   background-color: black;
 }
-#section_for_slides {
+.section__slides {
   z-index: -5;
   position:absolute;
-  transform: translatex(-70vw) translateY(-8vh);
-  width:90%;
-  height:86%;
+  width:80%;
+  height:90%;
   background-color: black;
+  color: black;
 }
 /*buttons*/
