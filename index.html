@@ -5,6 +5,7 @@
   <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
   <link rel="stylesheet" href="scripts/style.css" />
   <link rel="stylesheet" href="scripts/horizontal.css" />
+  <link rel="stylesheet" href="scripts/animate.css" />
   <script src="https://d3js.org/d3.v4.min.js"></script>
 </head>
 <body>
@@ -12,28 +13,26 @@
     <svg id="sky"/>
     <svg id="skyline" />
     <div id="moon_stars">
-      <!-- <svg id="first" class="moon"> -->
-        <button data-scroll="#second">
-        <svg id="first" class="moon"></svg></button>
-      <!-- </svg> -->
+      <svg id="first" class="moon"></svg>
       <svg id="second" class="star"></svg>
       <svg id="third" class="star"></svg>
       <svg id="fourth" class="star"></svg>
       <svg id="last" class="star"></svg>
+    </ol>
     </div>
   </div>
   <div id="wrapper">
     <div>
-      <section class="section" id="first">
-        <div class="container">
-          <div class="section__container">
-            <div class="section__header">
-              <h2 class="section__title">Title here</h2>
-              <p class="section__lead">Text here.</p>
+        <section class="section" id="first">
+          <div class="container">
+            <div class="section__container">
+              <div class="section__header">
+                <h2 class="section__title">Title here</h2>
+                <p class="section__lead">Text here.</p>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       <section class="section" id="second">
         <div class="container">
@@ -94,7 +93,5 @@
     }, "#wrapper");
     sweetScroll.update({ quickMode: this.checked });
     </script>
-    <script type="text/javascript">
-
-    </script>
+  </body>
 </html>
