@@ -8,13 +8,11 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <link rel="stylesheet" href="style.css">
+  <script src="https://d3js.org/d3.v4.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="seoul_municipalities_geojson_2014.js"></script>
-  <script type="text/javascript" src="seoul_municipalities_geojson_2015.js"></script>
-  <script type="text/javascript" src="seoul_municipalities_geojson_2016.js"></script>
 </head>
 <body>
   <div id ="map"></div>
@@ -31,14 +29,47 @@
 
   <div class="btn-group">
     <button id="choice_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-      CCTV
+      CCTV 설치대 수
     </button>
     <div class="dropdown-menu">
-      <a class="dropdown-item" onclick="changeLayer('', 'CCTV')">CCTV</a>
-      <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 집')">여성지킴이 집</a>
-      <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 이용자 수')">여성지킴이 이용자 수</a>
+      <a class="dropdown-item" onclick="changeLayer('', 'CCTV 설치대 수')">CCTV 설치대 수</a>
+      <a class="dropdown-item" onclick="changeLayer('', '여성안심지킴이 집')">여성안심지킴이 집</a>
+      <a class="dropdown-item" onclick="changeLayer('', '안심귀가스카우트 이용자 수')">안심귀가스카우트 이용자 수</a>
     </div>
   </div>
   <script type="text/javascript" src="./utils.js"></script>
   <script type="text/javascript" src="./script.js"></script>
+  <script>
+  var statesData = {};
+
+  d3.queue()
+    .defer(d3.json, 'seoul_municipalities_geo.json')
+    .defer(d3.json, 'seoul_municipalities_geo.json')
+    .defer(d3.json, 'seoul_municipalities_geo.json')
+    .defer(d3.csv, 'dataset.csv')
+    .awaitAll(function(err, data) {
+      var geos = data.slice(0, 3);
+      geos.forEach(function(g) {
+          g.features.sort(function(a, b) {
+              return d3.ascending(a.properties.SIG_KOR_NM, b.properties.SIG_KOR_NM);
+          });
+      });
+
+      var dataset = data[3];
+      var nested = d3.nest()
+        .key(function(d) {return d.year;})
+        .entries(dataset);
+      nested.forEach(function(d, i) {
+          statesData[d.key] = geos[i];
+          geos[i].features.forEach(function(f, j) {
+              var d = nested[i].values[j];
+              f.properties.cctv = +d.cctv;
+              f.properties.shelter = +d.shelter;
+              f.properties.users = +d.users;
+          });
+      });
+      
+      changeLayer('2014');
+    });
+  </script>
 </body>

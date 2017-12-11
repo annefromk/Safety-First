@@ -10,7 +10,7 @@ function initMap() {
 }
 
 function getColor(d) {
-  if (selectedInfo.type === 'CCTV') {
+  if (selectedInfo.type === 'CCTV 설치대 수') {
     return d > 400 ? '#800026' :
         d > 300  ? '#BD0026' :
         d > 200  ? '#E31A1C' :
@@ -19,7 +19,7 @@ function getColor(d) {
         d > 50   ? '#FEB24C' :
         d > 30   ? '#FED976' :
                    '#FFEDA0';
-  } else if (selectedInfo.type === '여성지킴이 집') {
+  } else if (selectedInfo.type === '여성안심지킴이 집') {
     return d > 80 ? '#800026' :
         d > 65  ? '#BD0026' :
         d > 52  ? '#E31A1C' :
@@ -28,19 +28,27 @@ function getColor(d) {
         d > 20   ? '#FEB24C' :
         d > 10   ? '#FED976' :
                    '#FFEDA0';
-  } else if (selectedInfo.type === '여성지킴이 이용자 수') {
-    // TODO
+  } else if (selectedInfo.type === '안심귀가스카우트 이용자 수') {
+    return d > 20000 ? '#800026' :
+        d > 15000  ? '#BD0026' :
+        d > 10000  ? '#E31A1C' :
+        d > 5000  ? '#FC4E2A' :
+        d > 1000   ? '#FD8D3C' :
+        d > 500   ? '#FEB24C' :
+        d > 100   ? '#FED976' :
+                   '#FFEDA0';
   }
 }
 
 function style(feature) {
-  let p
-  if (selectedInfo.type === 'CCTV') {
-    p = feature.properties.CCTV
-  } else if (selectedInfo.type === '여성지킴이 집') {
-    p = feature.properties.Shelter
-  } else if (selectedInfo.type === '여성지킴이 이용자 수') {
-    // TODO
+  var p;
+  if (selectedInfo.type === 'CCTV 설치대 수') {
+    p = feature.properties.cctv
+  } else if (selectedInfo.type === '여성안심지킴이 집') {
+    p = feature.properties.shelter
+  } else if (selectedInfo.type === '안심귀가스카우트 이용자 수') {
+    p = feature.properties.users
+      console.log(p);
   }
   return {
     weight: 2,
@@ -96,18 +104,14 @@ const changeLayer = (year, type) => {
     document.getElementById('choice_drop').innerHTML = type
   }
 
-  let data
-  if (selectedInfo.year === '2014') {
-    data = statesData_2014
-  } else if (selectedInfo.year === '2015') {
-    data = statesData_2015
-  } else if (selectedInfo.year === '2016') {
-    data = statesData_2016
-  }
+  let data = statesData[selectedInfo.year];
 
   geojson.clearLayers()
   geojson = L.geoJson(data, {
     style: style,
     onEachFeature: onEachFeature
   }).addTo(map);
+
+  legend.remove();
+  legend.addTo(map);
 }
