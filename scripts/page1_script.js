@@ -1,6 +1,4 @@
-(function() {
-
-let selectedInfo = {}
+let selectedForDemographic = {}
 const criminal_data = [[6, 24], [20, 129], [20, 264], [57, 1237], [130, 3867],
                        [56, 940], [41, 449], [24, 282], [10, 88]]
 
@@ -46,7 +44,7 @@ const styleBreadcomb = (type, value) => {
   }
 }
 
-const transferValueToIndex = (selectedInfo) => {
+const transferValueToIndex = (selectedForDemographic) => {
   result = {}
   if (selectedInfo.gender === '남성') {
     result.gIndex = 0
@@ -82,7 +80,7 @@ const transferValueToIndex = (selectedInfo) => {
 }
 
 const getVictim = () => {
-  const indices = transferValueToIndex(selectedInfo)
+  const indices = transferValueToIndex(selectedForDemographic)
   console.log(indices)
   g = indices.gIndex
   a = indices.aIndex
@@ -139,4 +137,3 @@ $('.navi-none-age').on('click', function() {
 $('.navi-none-gender').on('click', function() {
   showQuestion('gender')
 })
-}) ();

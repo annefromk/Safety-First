@@ -30,12 +30,6 @@ html, body {
   color: whitesmoke;
 }
 /*the background content*/
-.background {
-  padding:0;
-  margin:0;
-  width: 0;
-  height: 0;
-}
 #moon_stars{
   z-index: 0;
   position: fixed;
@@ -56,11 +50,11 @@ html, body {
 .star {
   margin: 2vw;
   background: yellow;
-  width: 4px;
-  height: 4px;
-  -moz-border-radius: 2px;
-  -webkit-border-radius: 2px;
-  border-radius: 2px;
+  width: 6px;
+  height: 6px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
   }
 #second {
   transform: translateX(10vw);
@@ -82,23 +76,95 @@ html, body {
   width: 100vw;
   height: 100vh;
 }
-#skyline {
-  z-index: -3;
-  position: fixed;
-  width: 100vw;
-  height: 7vh;
-  background-color: black;
-  transform: translateY(93vh);
-}
 .section__slides {
   z-index: -5;
   position:absolute;
-  transform: translateY(5vh);
-  width:80vw;
-  height:90vh;
+  transform: translateY(6vh);
+  width:90vw;
+  height:94vh;
   background-color: black;
   color: black;
 }
+/*Demographic slide*/
+#question-container {
+  min-height: 100px;
+}
+
+.question {
+  border-bottom: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+}
+
+.question-navi {
+  font-size: 0.8em;
+  font-weight: 200;
+}
+
+.navi-current {
+  font-weight:500
+}
+
+.navi-none-age, .navi-none-gender {
+  font-weight: 200;
+  color: grey;
+  cursor: pointer;
+}
+
+.selector-item {
+ border: 1px solid grey;
+ padding: 5px;
+ margin: 10px 10px 10px 0;
+ cursor: pointer;
+ opacity: 0.3;
+}
+
+.selector-item.hover, .selector-item.selected{
+  opacity: 1;
+}
+
+.image-selector {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-left:620px;
+  padding-right:300px;
+
+}
+.image-selector-age {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-left:450px;
+  padding-right:400px;
+}
+
+#result-container {
+  text-align: center;
+  min-height: 200px;
+  padding: 10px;
+}
+
+.breadcomb {
+  border: 2px solid #FCAF17;
+  border-radius: 32px;
+  color: #959494;
+  font-size: 1.1em;
+  padding: 6px 12px;
+}
+
+#result-summary {
+  margin-top: 30px;
+}
+
+#more {
+  position: fixed;
+  text-align: center;
+  background-color: skyblue;
+  bottom: 0;
+  width: 100%;
+}
+
 /*Map slide*/
 #map {
   padding: 0;
@@ -133,7 +199,7 @@ html, body {
   cursor: pointer;
   transform: translateX(64vw) translateY(4vh);
   font: 14px/16px Arial, Helvetica, sans-serif;
-  text-align: right;
+  /*text-align: right;*/
 }
 #choice_drop {
   width: 15vw;

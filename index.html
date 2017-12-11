@@ -5,10 +5,10 @@
   <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
   <link rel="stylesheet" href="scripts/style.css" />
   <link rel="stylesheet" href="scripts/horizontal.css" />
-  <link rel="stylesheet" href="scripts/page1_style.css" />
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -19,9 +19,7 @@
 
 </head>
 <body>
-  <div class="background">
     <svg id="sky"/>
-    <svg id="skyline" />
     <nav aria-label="Page navigation" id="moon_stars">
       <ul class="pagination">
         <li id="first"><a href="#first"><svg class="moon"></svg></a></li>
@@ -31,7 +29,6 @@
         <li id="last"><a href="#last"><svg class="star"></svg></a></li>
       </ul>
   </nav>
-  </div>
 
     <div>
         <section class="section" id="first_page">
@@ -53,7 +50,7 @@
             <div class="section__header">
               <h2 class="section__title">서울시, 성범죄로부터 안전한가?</h2>
               <svg class="section__slides">
-                <!-- <p class="section__lead">당신의 인적 사항 정보를 알려주세요.<br>
+                <p class="section__lead">당신의 인적 사항 정보를 알려주세요.<br>
                   입력된 정보와 일치하는 <u>최근 3년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br>
                   <h6>2014~ 2016년 서울시 성폭력 피해자 성별/연령 현황[데이터출처: 서울특별시 경찰청]</h6>
                 </p>
@@ -136,7 +133,7 @@
                   최근 3년간 성폭력 피해자 통계 <a href="#">더 알아보기</a>
                 </section>
               </svg>
-            </div> -->
+            </div>
           </div>
         </div>
       </section>
@@ -175,7 +172,6 @@
                       <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 이용자 수')">여성지킴이 이용자 수</a>
                     </div>
                   </span>
-                  <br><br><br><br><br><br>
                   <span class='navi-year'>
                     <button id="year_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       2014
@@ -212,7 +208,6 @@
   </div>
 
   <script type="text/javascript" src="scripts/page1_script.js"></script>
-  <script type="text/javascript" src="scripts/page3_utils.js"></script>
   <script type="text/javascript" src="scripts/page3_script.js"></script>
 
   <script>
