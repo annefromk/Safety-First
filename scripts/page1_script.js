@@ -8,11 +8,11 @@ const showQuestion = (type) => {
   if (type === 'age') {
     $('#question-gender').hide()
     $('#question-age').show()
-    $(`.selector-item[value="${ selectedInfo.age }"]`).addClass('selected')
+    $(`.selector-item[value="${ selectedForDemographic.age }"]`).addClass('selected')
   } else if (type === 'gender'){
     $('#question-age').hide()
     $('#question-gender').show()
-    $(`.selector-item[value="${ selectedInfo.gender }"]`).addClass('selected')
+    $(`.selector-item[value="${ selectedForDemographic.gender }"]`).addClass('selected')
   }
 }
 
@@ -46,31 +46,31 @@ const styleBreadcomb = (type, value) => {
 
 const transferValueToIndex = (selectedForDemographic) => {
   result = {}
-  if (selectedInfo.gender === '남성') {
+  if (selectedForDemographic.gender === '남성') {
     result.gIndex = 0
-  } else if (selectedInfo.gender === '여성') {
+  } else if (selectedForDemographic.gender === '여성') {
     result.gIndex = 1
   } else {
     result.gIndex = -1
   }
 
-  if (selectedInfo.age === '6세 이하') {
+  if (selectedForDemographic.age === '6세 이하') {
     result.aIndex = 0
-  } else if (selectedInfo.age === '12세 이하') {
+  } else if (selectedForDemographic.age === '12세 이하') {
     result.aIndex = 1
-  } else if (selectedInfo.age === '15세 이하') {
+  } else if (selectedForDemographic.age === '15세 이하') {
     result.aIndex = 2
-  } else if (selectedInfo.age === '20세 이하') {
+  } else if (selectedForDemographic.age === '20세 이하') {
     result.aIndex = 3
-  } else if (selectedInfo.age === '30세 이하') {
+  } else if (selectedForDemographic.age === '30세 이하') {
     result.aIndex = 4
-  } else if (selectedInfo.age === '40세 이하') {
+  } else if (selectedForDemographic.age === '40세 이하') {
     result.aIndex = 5
-  } else if (selectedInfo.age === '50세 이하') {
+  } else if (selectedForDemographic.age === '50세 이하') {
     result.aIndex = 6
-  } else if (selectedInfo.age === '60세 이하') {
+  } else if (selectedForDemographic.age === '60세 이하') {
     result.aIndex = 7
-  } else if (selectedInfo.age === '60세 초과') {
+  } else if (selectedForDemographic.age === '60세 초과') {
     result.aIndex = 8
   } else {
     result.aIndex = -1
@@ -102,21 +102,21 @@ const getVictim = () => {
 $('.selector-item').on('click', function(){
   if ($(this).attr('qtype') === 'gender') {
     if ($(this).hasClass('selected')) {
-      selectedInfo.gender = undefined
+      selectedForDemographic.gender = undefined
       styleBreadcomb('gender', 'unstyle')
     } else {
-      selectedInfo.gender = $(this).attr('value')
+      selectedForDemographic.gender = $(this).attr('value')
       showQuestion('age')
-      styleBreadcomb('gender', selectedInfo.gender)
+      styleBreadcomb('gender', selectedForDemographic.gender)
     }
   } else {
     if ($(this).hasClass('selected')) {
-      selectedInfo.age = undefined
+      selectedForDemographic.age = undefined
       styleBreadcomb('age', 'unstyle')
     } else {
-      selectedInfo.age = $(this).attr('value')
+      selectedForDemographic.age = $(this).attr('value')
       showQuestion('gender')
-      styleBreadcomb('age', selectedInfo.age)
+      styleBreadcomb('age', selectedForDemographic.age)
     }
   }
   $(this).toggleClass('selected')
