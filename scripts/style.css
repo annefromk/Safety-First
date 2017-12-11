@@ -16,17 +16,19 @@ html, body {
 }
 
 /*Title & Text colors*/
-.section__header{
-  padding:0;
-  margin: 10px;
-}
 .section__title {
   color: whitesmoke;
   position: absolute;
 }
+.section__header {
+  margin:0;
+  padding: 0;
+  width: 80vw;
+  height: 90vh;
+}
 .section__lead {
-  padding-top: 60px;
-  padding-left: 80px;
+  padding: 2em;
+  transform: translateY(6vh);
   color: whitesmoke;
 }
 /*the background content*/
@@ -78,74 +80,54 @@ html, body {
 .section__slides {
   z-index: -5;
   position:absolute;
-  transform: translateX(-8vw) translateY(6vh);
+  transform: translateX(-10vw) translateY(5vh);
   width:90vw;
-  height:90vh;
+  height:80vh;
   background-color: rgba(180,180,180);
   color: black;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
-/*Demographic slide*/
-#question-container {
-  min-height: 100px;
-}
 
+/*Demographic slide*/
 .question {
+  width: 74vw;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
 }
-
-.question-navi {
-  font-size: 0.8em;
-  font-weight: 200;
-}
-
-.navi-current {
-  font-weight:500
-}
-
 .navi-none-age, .navi-none-gender {
-  font-weight: 200;
   color: grey;
   cursor: pointer;
 }
-
 .selector-item {
  border: 1px solid grey;
- padding: 5px;
- margin: 10px 10px 10px 0;
+ /*padding: 5px;
+ margin: 10px 10px 10px 0;*/
  cursor: pointer;
  opacity: 0.3;
 }
-
 .selector-item.hover, .selector-item.selected{
   opacity: 1;
 }
-
 .image-selector {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   text-align: center;
-  padding-left:620px;
-  padding-right:300px;
-
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 .image-selector-age {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   text-align: center;
-  padding-left:450px;
-  padding-right:400px;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
-
 #result-container {
   text-align: center;
   min-height: 200px;
-  padding: 10px;
 }
-
 .breadcomb {
   border: 2px solid #FCAF17;
   border-radius: 32px;
@@ -153,26 +135,17 @@ html, body {
   font-size: 1.1em;
   padding: 6px 12px;
 }
-
 #result-summary {
   margin-top: 30px;
 }
 
-#more {
-  position: fixed;
-  text-align: center;
-  background-color: skyblue;
-  bottom: 0;
-  width: 100%;
-}
-
 /*Map slide*/
 #map {
-  padding: 0;
-  margin-left: 2vw;
-  margin-right: 0 auto;
+  margin-left: 0;
+  margin-right: 2vw;
   margin-top: 2vh;
-  margin-bottom: 0 auto;
+  margin-bottom: 0;
+  transform: translateX(-4vw);
   width: 60vw;
   height: 70vh;
 }
@@ -198,10 +171,11 @@ html, body {
   z-index: 10;
   opacity: 0.9;
   cursor: pointer;
-  transform: translateX(64vw) translateY(2vh);
+  transform: translateX(58vw) translateY(2vh);
   font: 14px/16px Arial, Helvetica, sans-serif;
-  /*text-align: right;*/
+  text-align: right;
 }
 #choice_drop {
-  width: 15vw;
+  width: 18vw;
+  overflow: hidden;
 }
