@@ -30,13 +30,6 @@ html, body {
   color: whitesmoke;
 }
 /*the background content*/
-#sky {
-  z-index: -3;
-  position: fixed;
-  background: linear-gradient(rgb(47, 108, 158), rgba(255, 135, 84, 0.3));
-  width: 100vw;
-  height: 100vh;
-}
 #moon_stars{
   z-index: 0;
   position: fixed;
@@ -75,16 +68,22 @@ html, body {
 #last {
    transform: translateX(34vw);
 }
+
+#sky {
+  z-index: -3;
+  position: fixed;
+  background: linear-gradient(#0a0763, #d8b2ff);
+  width: 100vw;
+  height: 100vh;
+}
 .section__slides {
   z-index: -5;
   position:absolute;
-  transform: translateX(-6vw) translateY(6vh);
+  transform: translateY(6vh);
   width:90vw;
-  height:90vh;
-  background-color: rgba(180,180,180);
+  height:94vh;
+  background-color: black;
   color: black;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
 }
 /*Demographic slide*/
 #question-container {

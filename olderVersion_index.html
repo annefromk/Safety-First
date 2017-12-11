@@ -158,31 +158,36 @@
               <h2 class="section__title">Map</h2>
               <svg class="section__slides">
                 <p class="section__lead">
-                  <div class="buttons">
-                    <span class="btn-group">
-                      <button id="choice_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        CCTV
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" onclick="changeLayer('', 'CCTV')">CCTV 설치대수</a>
-                        <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 집')">여성지킴이 집</a>
-                        <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 이용자 수')">여성지킴이 이용자 수</a>
-                      </div>
-                    </span>
-                    <br>
-                    <span class='navi-year'>
-                      <button id="year_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        2014
-                      </button>
-                      <div class="dropdown-menu">
-                        <a class="dropdown-item" onclick="changeLayer('2014', '')">2014</a>
-                        <a class="dropdown-item" onclick="changeLayer('2015', '')">2015</a>
-                        <a class="dropdown-item" onclick="changeLayer('2016', '')">2016</a>
-                      </div>
-                    </span>
-                  </div>
-                  <div id ="map"></div>
+
+
+                <div class="buttons">
+
+                  <span class="btn-group">
+                    <button id="choice_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      CCTV
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" onclick="changeLayer('', 'CCTV')">CCTV 설치대수</a>
+                      <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 집')">여성지킴이 집</a>
+                      <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 이용자 수')">여성지킴이 이용자 수</a>
+                    </div>
+                  </span>
+                  <span class='navi-year'>
+                    <button id="year_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      2014
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" onclick="changeLayer('2014', '')">2014</a>
+                      <a class="dropdown-item" onclick="changeLayer('2015', '')">2015</a>
+                      <a class="dropdown-item" onclick="changeLayer('2016', '')">2016</a>
+                    </div>
+                  </span>
+                </div>
+
+                <div id ="map"></div>
+
                 </p>
+
               </svg>
             </div>
           </div>
