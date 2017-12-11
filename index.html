@@ -7,6 +7,16 @@
   <link rel="stylesheet" href="scripts/horizontal.css" />
   <link rel="stylesheet" href="scripts/animate.css" />
   <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="scripts/seoul_municipalities_geojson_2014.js"></script>
+  <script type="text/javascript" src="scripts/seoul_municipalities_geojson_2015.js"></script>
+  <script type="text/javascript" src="scripts/seoul_municipalities_geojson_2016.js"></script>
+
 </head>
 <body>
   <div class="background">
@@ -21,7 +31,7 @@
     </ol>
     </div>
   </div>
-  <div id="wrapper">
+
     <div>
         <section class="section" id="first">
           <div class="container">
@@ -64,9 +74,40 @@
         <div class="container">
           <div class="section__container">
             <div class="section__header">
-              <h2 class="section__title">Title here</h2>
+              <h2 class="section__title">Map</h2>
               <svg class="section__slides">
-                <p class="section__lead">Text here.</p>
+                <p class="section__lead">
+
+
+                <div class="buttons">
+
+                  <span class="btn-group">
+                    <button id="choice_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      CCTV
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" onclick="changeLayer('', 'CCTV')">CCTV 설치대수</a>
+                      <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 집')">여성지킴이 집</a>
+                      <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 이용자 수')">여성지킴이 이용자 수</a>
+                    </div>
+                  </span>
+                  <br>
+                  <span class='navi-year'>
+                    <button id="year_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      2014
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" onclick="changeLayer('2014', '')">2014</a>
+                      <a class="dropdown-item" onclick="changeLayer('2015', '')">2015</a>
+                      <a class="dropdown-item" onclick="changeLayer('2016', '')">2016</a>
+                    </div>
+                  </span>
+                </div>
+
+                <div id ="map"></div>
+
+                </p>
+
               </svg>
             </div>
           </div>
@@ -83,15 +124,11 @@
           </div>
         </div>
       </section>
-    </div>
+
   </div>
 
-    <script src="scripts/sweet-scroll.js"></script>
-    <script>
-    var sweetScroll = new SweetScroll({
-      horizontalScroll: true
-    }, "#wrapper");
-    sweetScroll.update({ quickMode: this.checked });
-    </script>
+
+  <script type="text/javascript" src="scripts/utils.js"></script>
+  <script type="text/javascript" src="scripts/script.js"></script>
   </body>
 </html>
