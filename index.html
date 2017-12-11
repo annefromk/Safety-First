@@ -5,8 +5,8 @@
   <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
   <link rel="stylesheet" href="scripts/style.css" />
   <link rel="stylesheet" href="scripts/horizontal.css" />
-  <link rel="stylesheet" href="scripts/animate.css" />
-  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <link rel="stylesheet" href="scripts/page1_style.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
   <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
@@ -22,29 +22,126 @@
   <div class="background">
     <svg id="sky"/>
     <svg id="skyline" />
-    <div id="moon_stars">
-      <svg id="first" class="moon"></svg>
-      <svg id="second" class="star"></svg>
-      <svg id="third" class="star"></svg>
-      <svg id="fourth" class="star"></svg>
-      <svg id="last" class="star"></svg>
-    </ol>
-    </div>
+    <nav aria-label="Page navigation" id="moon_stars">
+      <ul class="pagination">
+        <li id="first"><a href="#first"><svg class="moon"></svg></a></li>
+        <li id="second"><a href="#second"><svg class="star"></svg></a></li>
+        <li id="third"><a href="#third"><svg class="star"></svg></a></li>
+        <li id="fourth"><a href="#fourth"><svg class="star"></svg></a></li>
+        <li id="last"><a href="#last"><svg class="star"></svg></a></li>
+      </ul>
+  </nav>
   </div>
 
     <div>
-        <section class="section" id="first">
+        <section class="section" id="first_page">
           <div class="container">
             <div class="section__container">
               <div class="section__header">
                 <h2 class="section__title">Title here</h2>
+                <svg class="section_slides" style="background-color: rgba(0,0,0,0);">
                 <p class="section__lead">Text here.</p>
+              </svg>
               </div>
             </div>
           </div>
         </section>
 
-      <section class="section" id="second">
+      <section class="section" id="second_page">
+        <div class="container">
+          <div class="section__container">
+            <div class="section__header">
+              <h2 class="section__title">서울시, 성범죄로부터 안전한가?</h2>
+              <svg class="section__slides">
+                <!-- <p class="section__lead">당신의 인적 사항 정보를 알려주세요.<br>
+                  입력된 정보와 일치하는 <u>최근 3년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br>
+                  <h6>2014~ 2016년 서울시 성폭력 피해자 성별/연령 현황[데이터출처: 서울특별시 경찰청]</h6>
+                </p>
+                <section id="question-container">
+                  <div id="question-gender">
+                    <div class="question">
+                      <div>1. 당신의 성별은?</div>
+                      <div class="question-navi">
+                        <span class="navi-current">성별</span> ➡ <span class="navi-none-age">연령</span>
+                      </div>
+                    </div>
+                    <div class="image-selector">
+                      <div class="selector-item" qtype="gender" value="여성">
+                        <img src="./img/female_selected.png" alt="female">
+                        <p>여성</p>
+                      </div>
+                      <div class="selector-item" qtype="gender" value="남성">
+                        <img src="./img/male_selected.png" alt="male">
+                        <p>남성</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="question-age">
+                    <div class="question">
+                      <div>2. 당신의 연령은?</div>
+                      <div class="question-navi">
+                        <span class="navi-none-gender">성별</span> ➡ <span class="navi-current">연령</span>
+                      </div>
+                    </div>
+                    <div class="image-selector-age">
+                      <div class="selector-item" qtype="age" value="6세 이하">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>6세 이하</p>
+                      </div>
+                      <div class="selector-item" qtype="age" value="12세 이하">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>12세 이하</p>
+                      </div>
+                      <div class="selector-item" qtype="age" value="15세 이하">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>15세 이하</p>
+                      </div>
+                      <div class="selector-item" qtype="age" value="20세 이하">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>20세 이하</p>
+                      </div>
+                      <div class="selector-item" qtype="age" value="30세 이하">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>30세 이하</p>
+                      </div>
+                      <div class="selector-item" qtype="age" value="40세 이하">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>40세 이하</p>
+                      </div>
+                      <div class="selector-item" qtype="age" value="50세 이하">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>50세 이하</p>
+                      </div>
+                      <div class="selector-item" qtype="age" value="60세 이하">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>60세 이하</p>
+                      </div>
+                      <div class="selector-item" qtype="age" value="60세 초과">
+                        <img src="./img/20_selected.png" alt="">
+                        <p>60세 초과</p>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+
+                <section id="result-container">
+                  <div id="user-intro">
+                    나는 <span id="gender-bc" class="breadcomb">성별</span> <span id="age-bc" class="breadcomb">연령</span> 입니다.
+                  </div>
+                  <div id="result-summary">
+                    "당신과 같은 조건의 피해자는 <span id="victim">8780</span>명입니다"
+                  </div>
+                </section>
+                <section id="more">
+                  최근 3년간 성폭력 피해자 통계 <a href="#">더 알아보기</a>
+                </section>
+              </svg>
+            </div> -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="third_page">
         <div class="container">
           <div class="section__container">
             <div class="section__header">
@@ -57,20 +154,7 @@
         </div>
       </section>
 
-      <section class="section" id="third">
-        <div class="container">
-          <div class="section__container">
-            <div class="section__header">
-              <h2 class="section__title">Title here</h2>
-              <svg class="section__slides">
-                <p class="section__lead">Text here.</p>
-              </svg>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="section" id="fourth">
+      <section class="section" id="fourth_page">
         <div class="container">
           <div class="section__container">
             <div class="section__header">
@@ -91,7 +175,7 @@
                       <a class="dropdown-item" onclick="changeLayer('', '여성지킴이 이용자 수')">여성지킴이 이용자 수</a>
                     </div>
                   </span>
-                  <br>
+                  <br><br><br><br><br><br>
                   <span class='navi-year'>
                     <button id="year_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                       2014
@@ -114,7 +198,7 @@
         </div>
       </section>
 
-      <section class="section" id="last">
+      <section class="section" id="last_page">
         <div class="container">
           <div class="section__container">
             <div class="section__header">
@@ -127,8 +211,21 @@
 
   </div>
 
+  <script type="text/javascript" src="scripts/page1_script.js"></script>
+  <script type="text/javascript" src="scripts/page3_utils.js"></script>
+  <script type="text/javascript" src="scripts/page3_script.js"></script>
 
-  <script type="text/javascript" src="scripts/utils.js"></script>
-  <script type="text/javascript" src="scripts/script.js"></script>
+  <script>
+  $('.pagination li').click(function(e) {
+    e.preventDefault();
+    var scrollTarget = document.querySelector('#' + e.currentTarget.id + '_page');
+    window.scroll({
+      top: 0,
+      left: scrollTarget.offsetLeft,
+      behavior: 'smooth'
+    });
+  });
+  </script>
+
   </body>
 </html>

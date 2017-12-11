@@ -61,15 +61,20 @@ html, body {
   -moz-border-radius: 2px;
   -webkit-border-radius: 2px;
   border-radius: 2px;
-  } #second {
-  transform: translateX(10vw);
-  } #third {
-  transform: translateX(18vw);
-  } #fourth {
-  transform: translateX(26vw);
-  } #last {
-  transform: translateX(34vw);
   }
+#second {
+  transform: translateX(10vw);
+}
+#third {
+  transform: translateX(18vw);
+}
+#fourth {
+   transform: translateX(26vw);
+}
+#last {
+   transform: translateX(34vw);
+}
+
 #sky {
   z-index: -3;
   position: fixed;
@@ -83,23 +88,25 @@ html, body {
   width: 100vw;
   height: 7vh;
   background-color: black;
-  transform: translateY(80vh);
+  transform: translateY(93vh);
 }
 .section__slides {
   z-index: -5;
   position:absolute;
+  transform: translateY(5vh);
   width:80vw;
-  height:80vh;
+  height:90vh;
   background-color: black;
   color: black;
 }
 /*Map slide*/
 #map {
+  padding: 0;
   margin-left: 2vw;
-  margin-right: auto;
-  margin-top: auto;
-  margin-bottom: auto;
-  width: 64vw;
+  margin-right: 0 auto;
+  margin-top: 4vh;
+  margin-bottom: 0 auto;
+  width: 60vw;
   height: 70vh;
 }
 .info {
@@ -124,6 +131,10 @@ html, body {
   z-index: 10;
   opacity: 0.9;
   cursor: pointer;
-  transform: translateX(70vw) translateY(-5vh);
+  transform: translateX(64vw) translateY(4vh);
   font: 14px/16px Arial, Helvetica, sans-serif;
+  text-align: right;
+}
+#choice_drop {
+  width: 15vw;
 }
