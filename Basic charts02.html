@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset='utf-8'>
+<title>베이직 차트</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- 구글 차트 이용하기 -->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+      // Load Charts and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      google.charts.setOnLoadCallback(drawPieChart1);
+      google.charts.setOnLoadCallback(drawLineYear);
+    google.charts.setOnLoadCallback(drawLineWeek);
+    google.charts.setOnLoadCallback(drawLineTime);
+
+      
+function drawPieChart1() {
+  var data = google.visualization.arrayToDataTable([
+    ['범죄유형', '평균 발생 건수'],
+    ['강간 및 강제추행', 5650], ['카메라 등 이용촬영', 2749], 
+    ['통신매체 이용 음란', 260], ['성적목적 공공장소 침입', 121]
+    ]);
+
+  var options = {
+   title:'서울시 성범죄 유형별 발생률 (2014년-2016년)',
+   width:800,
+   height:300,
+   backgroundColor: '#f1f8e9',
+   legend:'right',
+             pieHole: 0.4,
+             colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f']         
+           };
+
+           var chart = new google.visualization.PieChart(document.getElementById('pieChart1'));
+           chart.draw(data, options);
+         }
+
+      //연도별 성범죄 발생 건수 그래프
+      function drawLineYear() {
+        var data = google.visualization.arrayToDataTable
+        ([['연도', '발생건수'],
+         ['2014년',  8523],
+         ['2015년',  9476],
+         ['2016년',  8342]
+         ]);
+
+        var view = new google.visualization.DataView(data);
+        view.setColumns([0, 1,
+         { calc: "stringify",
+         sourceColumn: 1,
+         type: "string",
+         role: "annotation" },
+         ]);
+
+        var options = {
+          title : '서울시 연도별 성범죄 발생 건수 (2014년-2016년)',
+   width:800,
+   height:300,
+          hAxis: {
+            textStyle: {
+              color: 'black',
+              fontSize: 11,
+            //fontName: 'Arial',
+            bold: false,
+            italic: false
+          },
+        },
+        vAxis: {
+          title: '발생 건수', minValue: 0, maxValue: 10000, gridlines: { count: 6 },
+          textStyle: {
+            color: 'black',
+            fontSize: 11,
+            bold: false
+          },
+          titleTextStyle: {
+            color: 'black',
+            fontSize: 11,
+            bold: false
+          }
+        },
+        legend: 'none',
+        lineWidth: 2,
+        colors: ['#a52714'],
+        pointSize: 8,
+        pointShape: 'square',
+        backgroundColor: '#f1f8e9'
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('line_year'));
+      chart.draw(view, options);
+    }
+
+
+ //요일별 성범죄 발생 건수 그래프
+ function drawLineWeek() {
+  var data = google.visualization.arrayToDataTable([
+   ['요일',  '평균'],
+   ['월요일', 1163],
+   ['화요일', 1300],
+   ['수요일', 1220],
+   ['목요일', 1264],
+   ['금요일', 1376],
+   ['토요일', 1322],
+   ['일요일', 1136]
+   ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+   { calc: "stringify",
+   sourceColumn: 1,
+   type: "string",
+   role: "annotation" },
+   ]);
+
+  var options = {
+    title : '서울시 요일별 성범죄 발생 건수 (2014년-2016년)',
+   width:800,
+   height:300,
+    hAxis: {
+      textStyle: {
+        color: 'black',
+        fontSize: 11,
+            //fontName: 'Arial',
+            bold: false,
+            italic: false
+          },
+        },
+        vAxis: {
+          title: '평균 발생 건수', minValue: 0, maxValue: 1600, gridlines: { count: 4 },
+          textStyle: {
+            color: 'black',
+            fontSize: 11,
+            bold: false
+          },
+          titleTextStyle: {
+            color: 'black',
+            fontSize: 11,
+            bold: false
+          }
+        },
+        legend: 'none',
+        lineWidth: 2,
+        colors: ['#a52714'],
+        pointSize: 8,
+        pointShape: 'square',
+        backgroundColor: '#f1f8e9'
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('line_week'));
+      chart.draw(view, options);
+    }
+
+
+//시간별 성범죄 발생 건수 그래프
+function drawLineTime() {
+  var data = google.visualization.arrayToDataTable([
+   ['발생시간',           '평균'],
+   ['심야(00:00~04:00)',   581],
+   ['새벽(04:00~07:00)',   220],
+   ['오전(07:00~12:00)',   309],
+   ['오후(12:00~18:00)',   265],
+   ['초저녁(18:00~20:00)', 454],
+   ['밤(20:00~24:00)',     439]
+   ]);
+
+  var view = new google.visualization.DataView(data);
+  view.setColumns([0, 1,
+   { calc: "stringify",
+   sourceColumn: 1,
+   type: "string",
+   role: "annotation" },
+   ]);
+
+  var options = {
+    title : '서울시 시간대별 성범죄 발생 건수 (2014년-2016년)',
+   width:800,
+   height:300,
+    hAxis: {
+      textStyle: {
+        color: 'black',
+        fontSize: 11,
+            //fontName: 'Arial',
+            bold: false,
+            italic: false
+          },
+        },
+        vAxis: {
+          title: '시간당 평균 발생 건수', minValue: 0, maxValue: 600, gridlines: { count: 4 },
+          textStyle: {
+            color: 'black',
+            fontSize: 11,
+            bold: false
+          },
+          titleTextStyle: {
+            color: 'black',
+            fontSize: 11,
+            bold: false
+          }
+        },
+        legend: 'none',
+        lineWidth: 2,
+        colors: ['#a52714'],
+        pointSize: 8,
+        pointShape: 'square',
+        backgroundColor: '#f1f8e9'
+      };
+
+      var chart = new google.visualization.LineChart(document.getElementById('line_time'));
+      chart.draw(view, options);
+    }
+
+       </script>
+
+<style>
+body {padding:0px;}
+.container {margin:0 auto;}
+.carousel-inner {
+	height:500px;
+	width: 1200px;
+	margin:0 auto;
+	text-align:center;
+	vertical-align:middle; 
+	/*horizontal-align: center;*/
+	line-height:30px;
+	border:1px solid #fff;
+	background:#aaa;
+}
+.carousel-inner .chart {
+	width: 50%;
+	margin: auto;
+	display: inline-block;
+	vertical-align: middle;
+	border: 2px solid #fff;
+}
+.carousel-inner .chartText{
+	font-size:14px;
+	color:black;
+	background:#f1f8e9;
+	border: 2px solid #fff;
+	width: 67%;
+	/*max-width: 100%; */
+	margin-left: 0%; 
+	padding: 0%;
+	text-align: left;  
+	position: absolute;
+	left:25%;
+	top:300px;
+}
+
+/*좌우 아이콘*/
+
+.carousel-control {
+  position: absolute;
+  top: 150px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 30px;
+  background-image: none !important;
+  filter: none !important;
+  text-align: center;
+  -webkit-border-radius: 23px;
+     -moz-border-radius: 23px;
+          border-radius: 23px;  
+}
+
+.glyphicon{
+    font-size: 60px;
+    color: black;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+</style>
+
+</head>
+
+<body>   
+
+<div class="container">
+  <h2>서울시 성범죄 현황</h2>
+ <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" data-interval="false">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+    <div class="active item">
+      <div id="pieChart1" class="chart"></div>
+      <div class="chartText">
+       	<p>- 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행” (※ 5대 범죄란? 살인, 강도, 절도, 강간, 폭력)<br>
+		   - 2011년~2016년, 5년 동안 몰카 범죄 구속자수 5배로 급증<br>
+		   ※ 출처: 연합뉴스, “몰카 범죄 구속자 지난해 155명, 5년 만에 5배로 급증”, 2017/10/02      		
+       	</p></div>
+    </div>
+    <div class="item">      
+      <div id="line_year" class="chart"></div>
+       <div class="chartText">
+      <p>- 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
+		(비교) 성폭력 10년간 117% 급증, 반면 살인·강도·방화 등 다른 흉악범죄는 뚜렷한 감소 추세<br>
+		※ 출처: 연합뉴스, “성폭력 10년새 117% 급증…'고학력 초범' 집중”, 2017/06/13	
+       	</p></div>
+    </div>
+    <div class="item">
+       <div id="line_week" class="chart"></div>
+       <div class="chartText">
+      <p><br><br>- 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)<br><br>
+       	</p></div>
+    </div>
+    <div class="item">
+       <div id="line_time" class="chart"></div>
+       <div class="chartText">
+      <p><br><br>- 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)<br><br>
+       	</p></div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+<!-- Carousel -->
+
+</div>
+</body>
+</html>
