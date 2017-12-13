@@ -1,318 +1,268 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="utf-8">
-  <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
-  <link rel="stylesheet" href="scripts/style.css" />
-  <script src="https://d3js.org/d3.v4.min.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
-  <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
-  <style>
-  .section__title::after {
-    display: none;
-  }
+  <head>
+    <meta charset="utf-8">
+    <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
+    <link rel="stylesheet" href="scripts/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div class="background">
+      <svg id="background_sky" />
+      <nav aria-label="Page navigation" id="buttons_as_the_moon_and_the_stars">
+        <ul class="pagination">
+          <li id="main"><a class=""><svg class="moon"></svg></a></li>
+          <li id="index"><a><svg class="star"></svg></a></li>
+          <li id="intro_demographic"><a><svg class="star"></svg></img></a></li>
+          <li id="analysis_page1"><a><svg class="star"></svg></a></li>
+          <li id="map_vis"><a><svg class="star"></svg></a></li>
+          <li id="conclusion"><a><svg class="star"></svg></a></li>
+        </ul>
+      </nav>
+    </div>
 
-  .chartWithMarkerOverlay {
-   position: relative;
-   width: 400px;
- }
- .overlay-text {
-   width: 50px;
-   height: 50px;
-   position: absolute;
-   top: 140px;   /* chartArea top */
-   left: 250px; /* chartArea left */
- }
-  </style>
-</head>
-<body>
-    <svg id="sky"/>
-    <nav aria-label="Page navigation" id="moon_stars">
-      <ul class="pagination">
-        <li id="first"><a href="#first"><svg class="moon"></svg></a></li>
-        <li id="second"><a href="#second"><svg class="star"></svg></a></li>
-        <li id="third"><a href="#third"><svg class="star"></svg></a></li>
-        <li id="fourth"><a href="#fourth"><svg class="star"></svg></a></li>
-        <li id="fifth"><a href="#fifth"><svg class="star"></svg></a></li>
-        <li id="sixth"><a href="#sixth"><svg class="star"></svg></a></li>
-        <li id="last"><a href="#last"><svg class="star"></svg></a></li>
-      </ul>
-  </nav>
-
-    <div>
-        <section class="section" id="first_page">
-          <div class="container">
-            <div class="section__container">
-              <h1 class="section__title">Title here</h1>
-              <div class="section__header">
+    <div id="web_content">
+      <table>
+        <tr>
+          <td id="main_view">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title">서울은 성범죄로부터 안전한 곳일까</h1>
+              </div>
+              <div class="section_container">
                 <svg class="section_slides">
-                <p class="section__lead">Text here.</p>
-              </svg>
+                  <p class="section_text">첫 장</p>
+                </svg>
               </div>
             </div>
-          </div>
-        </section>
+          </td>
 
-        <section class="section" id="second_page">
-          <div class="container">
-            <div class="section__container">
-              <h2 class="section__title">서울시, 성범죄로부터 안전한가?</h2>
-              <div class="section__header">
-                <svg class="section__slides">
-                  <p class="section__lead">
-                    <br><p>당신의 인적 사항 정보를 알려주세요.<br>입력된 정보와 일치하는 <u>최근 3년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br></p></p>
-                    <h6 style="font-size: 12px;">2014~ 2016년 서울시 성폭력 피해자 성별/연령 현황[데이터출처: 서울특별시 경찰청]</h6>
+          <td id="index_view">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title"></h1>
+              </div>
+              <div class="section_container">
+                <svg class="section_slides">
+                  <p class="section_text"></p>
+                </svg>
+              </div>
+            </div>
+          </td>
 
-                      <section id="question-container">
-                        <div id="question-gender">
-                          <div class="question">
-                            <div>1. 당신의 성별은?</div>
-                            <div class="question-navi">
-                              <span class="navi-current">성별</span> ➡ <span class="navi-none-age">연령</span>
-                            </div>
-                          </div>
-                          <div class="image-selector">
-                            <div class="selector-item" qtype="gender" value="여성">
-                              <img src="./img/female_selected.png" alt="female">
-                              <p>여성</p>
-                            </div>
-                            <div class="selector-item" qtype="gender" value="남성">
-                              <img src="./img/male_selected.png" alt="male">
-                              <p>남성</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div id="question-age">
-                          <div class="question">
-                            <div>2. 당신의 연령은?</div>
-                            <div class="question-navi">
-                              <span class="navi-none-gender">성별</span> ➡ <span class="navi-current">연령</span>
-                            </div>
-                          </div>
-                          <div class="image-selector-age">
-                            <div class="selector-item" qtype="age" value="6세 이하">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>6세 이하</p>
-                            </div>
-                            <div class="selector-item" qtype="age" value="12세 이하">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>12세 이하</p>
-                            </div>
-                            <div class="selector-item" qtype="age" value="15세 이하">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>15세 이하</p>
-                            </div>
-                            <div class="selector-item" qtype="age" value="20세 이하">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>20세 이하</p>
-                            </div>
-                            <div class="selector-item" qtype="age" value="30세 이하">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>30세 이하</p>
-                            </div>
-                            <div class="selector-item" qtype="age" value="40세 이하">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>40세 이하</p>
-                            </div>
-                            <div class="selector-item" qtype="age" value="50세 이하">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>50세 이하</p>
-                            </div>
-                            <div class="selector-item" qtype="age" value="60세 이하">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>60세 이하</p>
-                            </div>
-                            <div class="selector-item" qtype="age" value="60세 초과">
-                              <img src="./img/20_selected.png" alt="">
-                              <p>60세 초과</p>
-                            </div>
-                          </div>
-                        </div>
-                      </section>
+          <td id="intro_demographic_view">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title">누가 얼만큼 안전할까?</h1>
+              </div>
+              <div class="section_container">
+                <svg class="section_slides">
+                  <section id="main-title">
+                    <p>당신의 인적 사항 정보를 알려주세요.<br>
+                      입력된 정보와 일치하는 <u>최근 3년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br>
+                    </p>
+                    <h6>2014~ 2016년 서울시 성폭력 피해자 성별/연령 현황[데이터출처: 서울특별시 경찰청]</h6>
+                  </section>
 
-                      <section id="result-container">
-                        <div id="user-intro">
-                          나는 <span id="gender-bc" class="breadcomb">성별</span> <span id="age-bc" class="breadcomb">연령</span> 입니다.
+                  <section id="question-container">
+                    <div id="question-gender">
+                      <div class="question">
+                        <div>1. 당신의 성별은?</div>
+                        <div class="question-navi">
+                          <span class="navi-current">성별</span> ➡ <span class="navi-none-age">연령</span>
                         </div>
-                        <div id="result-summary">
-                          "당신과 같은 조건의 피해자는 <span id="victim">8780</span>명입니다"
+                      </div>
+                      <div class="image-selector">
+                        <div class="selector-item" qtype="gender" value="여성">
+                          <img src="./img/female_selected.png" alt="female">
+                          <p>여성</p>
                         </div>
-                      </section>
+                        <div class="selector-item" qtype="gender" value="남성">
+                          <img src="./img/male_selected.png" alt="male">
+                          <p>남성</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="question-age">
+                      <div class="question">
+                        <div>2. 당신의 연령은?</div>
+                        <div class="question-navi">
+                          <span class="navi-none-gender">성별</span> ➡ <span class="navi-current">연령</span>
+                        </div>
+                      </div>
+                      <div class="image-selector-age">
+                        <div class="selector-item" qtype="age" value="6세 이하">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>6세 이하</p>
+                        </div>
+                        <div class="selector-item" qtype="age" value="12세 이하">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>12세 이하</p>
+                        </div>
+                        <div class="selector-item" qtype="age" value="15세 이하">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>15세 이하</p>
+                        </div>
+                        <div class="selector-item" qtype="age" value="20세 이하">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>20세 이하</p>
+                        </div>
+                        <div class="selector-item" qtype="age" value="30세 이하">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>30세 이하</p>
+                        </div>
+                        <div class="selector-item" qtype="age" value="40세 이하">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>40세 이하</p>
+                        </div>
+                        <div class="selector-item" qtype="age" value="50세 이하">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>50세 이하</p>
+                        </div>
+                        <div class="selector-item" qtype="age" value="60세 이하">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>60세 이하</p>
+                        </div>
+                        <div class="selector-item" qtype="age" value="60세 초과">
+                          <img src="./img/20_selected.png" alt="">
+                          <p>60세 초과</p>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
 
+                  <section id="result-container">
+                    <div id="user-intro">
+                      나는 <span id="gender-bc" class="breadcomb">성별</span> <span id="age-bc" class="breadcomb">연령</span> 입니다.
+                    </div>
+                    <div id="result-summary">
+                      "당신과 같은 조건의 피해자는 <span id="victim">8780</span>명입니다"
+                    </div>
+                  </section>
                   <p>최근 3년간 성폭력 피해자 통계 <a href="#">더 알아보기</a></p>
                 </svg>
               </div>
             </div>
-          </div>
-        </section>
+          </td>
 
-        <section class="section" id="third_page">
-          <div class="container">
-            <div class="section__container">
-              <h2 class="section__title">Title here</h2>
-              <div class="section__header">
-                <svg class="section__slides">
-                  <p class="section__lead">Text here.</p>
-                  <!--Table and divs that hold the pie charts-->
-                  <table class="columns">
-                    <tr>
-                      <td>
-                        <div class="chartWithMarkerOverlay">
-                          <div id="piechart1" style="border: 1px solid #ccc"></div>
-                          <div class="overlay-text">
-                            <div style="color: #b44; font-family:'Arial Black'; font-size: 12px; margin-top:3px; margin-left:10px;">
-                            성범죄</div>
-                            <div style="color: #444; font-family:'Arial Black'; font-size: 12px; margin-top:3px; margin-left:15px;">
-                            2.5%</div>
-                            <!-- <div style="color: #444; font-family:'Arial Black'; font-size: 12px; letter-spacing: .15em; margin-top:3px; margin-left:15px;">2.4%</div> -->
-                          </div>
-                        </div>
-                      </td>
-                      <td><div id="piechart2" style="border: 1px solid #ccc"></div></td>
-                    </tr>
-                  </table>
-                  <table class="columns">
-                   <tr>
-                     <td><div id="line_year" style="width: 400px; height: 300px; border: 1px solid #ccc"></div></td>
-                     <td><div id="line_week" style="width: 400px; height: 300px; border: 1px solid #ccc"></div></td>
-                     <td><div id="line_time" style="width: 400px; height: 300px; border: 1px solid #ccc"></div></td>
-                   </tr>
-                 </table>
+          <td id="analysis_view">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title">About 성범죄</h1>
+              </div>
+              <div class="section_container">
+                <svg class="section_slides">
+                  <p class="section_text"></p>
                 </svg>
               </div>
             </div>
-          </div>
-        </section>
+          </td>
 
-        <section class="section" id="fourth_page">
-          <div class="container">
-            <div class="section__container">
-              <h2 class="section__title">서울 안전 지도</h2>
-              <div class="section__header">
-                <svg class="section__slides">
-                  <div class="section__lead">
-                    <div class="buttons">
-                      <div class="btn-group">
-                        <button id="choice_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          CCTV 설치대 수
-                        </button>
-                        <span class="dropdown-menu">
-                          <a class="dropdown-item" onclick="changeLayer('', 'CCTV 설치대 수')">CCTV 설치대 수</a>
-                          <a class="dropdown-item" onclick="changeLayer('', '여성안심지킴이 집')">여성안심지킴이 집</a>
-                          <a class="dropdown-item" onclick="changeLayer('', '안심귀가스카우트 이용자 수')">안심귀가스카우트 이용자 수</a>
-                        </span>
+          <td id="map_vis_view">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title">서울 안전 지도</h1>
+              </div>
+              <div class="section_container">
+                <svg class="section_slides">
+                  <div id="map"></div>
+                  <div class="buttons">
+                    <div class="btn-group" role="group" aria-label="navi-year">
+                      <button id="year_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2014</button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" onclick="changeLayer('2014', '')">2014</a>
+                        <a class="dropdown-item" onclick="changeLayer('2015', '')">2015</a>
+                        <a class="dropdown-item" onclick="changeLayer('2016', '')">2016</a>
                       </div>
-                      <br>
-                      <span class='navi-year'>
-                        <button id="year_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                          2014
-                        </button>
-                        <div class="dropdown-menu">
-                          <a class="dropdown-item" onclick="changeLayer('2014', '')">2014</a>
-                          <a class="dropdown-item" onclick="changeLayer('2015', '')">2015</a>
-                          <a class="dropdown-item" onclick="changeLayer('2016', '')">2016</a>
-                        </div>
-                      </span>
                     </div>
-                    <div id ="map"></div>
+
+                    <div class="btn-group" role="group" aria-label="navi-policy">
+                      <button id="choice_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CCTV 설치대 수</button>
+                      <div class="dropdown-menu">
+                        <a class="dropdown-item" onclick="changeLayer('', 'CCTV 설치대 수')">CCTV 설치대 수</a>
+                        <a class="dropdown-item" onclick="changeLayer('', '여성안심지킴이 집')">여성안심지킴이 집</a>
+                        <a class="dropdown-item" onclick="changeLayer('', '안심귀가스카우트 이용자 수')">안심귀가스카우트 이용자 수</a>
+                        <a class="dropdown-item" onclick="changeLayer('', '구별 성범죄 수')">구별 성범죄 수</a>
+                      </div>
+                    </div>
                   </div>
+                  <p class="section_text"></p>
                 </svg>
               </div>
             </div>
-          </div>
-        </section>
+          </td>
 
-        <section class="section" id="fifth_page">
-          <div class="container">
-            <div class="section__container">
-              <h1 class="section__title">Title here</h1>
-              <div class="section__header">
+          <td id="conclusion_view">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title"></h1>
+              </div>
+              <div class="section_container">
                 <svg class="section_slides">
-                <p class="section__lead">Text here.</p>
-              </svg>
+                  <p class="section_text"></p>
+                </svg>
               </div>
             </div>
-          </div>
-        </section>
+          </td>
+        </tr>
+      </table>
+    </div>
 
-        <section class="section" id="sixth_page">
-          <div class="container">
-            <div class="section__container">
-              <h1 class="section__title">Title here</h1>
-              <div class="section__header">
-                <svg class="section_slides">
-                <p class="section__lead">Text here.</p>
-              </svg>
-              </div>
-            </div>
-          </div>
-        </section>
+    <script type="text/javascript" src="scripts/intro_script.js"></script>
+    <script type="text/javascript" src="scripts/analysis_script.js"></script>
+    <script type="text/javascript" src="scripts/map_utils.js"></script>
+    <script type="text/javascript" src="scripts/map_script.js"></script>
+    <script>
+        var statesData = {};
 
-        <section class="section" id="last_page">
-          <div class="container">
-            <div class="section__container">
-              <div class="section__header">
-                <h2 class="section__title">Last page</h2>
-                <p class="section__lead">Text here.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+        d3.queue()
+          .defer(d3.json, 'scripts/seoul_municipalities_geo.json')
+          .defer(d3.json, 'scripts/seoul_municipalities_geo.json')
+          .defer(d3.json, 'scripts/seoul_municipalities_geo.json')
+          .defer(d3.csv, 'scripts/dataset.csv')
+          .awaitAll(function(err, data) {
+            var geos = data.slice(0, 3);
+            geos.forEach(function(g) {
+                g.features.sort(function(a, b) {
+                    return d3.ascending(a.properties.SIG_KOR_NM, b.properties.SIG_KOR_NM);
+                });
+            });
 
-  </div>
+            var dataset = data[3];
+            var nested = d3.nest()
+              .key(function(d) {return d.year;})
+              .entries(dataset);
+            nested.forEach(function(d, i) {
+                statesData[d.key] = geos[i];
+                geos[i].features.forEach(function(f, j) {
+                    var d = nested[i].values[j];
+                    f.properties.cctv = +d.cctv;
+                    f.properties.shelter = +d.shelter;
+                    f.properties.users = +d.users;
+                    f.properties.crime = +d.crime;
+                });
+            });
 
-  <script type="text/javascript" src="scripts/page1_script.js"></script>
-  <script type="text/javascript" src="scripts/page2_script.js"></script>
-  <script type="text/javascript" src="scripts/page3_script.js"></script>
-  <script>
-    var statesData = {};
-
-    d3.queue()
-    .defer(d3.json, 'scripts/seoul_municipalities_geo.json')
-    .defer(d3.json, 'scripts/seoul_municipalities_geo.json')
-    .defer(d3.json, 'scripts/seoul_municipalities_geo.json')
-    .defer(d3.csv, 'scripts/dataset.csv')
-    .awaitAll(function(err, data) {
-      var geos = data.slice(0, 3);
-      geos.forEach(function(g) {
-        g.features.sort(function(a, b) {
-          return d3.ascending(a.properties.SIG_KOR_NM, b.properties.SIG_KOR_NM);
+            changeLayer('2014');
+          });
+    </script>
+    <script>
+        $('.pagination li').click(function(e) {
+          e.preventDefault();
+          var scrollTarget = document.querySelector('#' + e.currentTarget.id + '_view');
+          window.scroll({
+            top: 0,
+            left: scrollTarget.offsetLeft,
+            behavior: 'smooth'
+          });
         });
-      });
-
-      var dataset = data[3];
-      var nested = d3.nest()
-      .key(function(d) {return d.year;})
-      .entries(dataset);
-      nested.forEach(function(d, i) {
-        statesData[d.key] = geos[i];
-        geos[i].features.forEach(function(f, j) {
-          var d = nested[i].values[j];
-          f.properties.cctv = +d.cctv;
-          f.properties.shelter = +d.shelter;
-          f.properties.users = +d.users;
-        });
-      });
-
-      changeLayer('2014');
-    });
-  </script>
-  <script>
-    $('.pagination li').click(function(e) {
-      e.preventDefault();
-      var scrollTarget = document.querySelector('#' + e.currentTarget.id + '_page');
-      window.scroll({
-        top: 0,
-        left: scrollTarget.offsetLeft,
-        behavior: 'smooth'
-      });
-    });
-  </script>
-
+    </script>
   </body>
 </html>

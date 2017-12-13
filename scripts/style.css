@@ -1,55 +1,18 @@
-/*for the horizontallity and buttons*/
-/*change min / max width later according to the parts that need to be insert*/
 html, body {
-  font-family:sans-serif;
-  line-height:1.15;
   padding: 0;
   margin: 0;
   width: 700vw;
   height: 100vh;
-  overflow-x: scroll;
   overflow-y: hidden;
 }
-.section {
-  padding: 0;
-  margin: 0;
-  float: left;
-  width: 10%;
-}
 
-/*Title & Text colors*/
-.section__title {
-  color: whitesmoke;
-  position: absolute;
-  transform: translateY(6vh);
-}
-.section__header {
-  margin:0;
-  padding: 0;
-  width: 80vw;
-  height: 90vh;
-}
-.section__lead {
-  padding: 2em;
-  transform: translateY(10vh);
-  color: whitesmoke;
-}
-/*the background content*/
-#sky {
-  z-index: -3;
+/* background */
+#background_sky {
+  z-index: -5;
   position: fixed;
   background: linear-gradient(rgb(47, 108, 158), rgba(255, 135, 84, 0.3));
   width: 100vw;
   height: 100vh;
-}
-#moon_stars{
-  z-index: 0;
-  position: fixed;
-  padding: 0;
-  margin: 0;
-  color:rgba(0,0,0,0);
-  background-color: rgba(0,0,0,0);
-  transform: translateX(6vw) translateY(6vh);
 }
 .moon {
   width: 4vw;
@@ -61,80 +24,116 @@ html, body {
 }
 .star {
   background: yellow;
+  margin: 2vw;
   width: 6px;
   height: 6px;
   border-radius: 3px;
 }
-#second {
-  transform: translateX(10vw);
+#buttons_as_the_moon_and_the_stars {
+  z-index: 0;
+  position: fixed;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  height: 5vh;
+  cursor: pointer;
+  transform: translateX(6vw) translateY(3vh);
 }
-#third {
-  transform: translateX(18vw);
+#index {
+  transform: translateX(6vw);
 }
-#fourth {
-   transform: translateX(26vw);
+#intro_demographic {
+  transform: translateX(8vw);
 }
-#fifth {
-   transform: translateX(34vw);
+#analysis_page1 {
+   transform: translateX(10vw);
 }
-#sixth {
-  transform: translateY(42vw);
+#map_vis {
+   transform: translateX(12vw);
 }
-#last {
-  transform: translateY(50vw);
+#conclusion {
+  transform: translateX(14vw);
 }
 
-.section__slides {
-  z-index: -5;
+/* horizontallity */
+tr, td {
+  margin: 0;
+  padding-left: 3vw;
+  padding-right: 3vw;
+  width:100vw;
+  height: 100vh;
+}
+.container {
+  margin: 0;
+  padding: 0;
+  /*giving space for the navbar*/
+  width: 100vw;
+  height: 90vh;
+  transform: translateY(6vh);
+  align-self: center;
+}
+.section_slides {
+  z-index: -3;
   position:absolute;
-  transform: translateX(-10vw) translateY(10vh);
-  width:90vw;
-  height:80vh;
-  background-color: rgba(180,180,180);
+  transform: translateX(-6vw);
+  width:88vw;
+  height: 90vh;
+  background-color: rgba(200,195,200, 0.7);
   color: black;
   border-top-left-radius: 30px;
   border-top-right-radius: 30px;
 }
+.section_text {
+  padding: 3em;
+  margin: 0;
+}
 
-/*Demographic slide*/
+/* intro */
 .question {
-  width: 74vw;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
 }
+
 .navi-none-age, .navi-none-gender {
   color: grey;
   cursor: pointer;
 }
+
 .selector-item {
  border: 1px solid grey;
- /*padding: 5px;
- margin: 10px 10px 10px 0;*/
+ /* padding: 5px;
+ margin: 10px 10px 10px 0; */
  cursor: pointer;
  opacity: 0.3;
 }
+
 .selector-item.hover, .selector-item.selected{
   opacity: 1;
 }
+
 .image-selector {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   text-align: center;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  /* padding-left:620px;
+  padding-right:300px; */
+
 }
 .image-selector-age {
   display: flex;
-  flex-wrap: nowrap;
+  flex-wrap: wrap;
   text-align: center;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  /* padding-left:450px;
+  padding-right:400px; */
 }
+
 #result-container {
   text-align: center;
   min-height: 200px;
+  /* padding: 10px; */
 }
+
 .breadcomb {
   border: 2px solid #FCAF17;
   border-radius: 32px;
@@ -142,18 +141,64 @@ html, body {
   font-size: 1.1em;
   padding: 6px 12px;
 }
+
 #result-summary {
   margin-top: 30px;
 }
 
-/*Map slide*/
+/* analysis */
+.carousel-inner {height:500px; width: 1200px; text-align:center; line-height:30px; border:1px solid #fff; background:#aaa;}
+.carousel-inner .chart {width: 50%; margin: auto; display: inline-block; vertical-align: middle;}
+.carousel-inner .item p {font-size:20px; color:#eee;}
+
+.carousel-caption {
+max-width: 40%; /* was 60% */
+margin-left: 2%; /* was 11% */
+padding: 2%;  /* was 5% */
+position: absolute;
+left:25%;
+bottom:0px; /* hugs the bottom of the slider */
+}
+.carousel-caption h3 {
+font-size: 24px;
+line-height: 1; /*was 1.25 */
+}
+.carousel-caption p {
+font-size: 16px;
+line-height: 1; /* was 1.25 */
+}
+
+/*좌우 아이콘*/
+
+.carousel-control {
+  position: absolute;
+  top: 150px;
+  left: 15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 30px;
+  background-image: none !important;
+  filter: none !important;
+  text-align: center;
+  -webkit-border-radius: 23px;
+     -moz-border-radius: 23px;
+          border-radius: 23px;
+}
+
+.glyphicon{
+    font-size: 60px;
+    color: black;
+    text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+}
+
+
+/* map-vis */
 #map {
-  margin-left: 0;
-  margin-right: 2vw;
-  margin-top: 2vh;
-  margin-bottom: 0;
-  transform: translateX(-4vw);
-  width: 60vw;
+  transform: translateY(5vh);
+  width: 76vw;
   height: 70vh;
 }
 .info {
@@ -172,17 +217,11 @@ html, body {
 .legend { text-align: left; line-height: 18px; color: #555; }
 .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
 
-.buttons {
+.btn-group {
+  z-index: 400;
   position: absolute;
-  padding: 0;
-  z-index: 10;
   opacity: 0.9;
-  cursor: pointer;
-  transform: translateX(58vw) translateY(2vh);
   font: 14px/16px Arial, Helvetica, sans-serif;
-  text-align: right;
-}
-#choice_drop {
-  width: 18vw;
-  overflow: hidden;
+  cursor: pointer;
+  transform: translateX(5vw) translateY(-64vh);
 }

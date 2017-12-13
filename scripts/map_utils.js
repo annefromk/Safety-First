@@ -10,7 +10,7 @@ function initMap() {
 }
 
 function getColor(d) {
-  if (selectedInfo.type === 'CCTV 설치대 수') {
+  if (map_selectedInfo.type === 'CCTV 설치대 수') {
     return d > 400 ? '#800026' :
         d > 300  ? '#BD0026' :
         d > 200  ? '#E31A1C' :
@@ -19,7 +19,7 @@ function getColor(d) {
         d > 50   ? '#FEB24C' :
         d > 30   ? '#FED976' :
                    '#FFEDA0';
-  } else if (selectedInfo.type === '여성안심지킴이 집') {
+  } else if (map_selectedInfo.type === '여성안심지킴이 집') {
     return d > 80 ? '#800026' :
         d > 65  ? '#BD0026' :
         d > 52  ? '#E31A1C' :
@@ -28,7 +28,7 @@ function getColor(d) {
         d > 20   ? '#FEB24C' :
         d > 10   ? '#FED976' :
                    '#FFEDA0';
-  } else if (selectedInfo.type === '안심귀가스카우트 이용자 수') {
+  } else if (map_selectedInfo.type === '안심귀가스카우트 이용자 수') {
     return d > 20000 ? '#800026' :
         d > 15000  ? '#BD0026' :
         d > 10000  ? '#E31A1C' :
@@ -37,7 +37,7 @@ function getColor(d) {
         d > 500   ? '#FEB24C' :
         d > 100   ? '#FED976' :
                    '#FFEDA0';
-  } else if (selectedInfo.type === '구별 성범죄 수') {
+  } else if (map_selectedInfo.type === '구별 성범죄 수') {
     return d > 1000 ? '#800026' :
         d > 700  ? '#BD0026' :
         d > 500  ? '#E31A1C' :
@@ -51,16 +51,15 @@ function getColor(d) {
 
 function style(feature) {
   var p;
-  if (selectedInfo.type === 'CCTV 설치대 수') {
+  if (map_selectedInfo.type === 'CCTV 설치대 수') {
     p = feature.properties.cctv
-  } else if (selectedInfo.type === '여성안심지킴이 집') {
+  } else if (map_selectedInfo.type === '여성안심지킴이 집') {
     p = feature.properties.shelter
-  } else if (selectedInfo.type === '안심귀가스카우트 이용자 수') {
+  } else if (map_selectedInfo.type === '안심귀가스카우트 이용자 수') {
     p = feature.properties.users
-  } else if (selectedInfo.type === '구별 성범죄 수') {
+  } else if (map_selectedInfo.type === '구별 성범죄 수') {
     p = feature.properties.crime
-      console.log(p);
-  } 
+  }
   return {
     weight: 2,
     opacity: 1,
@@ -107,15 +106,15 @@ function zoomToFeature(e) {
 
 const changeLayer = (year, type) => {
   if (year) {
-    selectedInfo.year = year
+    map_selectedInfo.year = year
     document.getElementById('year_drop').innerHTML = year
   }
   if (type) {
-    selectedInfo.type = type
+    map_selectedInfo.type = type
     document.getElementById('choice_drop').innerHTML = type
   }
 
-  let data = statesData[selectedInfo.year];
+  let data = statesData[map_selectedInfo.year];
 
   geojson.clearLayers()
   geojson = L.geoJson(data, {
