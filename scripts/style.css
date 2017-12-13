@@ -1,7 +1,7 @@
 html, body {
   padding: 0;
   margin: 0;
-  width: 600vw;
+  width: 900vw;
   height: 100vh;
   overflow-y: hidden;
 }
@@ -24,7 +24,8 @@ html, body {
 }
 .star {
   background: yellow;
-  margin: 2vw;
+  margin: 1em;
+  transform: translateX(2vw);
   width: 6px;
   height: 6px;
   border-radius: 3px;
@@ -39,20 +40,10 @@ html, body {
   cursor: pointer;
   transform: translateX(6vw) translateY(3vh);
 }
-#index {
-  transform: translateX(6vw);
-}
-#intro_demographic {
-  transform: translateX(8vw);
-}
-#analysis {
-   transform: translateX(10vw);
-}
-#map_vis {
-   transform: translateX(12vw);
-}
-#conclusion {
-  transform: translateX(14vw);
+.naviagation_number {
+  text-align:center;
+  color: rgba(212, 225, 247, 0.8);
+  transform: translateX(1.7em) translateY(-2.6em);
 }
 
 /* horizontallity */
@@ -147,6 +138,25 @@ tr, td {
 }
 
 /* analysis */
+.chart {
+  width:76vw;
+  height:50vh;
+}
+#pieChart1 {
+  backgroundColor: '#f1f8e9';
+  legend:'right';
+  pieHole: 0.4;
+  colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f'];
+}
+#line_year {
+  legend: 'none';
+  lineWidth: 2;
+  colors: ['#a52714'];
+  pointSize: 8;
+  pointShape: 'square';
+  backgroundColor: '#f1f8e9';
+
+}
 
 /* map-vis */
 #map {

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://unpkg.com/leaflet@1.2.0/dist/leaflet.js" integrity="sha512-lInM/apFSqyy1o6s89K4iQUKg6ppXEgsVxT35HbzUupEVRh2Eu9Wdl4tHj7dZO0s1uvplcYGmt3498TtHq+log==" crossorigin=""></script>
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
@@ -18,46 +19,82 @@
       <svg id="background_sky" />
       <nav aria-label="Page navigation" id="buttons_as_the_moon_and_the_stars">
         <ul class="pagination">
-          <li id="main"><a class=""><svg class="moon"></svg></a></li>
-          <li id="index"><a><svg class="star"></svg></a></li>
-          <li id="intro_demographic"><a><svg class="star"></svg></img></a></li>
-          <li id="analysis"><a><svg class="star"></svg></a></li>
-          <li id="map_vis"><a><svg class="star"></svg></a></li>
-          <li id="conclusion"><a><svg class="star"></svg></a></li>
+          <li id="home"><a class=""><svg class="moon"><p class="naviagation_number" font-size="0.05em">1</p></svg></a></li>
+          <li id="project_introduction"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">2</p></svg></a></li>
+          <li id="team_introduction"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">3</p></svg></a></li>
+          <li id="intro"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">4</p></svg></img></a></li>
+          <li id="analysis"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">5</p></svg></a></li>
+          <li id="map_vis"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">6</p></svg></a></li>
+          <li id="further_analysis"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">7</p></svg></a></li>
+          <li id="conclusion"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">8</p></svg></a></li>
+          <li id="last_page"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">9</p></svg></a></li>
         </ul>
       </nav>
-    </div>
+      </div>
 
     <div id="web_content">
       <table>
         <tr>
-          <td id="main_view">
+          <td id="home_page">
             <div class="container">
               <div class="section_header">
-                <h1 class="section_title">서울은 성범죄로부터 안전한 곳일까</h1>
+                <h1 class="section_title">Safety First</h1>
+              </div>
+              <div class="section_container">
+                  <div class="section_text">
+                    <p>서울시, 성범죄로부터 안전한가?</p>
+                    <h4>Explore</h4>
+                    <h6>[과학기술정보통신부, 한국정보화진흥원, 데잇걸즈]</h6>
+                  </div>
+              </div>
+            </div>
+          </td>
+
+          <td id="project_introduction_page">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title">About Project</h1>
+              </div>
+              <div class="section_container">
+                <div class="section_slides">
+                  <ul class="nav">
+                    <li class="nav-link"><p>사진 / 기사 캡처</p></li>
+                    <li class="nav-link"><p>데이터 / 아이콘<br>왜?</p></li>
+                    <li class="nav-link"><p>시각화 (지도나 차트)<br>왜?</p></li>
+                  </ul>
+              </div>
+              </div>
+            </div>
+          </td>
+
+          <td id="team_introduction_page">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title">Our Team</h1>
               </div>
               <div class="section_container">
                 <svg class="section_slides">
-                  <p class="section_text">첫 장</p>
+                    <p>Introducing the team</p><br>
+                    <ul class="nav">
+                    <li class="nav-link" id="sujin"><h5>오수진 (team leader, analysis, data management)</h5><br>
+                    <p><em>“자! 그럼 일단 내 말 좀 들어봐?”</em><br>
+                    말 많은 사람들끼리 모아둔 조 이지만 그 중 에서도 말이 제일 많다. 교육과 사업에 관심이 많으셔서 둘을 합친 교육 사업을 준비 중이다. 혹자는 수진님과 매우 잘 어울리는 직업선택이라고 생각한다. 나이를 절대 밝히지 않으시며 항상 회의의 시작을 알리는 “자! 그럼 일단 내 말 좀 들어봐 봐!”는 교장선생님의 훈화말씀을 듣는 기분을 주지만 다른 멤버인 은채님 찬스를 쓰면 훈화말씀을 단축 시킬 수 있다. 하지만 언제나 큰언니와 같은 마음으로 팀원들을 챙겨주고 배려해 주며 탈출하려는 멘탈을 붙잡아주고 멤버들의 사기를 북돋아주는 든든한 리더의 역할을 완벽히 수행해 내고 있다.</p></li>
+                    <li class="nav-link" id="jihae"><h5>신지혜 (analysis, data management, intro develop)</h5><br>
+                    <p><em>“그럼… 카야 토스트 먹을까?”</em><br>
+                    혹자가 반년 동안 함께 점심을 먹으면서 알아낸 것은 고기를 먹는 중에 “우리…” 라고 하면 밥과 명이 나물을 드시고 싶어하시는 것이고 점심 식사 후에 “그럼…” 이라고 하시면 카야 토스트를 드시고 싶다는 것이다. 카야 토스트 세트는 사실 지혜님을 위한 메뉴가 아닐까?라는 조심스러운 생각을 해본다. 하고 싶으신 것이 너무 많아서 우리 팀의 프론트 앤드 개발자인 은채님이 매우 괴로워하신다. 하지만 좋은 아이디어를 종종 떠올리셔서 항상 혹자의 상상력에 발동을 걸어주신다. 이러한 아이디어들을 모아서 하나의 좋은 스토리로 완성시키는 능력이 있다.</p></li>
+                    <li class="nav-link" id="echa"><h5>김은채 (front-end develop, project management)</h5><br>
+                    <p><em>“네. 안됩니다”</em><br>
+                    단호박을 통째로 삶아 드신 것 같은 은채님은 매우 단호한 말투의 소유자이다. 어쩌면 할로윈 호박의 먼 친척일지도 모른다. 주로 수진님의 훈화 말씀을 단축시키고 지혜님의 무리한 요구를 자르는 역할을 맡고 있다. 하지만 혹자의 제안은 매우 잘 들어주어서 소소한 기쁨을 느낀다. 팔자에도 없던 프론트 앤드 개발을 맡고 있는 은채님은 사실 패션학도이다. 할 수 있는 것과 할 수 없는 경계를 명확하게 해주어 팀의 프로젝트가 더 수월하게 진행 될 수 있게 해주고 있다. 프로젝트를 위해 밤낮을 가리지 않고 불사르는 개발자의 삶을 몸소 보여주고 계신다</p></li>
+                    <li class="nav-link" id="jung"><h5>정희정 (analysis, data management, map visualization)</h5><br>
+                    <p><em>“건물 2채 사고싶다…”</em><br>
+                    아직 건물 2채가 없어서 열심히 일하고 있는 혹자는 언젠간 꿈을 이루는 날이 올 것이라 믿으며 하루하루를 베짱이처럼 살아가고 있다. 가만히 있는 것을 못 견뎌 일을 사서 하는 타입이다. 하지만 가끔 ‘어쩌다 이 일을 하게 됐지?’ 하는 생각이 든다. 지금 이 글을 쓰고 있는 것과 얼떨결에 맡게 된 발표 같은 것이 대표적인 예이다. 머신러닝과 딥러닝에 흥미를 느껴 앞으로 배움의 길을 걷기로 결정한 뒤 건물 2채의 꿈이 무너질까 살짝 두렵지만 두 마리의 토끼를 다 잡겠다는 야심 찬 목표를 갖고 오늘도 열심히 살고 있다.</p></li>
+                  </ul>
                 </svg>
               </div>
             </div>
           </td>
 
-          <td id="index_view">
-            <div class="container">
-              <div class="section_header">
-                <h1 class="section_title"></h1>
-              </div>
-              <div class="section_container">
-                <svg class="section_slides">
-                  <p class="section_text"></p>
-                </svg>
-              </div>
-            </div>
-          </td>
-
-          <td id="intro_demographic_view">
+          <td id="intro_page">
             <div class="container">
               <div class="section_header">
                 <h1 class="section_title">누가 얼만큼 안전할까?</h1>
@@ -155,12 +192,71 @@
           <td id="analysis_view">
             <div class="container">
               <div class="section_header">
-                <h1 class="section_title">About 성범죄</h1>
+                <h1 class="section_title">서울시 성범죄 현황</h1>
               </div>
               <div class="section_container">
-                <svg class="section_slides">
-                  <p class="section_text"></p>
-                </svg>
+                <div class="section_slides">
+                <!-- Indicators -->
+                <ul class="carousel-indicators">
+                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                  <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+                </ul>
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                  <div class="active item">
+                    <table class="columns">
+                      <tr><td><div id="pieChart1" class="chart"></div></td></tr>
+                      <tr><td><div class="chartText">
+                        <p>&nbsp;&nbsp;&nbsp;- 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”
+                          (※ 5대 범죄란? 살인, 강도, 절도, 강간, 폭력)<br>
+                          &nbsp;&nbsp;&nbsp;- 2011년~2016년, 5년 동안 몰카 범죄 구속자수 5배로 급증<br>
+                          &nbsp;&nbsp;&nbsp;※ 출처: 연합뉴스, “몰카 범죄 구속자 지난해 155명, 5년 만에 5배로 급증”, 2017/10/02
+                        </p></div></td></tr>
+                      </table>
+                    </div>
+
+                    <div class="item">
+                      <table class="columns">
+                        <tr><td><div id="line_year" class="chart"></div></td></tr>
+                        <tr><td><div class="chartText">
+                          <p>&nbsp;&nbsp;&nbsp;- 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
+                            &nbsp;&nbsp;&nbsp;(비교) 성폭력 10년간 117% 급증, 반면 살인·강도·방화 등 다른 흉악범죄는 뚜렷한 감소 추세<br>
+                            &nbsp;&nbsp;&nbsp;※ 출처: 연합뉴스, “성폭력 10년새 117% 급증…'고학력 초범' 집중”, 2017/06/13
+                          </p></div></td></tr>
+                        </table>
+                      </div>
+
+                      <div class="item">
+                        <table class="columns">
+                          <tr><td><div id="line_week" class="chart"></div></td></tr>
+                          <tr><td><div class="chartText">
+                            <p><br>&nbsp;&nbsp;&nbsp;- 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)<br><br>
+                            </p></div></td></tr>
+                          </table>
+                        </div>
+
+                        <div class="item">
+                          <table class="columns">
+                            <tr><td><div id="line_time" class="chart"></div></td></tr>
+                            <tr><td><div class="chartText">
+                              <p><br>&nbsp;&nbsp;&nbsp;- 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)<br><br>
+                              </p></div></td></tr>
+                            </div>
+                          </table>
+                        </div>
+
+                        <!-- Controls -->
+                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                        </a>
+                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                        </a>
+                      </div>
+                      <!-- Carousel -->
+                    </div>
               </div>
             </div>
           </td>
@@ -168,7 +264,7 @@
           <td id="map_vis_view">
             <div class="container">
               <div class="section_header">
-                <h1 class="section_title">서울 안전 지도</h1>
+                <h1 class="section_title">서울시 구별 현황 비교</h1>
               </div>
               <div class="section_container">
                 <svg class="section_slides">
@@ -193,7 +289,26 @@
                       </div>
                     </div>
                   </div>
-                  <p class="section_text"></p>
+                  <div class="section_text">
+                    <p>CTV 설치 대수는 점차 증가했고 2016년에는 대다수의 자치구가  CCTV 300대 이상을 보유하고 있습니다.<br>
+                      -  여성 안심 지킴이집도 점차 증가하여 2016년에는 대다수의 자치구들이 40곳 이상을 보유하고 있습니다.<br>
+                      - 안심귀가스카우트 이용자 수도 점차 증가하여 2016년에는 대다수의 자치구에서 만명 이상의 이용자가 생겼습니다.<br>
+                      - 하지만 이 모든 변수는 범죄와 큰 상관관계가 없었고, 어떤 자치구인지가 범죄율과 가장 큰 상관관계가 있었습니다.</p>
+                  </div>
+                </svg>
+              </div>
+            </div>
+          </td>
+
+          <td id="further_analysis_view">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title">서울시 구별 현황 비교</h1>
+              </div>
+              <div class="section_container">
+                <svg class="section_slides">
+                  <div class="section_text">
+                  </div>
                 </svg>
               </div>
             </div>
@@ -202,12 +317,26 @@
           <td id="conclusion_view">
             <div class="container">
               <div class="section_header">
-                <h1 class="section_title"></h1>
+                <h1 class="section_title">결론</h1>
               </div>
               <div class="section_container">
                 <svg class="section_slides">
-                  <p class="section_text"></p>
+                  <div class="section_text"></div>
                 </svg>
+              </div>
+            </div>
+          </td>
+
+          <td id="last_page_view">
+            <div class="container">
+              <div class="section_header">
+                <h1 class="section_title"></h1>
+              </div>
+              <div class="section_container">
+                <div class="section_text">
+                  <h4>캐치프레이즈</h4>
+                  <section class="social_link"></section>
+                </div>
               </div>
             </div>
           </td>
@@ -256,7 +385,7 @@
     <script>
         $('.pagination li').click(function(e) {
           e.preventDefault();
-          var scrollTarget = document.querySelector('#' + e.currentTarget.id + '_view');
+          var scrollTarget = document.querySelector('#' + e.currentTarget.id + '_page');
           window.scroll({
             top: 0,
             left: scrollTarget.offsetLeft,
