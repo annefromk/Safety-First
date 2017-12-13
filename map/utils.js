@@ -37,6 +37,15 @@ function getColor(d) {
         d > 500   ? '#FEB24C' :
         d > 100   ? '#FED976' :
                    '#FFEDA0';
+  } else if (selectedInfo.type === '구별 성범죄 수') {
+    return d > 1000 ? '#800026' :
+        d > 700  ? '#BD0026' :
+        d > 500  ? '#E31A1C' :
+        d > 400  ? '#FC4E2A' :
+        d > 300   ? '#FD8D3C' :
+        d > 200   ? '#FEB24C' :
+        d > 100   ? '#FED976' :
+                   '#FFEDA0';
   }
 }
 
@@ -48,8 +57,10 @@ function style(feature) {
     p = feature.properties.shelter
   } else if (selectedInfo.type === '안심귀가스카우트 이용자 수') {
     p = feature.properties.users
+  } else if (selectedInfo.type === '구별 성범죄 수') {
+    p = feature.properties.crime
       console.log(p);
-  }
+  } 
   return {
     weight: 2,
     opacity: 1,

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+
+  </head>
+  <body>
+    <div class="background">
+      <svg id="background_sky" />
+      <nav aria-label="Page navigation" id="buttons_as_the_moon_and_the_stars">
+        <ul class="pagination">
+          <li id="main"><a><img src="svg/moon.svg"></img></a></li>
+          <li id="index"><a><img src="svg/star.svg"></img></a></li>
+          <li id="intro_demographic"><a><img src="svg/star.svg"></img></a></li>
+          <li id="analysis_page1"><a><img src="svg/star.svg"></img></a></li>
+          <li id="analysis_page2"><a><img src="svg/star.svg"></img></a></li>
+          <li id="map_vis"><a><img src="svg/star.svg"></img></a></li>
+          <li id="conclusion"><a><img src="svg/star.svg"></img></a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div id="web_content">
+      <section id="main_view">
+        <div class="viewPage_container">
+          <div class="section_header">
+            <h1 class="section_title"></h1>
+          </div>
+          <div class="section_container">
+            <svg class="section__slides"></svg>
+            <p class="section_text"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="index_view">
+        <div class="viewPage_container">
+          <div class="section_header">
+            <h1 class="section_title"></h1>
+          </div>
+          <div class="section_container">
+            <svg class="section__slides"></svg>
+            <p class="section_text"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="intro_demographic_view">
+        <div class="viewPage_container">
+          <div class="section_header">
+            <h1 class="section_title"></h1>
+          </div>
+          <div class="section_container">
+            <svg class="section__slides"></svg>
+            <p class="section_text"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="analysis_page1_view">
+        <div class="viewPage_container">
+          <div class="section_header">
+            <h1 class="section_title"></h1>
+          </div>
+          <div class="section_container">
+            <svg class="section__slides"></svg>
+            <p class="section_text"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="analysis_page2_view">
+        <div class="viewPage_container">
+          <div class="section_header">
+            <h1 class="section_title"></h1>
+          </div>
+          <div class="section_container">
+            <svg class="section__slides"></svg>
+            <p class="section_text"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="map_vis_view">
+        <div class="viewPage_container">
+          <div class="section_header">
+            <h1 class="section_title"></h1>
+          </div>
+          <div class="section_container">
+            <svg class="section__slides"></svg>
+            <p class="section_text"></p>
+          </div>
+        </div>
+      </section>
+
+      <section id="conclusion_view">
+        <div class="viewPage_container">
+          <div class="section_header">
+            <h1 class="section_title"></h1>
+          </div>
+          <div class="section_container">
+            <svg class="section__slides"></svg>
+            <p class="section_text"></p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      $('.pagination li').click(function(e) {
+        e.preventDefault();
+        var scrollTarget = document.querySelector('#' + e.currentTarget.id + '_view');
+        window.scroll({
+          top: 0,
+          left: scrollTarget.offsetLeft,
+          behavior: 'smooth'
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -35,6 +35,7 @@
       <a class="dropdown-item" onclick="changeLayer('', 'CCTV 설치대 수')">CCTV 설치대 수</a>
       <a class="dropdown-item" onclick="changeLayer('', '여성안심지킴이 집')">여성안심지킴이 집</a>
       <a class="dropdown-item" onclick="changeLayer('', '안심귀가스카우트 이용자 수')">안심귀가스카우트 이용자 수</a>
+      <a class="dropdown-item" onclick="changeLayer('', '구별 성범죄 수')">구별 성범죄 수</a>
     </div>
   </div>
   <script type="text/javascript" src="./utils.js"></script>
@@ -66,9 +67,10 @@
               f.properties.cctv = +d.cctv;
               f.properties.shelter = +d.shelter;
               f.properties.users = +d.users;
+              f.properties.crime = +d.crime;
           });
       });
-
+      
       changeLayer('2014');
     });
   </script>

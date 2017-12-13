@@ -22,6 +22,8 @@ info.update = function (props) {
       this._div.innerHTML = `<h4>Number of ${ selectedInfo.type }</h4><b>${ props.SIG_KOR_NM }</b> ${ props.shelter }곳`
     } else if (selectedInfo.type === '안심귀가스카우트 이용자 수') {
     this._div.innerHTML = `<h4>Number of ${ selectedInfo.type }</h4><b>${ props.SIG_KOR_NM }</b> ${ props.users }명`
+    } else if (selectedInfo.type === '구별 성범죄 수') {
+    this._div.innerHTML = `<h4>Number of ${ selectedInfo.type }</h4><b>${ props.SIG_KOR_NM }</b> ${ props.crime }건`
     }
   } else {
     this._div.innerHTML = `<h4>Number of ${ selectedInfo.type }</h4>Hover over a state`
@@ -54,7 +56,12 @@ if (selectedInfo.type === 'CCTV 설치대 수'){
     grades = [0, 100, 500, 1000, 5000, 10000, 15000, 20000],
     labels = [],
     from, to; 
-}
+} else if (selectedInfo.type === '구별 성범죄 수') {
+  var div = L.DomUtil.create('div', 'info legend'),
+    grades = [0, 100, 200, 300, 400, 500, 700, 1000],
+    labels = [],
+    from, to; 
+} 
    
     
   for (var i = 0; i < grades.length; i++) {
