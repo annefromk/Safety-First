@@ -1,0 +1,92 @@
+<html>
+<head>
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <script type="text/javascript">
+    google.charts.load('current', {'packages':['corechart']});
+    google.charts.setOnLoadCallback(drawBarChart);
+
+    function drawBarChart() {
+      var data = google.visualization.arrayToDataTable([
+       ['Year', '2014년', '2015년', '2016년'],
+          ['강남',   754,  1152,  789],
+          ['마포',   415,   673,  681],
+          ['서초',   442,   578,  600],
+          ['동작',   427,   497,   423],
+          ['영등포',   348,   489,   475],
+          ['서대문',  868,   212,    225],
+          ['구로',   402,   497,   402],
+          ['관악',   460,   403,   400],
+          ['중구',   390,   438,   343],
+          ['광진',   323,   362,   400],
+          ['송파',   380,   390,   309],
+          ['종로',   301,   404,   303],
+          ['강서',   307,   349,   346],
+          ['용산',   262,   252,   310],
+          ['노원',   294,   318,   210],
+          ['양천',   244,   329,   183],
+          ['은평',   224,   291,   235],
+          ['중랑',   207,   331,   195],
+          ['성북',   224,   264,   213],
+          ['금천',   246,   201,   233],
+          ['강북',   217,   205,   253],
+          ['동대문',   210,   225,   240],
+          ['성동',   193,   253,   198],
+          ['강동',   178,   207,   194],
+          ['도봉',   207,   156,   182]
+        ]); 
+
+ var options = {
+  title : '서울시 구별 성범죄 발생 건수',
+  hAxis: {
+            textStyle: {
+              color: 'black',
+              fontSize: 12,
+            //fontName: 'Arial',
+            bold: false,
+            italic: true
+          },
+        },
+  vAxis: {title: '발생 건수', minValue: 0, maxValue: 1000, gridlines: { count: 5 }},
+  seriesType: 'bars',
+  // series: {3: {type: 'line'}}
+};
+
+var chart = new google.visualization.ComboChart(document.getElementById('barChart'));
+chart.draw(data, options);
+  }
+</script>
+<style>
+table { 
+  /* width: 80%; height: 80%;*/
+   background:#f1f8e9; margin: auto; 
+ }
+
+ td {
+   border: 2px solid white; border-spacing: 0px 0px; border-collapse: separate; padding: 2px;
+ }
+ #barText {
+   font-size:14px;
+   color:black;
+   background:white;
+   text-align: left;
+   line-height:30px;
+ }
+  
+</style>
+
+
+</head>
+<body>
+  <table>
+  <tr>
+  <td><div id="barChart" style="width: 600px; height: 500px;"></div></td>
+  <td><div id="barText" style="width: 300px; height: 500px;">
+    <p>- 요일보다는 시간대와 범죄의 상관관계가 높다.<br>
+- 구와 범죄의 상관관계만 유의미하다.</p><br>
+<p><h2>Idea</h2>
+  - 범죄율이 가장 높은 0~4시를 위한 정책 필요<br> (지하철 24시간, 기숙사 통금 없애기 등)<br>
+- 범죄율이 높은 구는 주로 유동인구가 많은 곳으로 판단됨. 집중공략 필요 </p></div></td>
+</tr>
+</table>
+</body>
+</html>
