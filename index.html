@@ -27,7 +27,7 @@
           <li id="map_vis"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">6</p></svg></a></li>
           <li id="further_analysis"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">7</p></svg></a></li>
           <li id="conclusion"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">8</p></svg></a></li>
-          <li id="last_page"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">9</p></svg></a></li>
+          <li id="last"><a><svg class="star"><p class="naviagation_number" font-size="0.05em">9</p></svg></a></li>
         </ul>
       </nav>
       </div>
@@ -189,27 +189,28 @@
             </div>
           </td>
 
-          <td id="analysis_view">
+          <td id="analysis_page">
             <div class="container">
               <div class="section_header">
                 <h1 class="section_title">서울시 성범죄 현황</h1>
               </div>
               <div class="section_container">
                 <div class="section_slides">
-                <!-- Indicators -->
-                <ul class="carousel-indicators">
-                  <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-                  <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-                </ul>
-                <!-- Wrapper for slides -->
-                <div class="carousel-inner">
-                  <div class="active item">
-                    <table class="columns">
-                      <tr><td><div id="pieChart1" class="chart"></div></td></tr>
-                      <tr><td><div class="chartText">
-                        <p>&nbsp;&nbsp;&nbsp;- 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”
+                  <div id="crouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="false">
+                    <!-- Indicators -->
+                    <ol class="carousel-indicators">
+                      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                      <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+                    </ol>
+                    <!-- Wrapper for slides -->
+                    <div class="carousel-inner">
+                      <div class="carousel-item active">
+                       <table class="charts">
+                        <tr><td><div id="pieChart1" class="chart"></div></td></tr>
+                        <tr><td><div class="chartText">
+                         <p>&nbsp;&nbsp;&nbsp;- 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”
                           (※ 5대 범죄란? 살인, 강도, 절도, 강간, 폭력)<br>
                           &nbsp;&nbsp;&nbsp;- 2011년~2016년, 5년 동안 몰카 범죄 구속자수 5배로 급증<br>
                           &nbsp;&nbsp;&nbsp;※ 출처: 연합뉴스, “몰카 범죄 구속자 지난해 155명, 5년 만에 5배로 급증”, 2017/10/02
@@ -217,8 +218,8 @@
                       </table>
                     </div>
 
-                    <div class="item">
-                      <table class="columns">
+                    <div class="carousel-item">
+                      <table class="charts">
                         <tr><td><div id="line_year" class="chart"></div></td></tr>
                         <tr><td><div class="chartText">
                           <p>&nbsp;&nbsp;&nbsp;- 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
@@ -228,40 +229,43 @@
                         </table>
                       </div>
 
-                      <div class="item">
-                        <table class="columns">
-                          <tr><td><div id="line_week" class="chart"></div></td></tr>
-                          <tr><td><div class="chartText">
-                            <p><br>&nbsp;&nbsp;&nbsp;- 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)<br><br>
-                            </p></div></td></tr>
-                          </table>
-                        </div>
-
-                        <div class="item">
-                          <table class="columns">
-                            <tr><td><div id="line_time" class="chart"></div></td></tr>
-                            <tr><td><div class="chartText">
-                              <p><br>&nbsp;&nbsp;&nbsp;- 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)<br><br>
-                              </p></div></td></tr>
-                            </div>
-                          </table>
-                        </div>
-
-                        <!-- Controls -->
-                        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                          <span class="glyphicon glyphicon-chevron-left"></span>
-                        </a>
-                        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                          <span class="glyphicon glyphicon-chevron-right"></span>
-                        </a>
+                      <div class="carousel-item">
+                       <table class="charts">
+                        <tr><td><div id="line_week" class="chart"></div></td></tr>
+                        <tr><td><div class="chartText">
+                          <p><br>&nbsp;&nbsp;&nbsp;- 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)<br><br>
+                          </p></div></td></tr>
+                        </table>
                       </div>
-                      <!-- Carousel -->
+
+                      <div class="carousel-item">
+                       <table class="charts">
+                         <tr><td><div id="line_time" class="chart"></div></td></tr>
+                         <tr><td><div class="chartText">
+                          <p><br>&nbsp;&nbsp;&nbsp;- 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)<br><br>
+                          </p></div></td></tr>
+                        </div>
+                      </table>
                     </div>
+
+                    <!-- Controls -->
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                      <span class="sr-only">prev</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                      <span class="sr-only">next</span>
+                    </a>
+                  </div>
+                  <!-- Carousel -->
+
+                </div>
               </div>
             </div>
           </td>
 
-          <td id="map_vis_view">
+          <td id="map_vis_page">
             <div class="container">
               <div class="section_header">
                 <h1 class="section_title">서울시 구별 현황 비교</h1>
@@ -300,7 +304,7 @@
             </div>
           </td>
 
-          <td id="further_analysis_view">
+          <td id="further_analysis_page">
             <div class="container">
               <div class="section_header">
                 <h1 class="section_title">서울시 구별 현황 비교</h1>
@@ -314,7 +318,7 @@
             </div>
           </td>
 
-          <td id="conclusion_view">
+          <td id="conclusion_page">
             <div class="container">
               <div class="section_header">
                 <h1 class="section_title">결론</h1>
@@ -327,7 +331,7 @@
             </div>
           </td>
 
-          <td id="last_page_view">
+          <td id="last_page">
             <div class="container">
               <div class="section_header">
                 <h1 class="section_title"></h1>

@@ -138,24 +138,45 @@ tr, td {
 }
 
 /* analysis */
-.chart {
-  width:76vw;
-  height:50vh;
+.carousel-inner {
+ height:500px;
+ width: 1200px;
+ margin:0 auto;
+ text-align:center;
+ vertical-align:middle;
+ line-height:30px;
+ border:1px solid #fff;
+ background:#aaa;
 }
-#pieChart1 {
-  backgroundColor: '#f1f8e9';
-  legend:'right';
-  pieHole: 0.4;
-  colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f'];
+.chartText {
+ font-size:14px;
+ color:black;
+ background:white;
+ text-align: left;
+ line-height:30px;
 }
-#line_year {
-  legend: 'none';
-  lineWidth: 2;
-  colors: ['#a52714'];
-  pointSize: 8;
-  pointShape: 'square';
-  backgroundColor: '#f1f8e9';
-
+.carousel-control {
+  position: absolute;
+  top: 150px;
+  left: 15px;
+  right: 15px;
+  width: 40px;
+  height: 40px;
+  margin-top: -20px;
+  font-size: 60px;
+  font-weight: 100;
+  line-height: 30px;
+  background-image: none !important;
+  filter: none !important;
+  text-align: center;
+  -webkit-border-radius: 23px;
+  -moz-border-radius: 23px;
+  border-radius: 23px;
+}
+.glyphicon{
+  font-size: 60px;
+  color: black;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
 }
 
 /* map-vis */
