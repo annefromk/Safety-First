@@ -1,51 +1,39 @@
 html, body {
+  font-family: sans-serif;
   padding: 0;
   margin: 0;
-  width: 900vw;
-  height: 100vh;
+  width: 800vw;
   overflow-y: hidden;
 }
-
-/* background */
-#background_sky {
-  z-index: -5;
+.jumbotron {
+  background: transparent !important;
+}
+#background_gradient {
+  z-index: -100;
   position: fixed;
-  background: linear-gradient(rgb(47, 108, 158), rgba(255, 135, 84, 0.3));
   width: 100vw;
   height: 100vh;
+  background: linear-gradient(rgb(47, 108, 158), rgba(255, 135, 84, 0.3));
 }
-.moon {
-  width: 4vw;
-  height: 4vw;
-  background: whitesmoke;
-  -moz-border-radius: 2vw;
-  -webkit-border-radius: 2vw;
-  border-radius: 2vw;
+.slide_backdrop {
+  z-index: -10;
+  position: absolute;
+  width: 90vw;
+  height:80vh;
+  background-color: whitesmoke;
 }
-.star {
-  background: yellow;
-  margin: 1em;
-  transform: translateX(2vw);
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
+/* team */
+.team_image {
+  width:auto;
 }
-#buttons_as_the_moon_and_the_stars {
-  z-index: 0;
-  position: fixed;
-  padding: 0;
-  margin: 0;
-  width: 100vw;
-  height: 5vh;
-  cursor: pointer;
-  transform: translateX(6vw) translateY(3vh);
+/* navbar */
+.navbar {
+  background-color: black;
 }
-.naviagation_number {
-  text-align:center;
-  color: rgba(212, 225, 247, 0.8);
-  transform: translateX(1.7em) translateY(-2.6em);
+.nav-link, .dropup {
+  color: whitesmoke;
+  background-color: black;
 }
-
 /* horizontallity */
 tr, td {
   margin: 0;
@@ -54,43 +42,17 @@ tr, td {
   width:100vw;
   height: 100vh;
 }
-.container {
-  margin: 0;
-  padding: 0;
-  /*giving space for the navbar*/
-  width: 100vw;
-  height: 90vh;
-  transform: translateY(6vh);
-  align-self: center;
-}
-.section_slides {
-  z-index: -3;
-  position:absolute;
-  transform: translateX(-6vw);
-  width:88vw;
-  height: 90vh;
-  background-color: rgba(200,195,200, 0.7);
-  color: black;
-  border-top-left-radius: 30px;
-  border-top-right-radius: 30px;
-}
-.section_text {
-  padding: 3em;
-  margin: 0;
-}
 
-/* intro */
+/* demographics */
 .question {
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
 }
-
 .navi-none-age, .navi-none-gender {
   color: grey;
   cursor: pointer;
 }
-
 .selector-item {
  border: 1px solid grey;
  /* padding: 5px;
@@ -98,18 +60,15 @@ tr, td {
  cursor: pointer;
  opacity: 0.3;
 }
-
 .selector-item.hover, .selector-item.selected{
   opacity: 1;
 }
-
 .image-selector {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
   /* padding-left:620px;
   padding-right:300px; */
-
 }
 .image-selector-age {
   display: flex;
@@ -118,13 +77,11 @@ tr, td {
   /* padding-left:450px;
   padding-right:400px; */
 }
-
 #result-container {
   text-align: center;
   min-height: 200px;
   /* padding: 10px; */
 }
-
 .breadcomb {
   border: 2px solid #FCAF17;
   border-radius: 32px;
@@ -132,7 +89,6 @@ tr, td {
   font-size: 1.1em;
   padding: 6px 12px;
 }
-
 #result-summary {
   margin-top: 30px;
 }
@@ -145,45 +101,21 @@ tr, td {
  text-align:center;
  vertical-align:middle;
  line-height:30px;
- border:1px solid #fff;
- background:#aaa;
 }
+
 .chartText {
  font-size:14px;
  color:black;
- background:white;
  text-align: left;
  line-height:30px;
-}
-.carousel-control {
-  position: absolute;
-  top: 150px;
-  left: 15px;
-  right: 15px;
-  width: 40px;
-  height: 40px;
-  margin-top: -20px;
-  font-size: 60px;
-  font-weight: 100;
-  line-height: 30px;
-  background-image: none !important;
-  filter: none !important;
-  text-align: center;
-  -webkit-border-radius: 23px;
-  -moz-border-radius: 23px;
-  border-radius: 23px;
-}
-.glyphicon{
-  font-size: 60px;
-  color: black;
-  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+ width: 500px;
+ height: 50px;;
 }
 
 /* map-vis */
 #map {
-  transform: translateY(5vh);
-  width: 76vw;
-  height: 70vh;
+  width: 80vw;
+  height: 60vh;
 }
 .info {
   padding: 6px 8px;
@@ -208,4 +140,12 @@ tr, td {
   font: 14px/16px Arial, Helvetica, sans-serif;
   cursor: pointer;
   transform: translateX(5vw) translateY(-64vh);
+}
+
+/* conclusion */
+.conclusion_image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height:70vh;
 }
