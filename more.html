@@ -1,135 +1,127 @@
 <!DOCTYPE html>
-<html lang="ko">
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-  <meta name="Description" content="Description" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title><더알아보기>성폭력 피해자 상세 통계</title>
-  <link rel="stylesheet" href="./scripts/morecss.css">
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-  <div id="chart_div"></div>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Safety First | 더 알아보기 : 성폭력 피해자 상세 통계 </title>
+    <link rel="stylesheet" href="./scripts/morecss.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <div id="chart_div"></div>
+    <section id="more_title">
+      <h1>성폭력 피해자 상세 통계</h1>
+      <h4>최근 2년간 일어난 성폭력 피해자에 대한 상세 통계입니다.</h4>
+      <p>[2014~2015년 전국 성폭력 상세 현황[데이터출처: 대검찰청]</p>
+      <hr>
+    </section>
+    <section>
+      <table class="columns">
+        <tr>
+          <td><img src="scripts/demographic_img/hist_both.png" width="95%">
+            <div id="hist_bottom">- 성폭력 피해자 대부분은 여성이었고, 그 가운데 절반 이상은 10~20대인 것으로 나타났다.
+            </div>
+          </td>
+          <td><img src="scripts/demographic_img/hist_harm.png" width="98%">
+            <div id="hist_bottom">- 성폭력 범죄로 인해 상해를 입거나 목숨을 잃은 피해자 중 여성의 비율이 높았습니다.
+            </div>
+          </td>
+        </tr>
+      </table>
+    </section>
+    <section>
+      <table class="columns">
+        <tr>
+          <td><div id="bar_situation" style="width: 700px; height: 350px; border: 1px solid #ccc"></div>
+          <div id="bar_bottom">- '담화중', '보행중'이 평균 3750건으로 가장 많이 발생하는 피해시 상황으로 집계됐다.<br>
+            (전체 피해자 평균 건수 30,463(부재중 16건, 기타 10,790건, 미상 3310건)
+          </div>
+        </td>
+        <td><div id="bar_relationship" style="width: 700px; height: 350px; border: 1px solid #ccc"></div>
+          <div id="bar_bottom">- '타인'에 의한 피해건수가 평균 15000건 이상으로 가장 높게 나왔다.<br>
+            (국가 9건, 공무원 18건, 기타 909건, 미상 3869건)
+          </div>
+        </td>
+      </tr>
+    </table>
+    <a class="btn" href="index.html#demographics_page" role="button">BACK</a>
+  </section>
+
+
   <script type="text/javascript">
   google.charts.load('current', {packages: ['corechart', 'bar']});
   google.charts.setOnLoadCallback(drawbarsituation);
   google.charts.setOnLoadCallback(drawbarrelationship);
   <!--연령대별 성폭력 피해자수-->
-      <!--Bidirectional Barplot-->
+  <!--Bidirectional Barplot-->
   <!--성폭력 피해자 피해시 상황-->
-      function drawbarsituation() {
+  function drawbarsituation() {
 
-            var data = google.visualization.arrayToDataTable([
-              ['상황', '건수', {role: 'style'}],
-              ['취침중', 2925, '#1f4e5f'],
-              ['일하는중', 1862, '#1f4e5f'],
-              ['담화중', 4025, '#1f4e5f'],
-              ['혼잡중', 1953, '#1f4e5f'],
-              ['보행중', 3865, '#1f4e5f'],
-              ['딴 데 정신 잃어서 ', 1234, '#1f4e5f'],
-              ['속아서 ', 487, '#1f4e5f']
-            ]);
+    var data = google.visualization.arrayToDataTable([
+      ['상황', '건수', {role: 'style'}],
+      ['취침중', 2925, '#1f4e5f'],
+      ['일하는중', 1862, '#1f4e5f'],
+      ['담화중', 4025, '#1f4e5f'],
+      ['혼잡중', 1953, '#1f4e5f'],
+      ['보행중', 3865, '#1f4e5f'],
+      ['딴 데 정신 잃어서 ', 1234, '#1f4e5f'],
+      ['속아서 ', 487, '#1f4e5f']
+    ]);
 
-            var options = {
-              title: '성폭력 피해자 피해시 상황',
-              chartArea: {width: '35%'},
-              hAxis: {
-                title: '건수',
-                minValue: 0
-              },
-              vAxis: {
-                title: '상황'
-              },
-              legend: 'none'
-            };
+    var options = {
+      title: '성폭력 피해자 피해시 상황',
+      chartArea: {width: '35%'},
+      hAxis: {
+        title: '건수',
+        minValue: 0
+      },
+      vAxis: {
+        title: '상황'
+      },
+      legend: 'none'
+    };
 
-            var chart = new google.visualization.BarChart(document.getElementById('bar_situation'));
-            chart.draw(data, options);
-          }
+    var chart = new google.visualization.BarChart(document.getElementById('bar_situation'));
+    chart.draw(data, options);
+  }
 
-        <!--가해자와 피해자 관계-->
-        function drawbarrelationship() {
+  <!--가해자와 피해자 관계-->
+  function drawbarrelationship() {
 
-              var data = google.visualization.arrayToDataTable([
-                ['상황', '건수', {role: 'style'}],
-                ['국가 및 공무원', 27, '#1f4e5f'],
-                ['고용자', 173, '#1f4e5f'],
-                ['피고용자', 289, '#1f4e5f'],
-                ['직장동료', 718, '#1f4e5f'],
-                ['친구', 760, '#1f4e5f'],
-                ['애인', 744, '#1f4e5f'],
-                ['동거친족', 457, '#1f4e5f'],
-                ['기타친족', 203, '#1f4e5f'],
-                ['거래상대방', 193, '#1f4e5f'],
-                ['이웃', 621, '#1f4e5f'],
-                ['지인', 1767, '#1f4e5f'],
-                ['타인', 15485, '#1f4e5f'],
-              ]);
+    var data = google.visualization.arrayToDataTable([
+      ['상황', '건수', {role: 'style'}],
+      ['국가 및 공무원', 27, '#1f4e5f'],
+      ['고용자', 173, '#1f4e5f'],
+      ['피고용자', 289, '#1f4e5f'],
+      ['직장동료', 718, '#1f4e5f'],
+      ['친구', 760, '#1f4e5f'],
+      ['애인', 744, '#1f4e5f'],
+      ['동거친족', 457, '#1f4e5f'],
+      ['기타친족', 203, '#1f4e5f'],
+      ['거래상대방', 193, '#1f4e5f'],
+      ['이웃', 621, '#1f4e5f'],
+      ['지인', 1767, '#1f4e5f'],
+      ['타인', 15485, '#1f4e5f'],
+      ]);
 
-              var options = {
-                title: '가해자와 피해자 관계',
-                chartArea: {width: '35%'},
-                hAxis: {
-                  title: '건수',
-                  minValue: 0
-                },
-                vAxis: {
-                  title: '관계'
-                },
-                legend: 'none'
-              };
+      var options = {
+        title: '가해자와 피해자 관계',
+        chartArea: {width: '35%'},
+        hAxis: {
+          title: '건수',
+          minValue: 0
+        },
+        vAxis: {
+          title: '관계'
+        },
+        legend: 'none'
+      };
 
-              var chart = new google.visualization.BarChart(document.getElementById('bar_relationship'));
-              chart.draw(data, options);
-            }
-</script>
-<style >
-</style>
-
-</head>
-
-
-<body style= "background-color : rgb(242, 229, 255)">
- <section id="more_title">
-   <h1>성폭력 피해자 상세 통계</h1>
-   <h4>최근 2년간 일어난 성폭력 피해자에 대한 상세 통계입니다.</h4>
-   <p>[2014~2015년 전국 성폭력 상세 현황[데이터출처: 대검찰청]</p>
-   <hr>
- </section>
-
-   <section>
-     <table class="columns">
-       <tr>
-         <td><img src="scripts/demographic_img/hist_both.png" width="95%">
-           <div id="hist_bottom"><p> - 성폭력 피해자 대부분은 여성이었고, 그 가운데 절반 이상은 10~20대인 것으로 나타났다.
-
-           </div>
-         </td>
-         <td><img src="scripts/demographic_img/hist_harm.png" width="98%">
-           <div id="hist_bottom"><p> - 성폭력 범죄로 인해 상해를 입거나 목숨을 잃은 피해자 중 여성의 비율이 높았습니다.<div>
-         </td>
-       </tr>
-    <section>
-
-   <section>
-     <table class="columns">
-      <tr>
-        <td><div id="bar_situation" style="width: 700px; height: 350px; border: 1px solid #ccc"></div>
-        <div id="bar_bottom"><p>- '담화중', '보행중'이 평균 3750건으로 가장 많이 발생하는 피해시 상황으로 집계됐다.<br>
-                   (전체 피해자 평균 건수 30,463(부재중 16건, 기타 10,790건, 미상 3310건)
-        </p>
-      </div>
-      </td>
-      <td><div id="bar_relationship" style="width: 700px; height: 350px; border: 1px solid #ccc"></div>
-        <div id="bar_bottom"><p>- '타인'에 의한 피해건수가 평균 15000건 이상으로 가장 높게 나왔다.<br>
-                   (국가 9건, 공무원 18건, 기타 909건, 미상 3869건)</p>
-        </div>
-      </td>
-      </tr>
-    </table>
-   </section>
-
-     <section id="back">
-       <a href = "index.html#demographics_page">앞으로 돌아가기</a>
-     </section>
-</body>
+      var chart = new google.visualization.BarChart(document.getElementById('bar_relationship'));
+      chart.draw(data, options);
+    }
+    </script>
+  </body>
 </html>

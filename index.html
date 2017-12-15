@@ -37,6 +37,7 @@
         </div>
         </li>
         <li class="nav-item"><a class="nav-link" href="#conclusion_page">CONCLUSION</a></li>
+        <li class="nav-item"><a class="nav-link" href="#Lesson_page">Lesson Learned</a></li>
       </ul>
     </nav>
 
@@ -45,6 +46,7 @@
       <td id="home_page" class="jumbotron" style="background: transparent !important;">
         <h1 class="home_page_title">Safety First</h1>
         <p class="home_page_text"><strong>서울시, 성범죄로부터 안전한가?</strong></p>
+        <a class="btn btn-lg" href="#project_introduction_page" role="button">EXPLORE</a>
       </td>
 
       <td id="project_introduction_page">
@@ -52,21 +54,20 @@
         <h1 class="page_header">About the Project</h1>
         <table>
           <td class="project_intro_section"><img class="project_intro_image" src="scripts/demographic_img/intro_icon1.png">
-            <h4> 안전 서울? </h4><br>
+            <br><br><h4> 안전 서울? </h4><br>
             <p>서울의 밤길은 안전한가<br>
               받을 수 있는 도움은 무엇인가<br>
               <b>데이터로 살펴보는 안전한 서울</b></p>
             </td>
             <td class="project_intro_section"><img class="project_intro_image" src="scripts/demographic_img/intro_icon2.png">
-              <h4> 분석 및 시각화 </h4><br>
+              <br><br><h4> 분석 및 시각화 </h4><br>
               <p>요일별/시간대별/자치구별<br>
                 성범죄율과 예방 정책<br>
                 <b>상관관계 분석 및 시각화</b></p>
               </td>
               <td class="project_intro_section"><img class="project_intro_image" src="scripts/demographic_img/intro_icon3.png">
-                <h4> All of us </h4><br>
-                <p>우리가 알지 못했던 일<br>
-                  그리고<br>
+                <br><br><h4> All of us </h4><br>
+                <p>우리가 알지 못했던 일<br><br>
                   <b>우리가 할 수 있는 일</b></p>
                 </td>
               </table>
@@ -77,7 +78,7 @@
         <h1 class="page_header">The Team Members</h1>
         <table class="content">
         <tbody>
-          <tr style="height: 20em;">
+          <tr>
             <td><img class="team_image align-top" src="scripts/demographic_img/team_sujin.png">
               <h2>오수진</h2>
               <p>Team Leader, Planning, Visualization<br>
@@ -87,7 +88,6 @@
             <td><img class="team_image align-top" src="scripts/demographic_img/team_jihae.png">
               <h2>신지혜</h2>
               <p>Planning, Storytelling, Front-end developer<br>
-                (What about You?)<br>
                 &nbsp;<br>
               anne.jh.shin@gmail.com</p>
             </td>
@@ -110,13 +110,14 @@
       </table>
       </td>
 
-      <td id="demographics_page" class="jumbotron">
-        <h2>대한민국에 사는 우리들, 성범죄로부터 안전한가?</h2>
-        <p class="lead">당신의 인적 사항 정보를 알려주세요.<br>
-          입력된 정보와 일치하는 <u>최근 2년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br>
-        </p>
-        <h6>2014~2015년 전국 성폭력 피해자 성별/연령 현황[데이터출처: 대검찰청]</h6>
-        <hr class="my-4">
+      <td id="demographics_page">
+        <div class="slide_backdrop_chart"></div>
+        <section="demographics_content_wrapper">
+        <h1 class="page_header_chart">대한민국에 사는 우리들, 성범죄로부터 안전한가?</h1>
+        <div class="demographic_intro">당신의 인적 사항 정보를 알려주세요.<br>
+          입력된 정보와 일치하는 <u>최근 2년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br><br><br>
+        <h6>2014~2015년 전국 성폭력 피해자 성별/연령 현황[데이터출처: 대검찰청]</h6><br>
+      </div>
         <section id="question-container">
           <div id="question-gender">
             <div class="question">
@@ -189,21 +190,23 @@
             나는 <span id="gender-bc" class="breadcomb">성별</span> <span id="age-bc" class="breadcomb">연령</span> 입니다.
           </div>
           <div id="result-summary">
-            "당신과 같은 조건의 피해자는 <span id="victim">30463</span>명입니다"
+            "당신과 같은 조건의 피해자는 <span id="victim"></span>명입니다"
           </div>
         </section>
         <section id="next">
-        <p class="lead"><strong>최근 2년간(2014-2015년) 성폭력 피해자 상세 통계</strong>
-          <a class="btn" href="more.html" role="button"><strong>더 알아보기</strong></a>
-        </p>
+        <div class="alert" role="alert">
+          최근 2년간(2014~2015년) 성폭력 피해자 상세 통계 <a href="more.html" class="alert-link">더 알아보기</a>
+        </div>
         </section>
+      </section>
       </td>
 
       <td id="analysis_page">
-        <div class="slide_backdrop" style="position: absolute; top: 20px;"></div>
+        <div class="slide_backdrop_chart"></div>
+        <h2 class="page_header_chart">서울시 성범죄 현황</h2>
         <div class="container">
-          <h2 class="page_header_chart">서울시 성범죄 현황</h2>
           <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
+
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -211,16 +214,18 @@
               <li data-target="#myCarousel" data-slide-to="2"></li>
               <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
+
             <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
+            <div class="carousel-inner" role="listbox" style="transform: translateY(10vh);">
               <div class="carousel-item active">
+                <!-- 수정시작 -->
                 <div class="chartWithOverlay">
                   <div id="pieChart1" class="chart"></div>
-                  <div class="overlay analysis_text">
-                    - 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”
+                  <div class="overlay">
+                    <div>- 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”
                       (* 5대 범죄란? 살인, 강도, 절도, 강간, 폭력)<br>
                       - 2011년~2016년, 5년 동안 몰카 범죄 구속자수 5배로 급증<br>
-                      [출처: 카메라 등을 이용한 촬영범죄 현황/법무부, 경찰청/ 2017년]
+                      [출처: 카메라 등을 이용한 촬영범죄 현황/법무부, 경찰청/ 2017년]</div>
                     </div>
                   </div>
                 </div>
@@ -228,47 +233,50 @@
                 <div class="carousel-item">
                   <div class="chartWithOverlay">
                     <div id="line_year" class="chart"></div>
-                    <div class="overlay analysis_text">
-                      - 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
+                    <div class="overlay">
+                      <div>- 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
                         (비교) 성폭력 10년간 117% 급증, 반면 살인·강도·방화 등 다른 흉악범죄는 뚜렷한 감소 추세<br>
                         [출처: 2016년 범죄백서/법무부 산하 법무연수원/2016년]
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div class="carousel-item">
-                    <div class="chartWithOverlay">
-                      <div id="line_week" class="chart"></div>
-                      <div class="overlay" id="analysis_text">
-                        - 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)<br>
+                <div class="carousel-item">
+                  <div class="chartWithOverlay">
+                    <div id="line_week" class="chart"></div>
+                    <div class="overlay">
+                      <div>- 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일
                       </div>
                     </div>
                   </div>
+                </div>
 
-                  <div class="carousel-item">
-                    <div class="chartWithOverlay">
-                      <div id="line_time" class="chart"></div>
-                      <div class="overlay analysis_text">
-                        - 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)<br>
-                      </div>
-                    </div>
+              <div class="carousel-item">
+                <div class="chartWithOverlay">
+                  <div id="line_time" class="chart"></div>
+                  <div class="overlay">
+                    <div>- 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤</div>
                   </div>
+                </div>
+            </div>
 
-                 <!-- Controls -->
-                 <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                   <span class="sr-only">Previous</span>
-                 </a>
-                 <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                   <span class="sr-only">Next</span>
-                 </a>
-               </div>
-             </td>
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+       </div>
+     </td>
 
       <td id="map_vis_page">
           <svg class="slide_backdrop" />
-          <h1 class="page_header">서울시 구별 현황 비교</h1>
+          <h1 class="page_header_map">서울시 구별 현황 비교</h1>
           <table>
             <td>
               <div class="btn-group" role="group" aria-label="navi-year">
@@ -301,9 +309,9 @@
 
 
       <td id="crime_analysis_page">
-        <div class="slide_backdrop" style="position: absolute; top: 20px;"></div>
+        <div class="slide_backdrop_chart"></div>
         <h1 class="page_header_chart">서울시 구별 현황 비교</h1>
-        <div class="chartWithOverlay">
+        <div class="chartWithOverlay" style="transform: translateX(5vw);">
           <div div id="barChart"></div>
           <div class="overlay">
             <div><br>
@@ -318,8 +326,12 @@
 
 
       <td id="conclusion_page">
-        <div class="slide_backdrop" style="position: absolute; top: 20px;"></div>
+        <div class="slide_backdrop_chart"></div>
         <img class="conclusion_image" src="scripts/demographic_img/conclusion.png">
+      </td>
+
+      <td id="Lesson_page">
+        <img class="Lesson_image" src="scripts/demographic_img/Lesson_image.png">
       </td>
     </td>
   </tr>

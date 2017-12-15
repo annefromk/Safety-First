@@ -2,7 +2,7 @@ html, body {
   font-family: 'Noto Sans KR', 'Sans-serif';
   padding: 0;
   margin: 0;
-  width: 800vw;
+  width: 900vw;
   overflow-y: hidden;
 }
 /* horizontallity */
@@ -12,6 +12,17 @@ td {
   padding-right: 5vw;
   width:100vw;
   height: 100vh;
+}
+.btn-lg {
+  font-family: 'Noto Sans KR', 'Sans-serif';
+  font-size: 40px;
+  text-align: center;
+  transform: translateY(20vh);
+  width: 100vw;
+  color: whitesmoke;
+}
+.btn-lg:hover {
+  color: rgb(20, 10, 50);
 }
 
 /* background & slides */
@@ -29,6 +40,14 @@ td {
   height:100vh;
   background-color: rgb(242, 229, 255);
 }
+.slide_backdrop_chart {
+  z-index: -90;
+  position: absolute;
+  width: 90vw;
+  height:100vh;
+  background-color: rgb(242, 229, 255);
+  top: 20px;
+}
 
 /* navbar */
 .navbar {
@@ -39,17 +58,31 @@ td {
   color: whitesmoke;
   background-color: black;
 }
+.nav-link:hover, .dropdown:hover {
+  color: rgb(81, 40, 91);
+}
+.nav-pills .nav-item.show .nav-link, .nav-pills .nav-link.active {
+  background-color: rgb(81, 40, 91);
+  cursor: default;
+  color: whitesmoke;
+}
 .page_header {
   font-family: 'Noto Sans KR', 'Sans-serif';
   font-size: 45px;
   color: black;
-  transform: translateX(5vw) translateY(15vh);
+  transform: translateX(5vw) translateY(13vh);
 }
 .page_header_chart {
   font-family: 'Noto Sans KR', 'Sans-serif';
   font-size: 45px;
   color: black;
   transform: translateX(5vw);
+}
+.page_header_map {
+  font-family: 'Noto Sans KR', 'Sans-serif';
+  font-size: 45px;
+  color: black;
+  transform: translateX(5vw) translateY(10vh);
 }
 
 /* home page */
@@ -89,48 +122,58 @@ td {
 }
 
 /* demographics */
-#demographics_line {
-  border: 1px 1px 1px 1px solid red
+.demographic_intro {
+  font-family: 'Noto Sans KR', 'Sans-serif';
+  font-size: 20px;
+  padding-left: 5vw;
+  padding-top: 2vh;
 }
 .question {
+  font-family: 'Noto Sans KR', 'Sans-serif';
+  font-size: 25px;
+  padding-left: 5vw;
+  padding-right: 5vw;
   border-bottom: 1px solid black;
   display: flex;
   justify-content: space-between;
+}
+.image-selector {
+  padding-top: 1vh;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-left:38vw;
+  padding-right:38vw;
+}
+.image-selector-age {
+  padding-top: 5vh;
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  padding-left:18vw;
+  padding-right:18vw;
 }
 .navi-none-age, .navi-none-gender {
   color: grey;
   cursor: pointer;
 }
 .selector-item {
- border: 1px solid grey;
- /* padding: 5px;
- margin: 10px 10px 10px 0; */
- cursor: pointer;
- opacity: 0.3;
+  border: 1px solid grey;
+  cursor: pointer;
+  opacity: 0.3;
 }
 .selector-item.hover, .selector-item.selected{
   opacity: 1;
 }
-.image-selector {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  background-color: #fff;
-  padding-left:450px;
-  padding-right:400px;
-}
-.image-selector-age {
-  display: flex;
-  flex-wrap: wrap;
-  text-align: center;
-  background-color: #fff;
-}
 #result-container {
+  font-family: 'Noto Sans KR', 'Sans-serif';
+  font-size: 23px;
   text-align: center;
   min-height: 200px;
   padding-top: 50px;
 }
 .breadcomb {
+  font-family: 'Noto Sans KR', 'Sans-serif';
   border: 2px solid #FCAF17;
   border-radius: 32px;
   color: #959494;
@@ -141,11 +184,12 @@ td {
   margin-top: 30px;
 }
 #next {
+  font-family: 'Noto Sans KR', 'Sans-serif';
   text-align: center;
-  color: white;
-  background-color: #AAABD3 ;
-  bottom: 0;
+  color: black;
+  background-color: #AAABD3;
   width: 100%;
+  height: 7vh;
 }
 
 /* analysis */
@@ -157,6 +201,11 @@ td {
 .chart {
   padding-left: 5vw;
 }
+.chartWithOverlay {
+ position: relative;
+ width: 700px;
+}
+
 /* map-vis */
 #map {
   z-index: 3;
@@ -202,17 +251,17 @@ td {
 #barChart {
   width: 1000px;
   height: 50vh;
-  transform: translateX(10vw);
+  transform: translateX(5vw);
   font-family: 'Noto Sans KR', 'Sans-serif';
 }
 .overlay {
   padding-left: 5vw;
-  padding-bottom: 5vh;
+  padding-bottom: 3vh;
   width: 1000px;
   background: white;
   font-size: 20px;
   font-family: 'Noto Sans KR', 'Sans-serif';
-  transform: translateX(10vw);
+  transform: translateX(5vw);
 }
 
 /* conclusion */
@@ -221,4 +270,9 @@ td {
   margin-left: auto;
   margin-right: auto;
   height:85vh;
+}
+/* Lesson page */
+.Lesson_image {
+  height: 90vh;
+  transform: translateX(6vw) translateY(-3vh);
 }
