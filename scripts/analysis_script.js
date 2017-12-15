@@ -17,7 +17,7 @@ function drawPieChart1() {
 
   var options = {
    title:'서울시 성범죄 유형별 발생률 (2014년-2016년)',
-   width:900,
+   width:850,
    height:500,
    legend:'right',
    pieHole: 0.4,
@@ -47,7 +47,7 @@ function drawLineYear() {
 
   var options = {
     title : '서울시 연도별 성범죄 발생 건수 (2014년-2016년)',
-    width:900,
+    width:850,
     height:500,
     hAxis: {
       textStyle: {
@@ -105,7 +105,7 @@ role: "annotation" },
 
 var options = {
 title : '서울시 요일별 성범죄 발생 건수 (2014년-2016년)',
-width:900,
+width:850,
 height:500,
 hAxis: {
 textStyle: {
@@ -163,7 +163,7 @@ role: "annotation" },
 
 var options = {
 title : '서울시 시간대별 성범죄 발생 건수 (2014년-2016년)',
-width:900,
+width:850,
 height:500,
 hAxis: {
 textStyle: {

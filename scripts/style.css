@@ -43,12 +43,13 @@ td {
   font-family: 'Noto Sans KR', 'Sans-serif';
   font-size: 45px;
   color: black;
-  transform: translateX(3vw) translateY(15vh);
+  transform: translateX(5vw) translateY(15vh);
 }
 .page_header_chart {
   font-family: 'Noto Sans KR', 'Sans-serif';
   font-size: 45px;
   color: black;
+  transform: translateX(5vw);
 }
 
 /* home page */
@@ -75,8 +76,14 @@ td {
   font-family: 'Noto Sans KR', 'Sans-serif';
   font-size: 20px;
 }
+.project_intro_image {
+  width: 10em;
+}
 
 /* team */
+#team_introduction_page {
+  font-family: 'Noto Sans KR', 'Sans-serif';
+}
 .team_image {
   width:10em;
 }
@@ -138,7 +145,6 @@ td {
  background: white;
  text-align: left;
  line-height:30px;
- width: 300px;
 }
 
 /* map-vis */
@@ -182,6 +188,22 @@ td {
 .legend { text-align: left; line-height: 18px; color: #555; }
 .legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }
 
+/* crime analysis */
+#barChart {
+  width: 80vw;
+  height: 50vh;
+  transform: translateX(5vw);
+  font-family: 'Noto Sans KR', 'Sans-serif';
+}
+.overlay {
+  padding-left: 5vw;
+  padding-bottom: 5vh;
+  width: 80vw;
+  background: white;
+  font-size: 20px;
+  font-family: 'Noto Sans KR', 'Sans-serif';
+  transform: translateX(5vw);
+}
 
 /* conclusion */
 .conclusion_image {

@@ -32,19 +32,23 @@ function drawBarChart() {
     ]);
 
 var options = {
-title : '서울시 구별 성범죄 발생 건수',
-hAxis: {
-        textStyle: {
-          color: 'black',
-          fontSize: 12,
-        //fontName: 'Arial',
-        bold: false,
-        italic: true
-      },
+  title: '서울시 구별 성범죄 발생 건수',
+    textStyle: {
+      color: 'black',
+      fontSize: 18,
+      fontName: 'Noto Sans KR',
     },
+  hAxis: {
+    textStyle: {
+      color: 'black',
+      fontSize: 15,
+      fontName: 'Noto Sans KR',
+    bold: false,
+    italic: false
+   },
+  },
 vAxis: {title: '발생 건수', minValue: 0, maxValue: 1000, gridlines: { count: 5 }},
 seriesType: 'bars',
-// series: {3: {type: 'line'}}
 };
 
 var chart = new google.visualization.ComboChart(document.getElementById('barChart'));

@@ -51,23 +51,23 @@
         <div class="slide_backdrop"></div>
         <h1 class="page_header">About the Project</h1>
         <table>
-          <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon1.png">
+          <td class="project_intro_section"><img class="project_intro_image" src="scripts/demographic_img/intro_icon1.png">
             <h4> 안전 서울? </h4><br>
-            <p>서울의 밤길은 안전한가?<br>
-              안전을 위해 받을 수 있는 도움은 무엇인가<br>
+            <p>서울의 밤길은 안전한가<br>
+              받을 수 있는 도움은 무엇인가<br>
               <b>데이터로 살펴보는 안전한 서울</b></p>
             </td>
-            <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon2.png">
+            <td class="project_intro_section"><img class="project_intro_image" src="scripts/demographic_img/intro_icon2.png">
               <h4> 분석 및 시각화 </h4><br>
               <p>요일별/시간대별/자치구별<br>
                 성범죄율과 예방 정책<br>
                 <b>상관관계 분석 및 시각화</b></p>
               </td>
-              <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon3.png">
+              <td class="project_intro_section"><img class="project_intro_image" src="scripts/demographic_img/intro_icon3.png">
                 <h4> All of us </h4><br>
                 <p>우리가 알지 못했던 일<br>
                   그리고<br>
-                  우리가 할 수 있는 일</p>
+                  <b>우리가 할 수 있는 일</b></p>
                 </td>
               </table>
             </td>
@@ -81,22 +81,29 @@
             <td><img class="team_image align-top" src="scripts/demographic_img/team_sujin.png">
               <h2>오수진</h2>
               <p>Team Leader, Planning, Visualization<br>
+              &nbsp;<br>
               &nbsp;</p>
             </td>
             <td><img class="team_image align-top" src="scripts/demographic_img/team_jihae.png">
               <h2>신지혜</h2>
-              <p>Planning, Storytelling, Front-end developer(What about You?)<br>
+              <p>Planning, Storytelling, Front-end developer<br>
+                (What about You?)<br>
+                &nbsp;<br>
               anne.jh.shin@gmail.com</p>
             </td>
             <td><img class="team_image align-bottom" src="scripts/demographic_img/team_hijung.png">
               <h2>정희정</h2>
               <p>Analysis, Map Visualization, Presenter<br>
-              jhj7347@naver.com</p>
+              &nbsp;<br>
+              jhj7347@naver.com<br>
+              &nbsp;</p>
             </td>
             <td><img class="team_image align-bottom" src="scripts/demographic_img/team_eunchae.png">
               <h2>김은채</h2>
               <p>Main Front-end-developer, Planning, Web design<br>
-                echaekim219@gmail.com</p>
+              &nbsp;<br>
+                echaekim219@gmail.com<br>
+                &nbsp;</p>
             </td>
           </tr>
         </tbody>
@@ -298,22 +305,24 @@
 
       <td id="crime_analysis_page">
         <div class="slide_backdrop" style="position: absolute; top: 20px;"></div>
-        <h2 class="page_header_chart">서울시 구별 현황 비교</h2>
-        <div class="container">
-          <div id="barChart"></div>
-          <div id="barText">
-           <p>- 요일보다는 시간대가 범죄율과 상관관계가 높다.<br>
-              - 자치구와 범죄율의 상관관계만 유의미하다.<br>
-           <h2>IDEA</h2>
-              - 범죄율이 가장 높은 0~4시를 위한 정책 필요<br>
-              - 범죄율이 높은 자치구는 주로 유동인구가 많은 곳으로 판단되어 더 많은 대중적 관심 및 정책 필요</p>
+        <h1 class="page_header_chart">서울시 구별 현황 비교</h1>
+        <div class="chartWithOverlay">
+          <div div id="barChart"></div>
+          <div class="overlay">
+            <div><br>
+              - 요일보다는 시간대가 범죄율과 상관관계가 높다.<br>
+              - 자치구와 범죄율의 상관관계만 유의미하다.<br><br>
+              <h2>IDEA</h2>
+              <b>- 범죄율이 가장 높은 0~4시를 위한 정책 필요<br>
+              - 범죄율이 높은 자치구는 주로 유동인구가 많은 곳으로 판단되어 더 많은 대중적 관심 및 정책 필요</b></div>
             </div>
           </div>
         </td>
 
 
       <td id="conclusion_page">
-        <h2 class="page_header">결론</h2>
+        <div class="slide_backdrop" style="position: absolute; top: 20px;"></div>
+        <h2 class="page_header_chart">결론</h2>
         <img class="conclusion_image" src="scripts/demographic_img/conclusion.png">
       </td>
     </td>
