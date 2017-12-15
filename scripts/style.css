@@ -150,8 +150,8 @@ td {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
-  padding-left:18vw;
-  padding-right:18vw;
+  padding-left:16vw;
+  padding-right:16vw;
 }
 .navi-none-age, .navi-none-gender {
   color: grey;
