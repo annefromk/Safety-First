@@ -1,0 +1,22 @@
+#back {
+  position: fixed;
+  text-align: center;
+  background-color: #AAABD3;
+  bottom: 0;
+  width: 100%;
+}
+
+#more_title {
+  background: rgb(242, 229, 255);
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.columns {
+  margin: auto;
+  color: grey;
+}
+
+#bar_bottom {
+  margin-bottom: 50px;
+}

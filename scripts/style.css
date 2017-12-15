@@ -89,6 +89,9 @@ td {
 }
 
 /* demographics */
+#demographics_line {
+  border: 1px 1px 1px 1px solid red
+}
 .question {
   border-bottom: 1px solid black;
   display: flex;
@@ -100,6 +103,8 @@ td {
 }
 .selector-item {
  border: 1px solid grey;
+ /* padding: 5px;
+ margin: 10px 10px 10px 0; */
  cursor: pointer;
  opacity: 0.3;
 }
@@ -110,15 +115,20 @@ td {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  background-color: #fff;
+  padding-left:450px;
+  padding-right:400px;
 }
 .image-selector-age {
   display: flex;
   flex-wrap: wrap;
   text-align: center;
+  background-color: #fff;
 }
 #result-container {
   text-align: center;
   min-height: 200px;
+  padding-top: 50px;
 }
 .breadcomb {
   border: 2px solid #FCAF17;
@@ -130,23 +140,23 @@ td {
 #result-summary {
   margin-top: 30px;
 }
+#next {
+  text-align: center;
+  color: white;
+  background-color: #AAABD3 ;
+  bottom: 0;
+  width: 100%;
+}
 
 /* analysis */
 .carousel-inner {
- height: 70vh;
- width: 80vw;
- position: bottom;
- align-content: center;
+  width: 1000px;
+  height: 80vh;
+  align-content: center;
 }
-.chartText {
- font-size: 20px;
- font-family: 'Noto Sans KR', 'Sans-serif';
- color:black;
- background: white;
- text-align: left;
- line-height:30px;
+.chart {
+  padding-left: 5vw;
 }
-
 /* map-vis */
 #map {
   z-index: 3;
@@ -190,19 +200,19 @@ td {
 
 /* crime analysis */
 #barChart {
-  width: 80vw;
+  width: 1000px;
   height: 50vh;
-  transform: translateX(5vw);
+  transform: translateX(10vw);
   font-family: 'Noto Sans KR', 'Sans-serif';
 }
 .overlay {
   padding-left: 5vw;
   padding-bottom: 5vh;
-  width: 80vw;
+  width: 1000px;
   background: white;
   font-size: 20px;
   font-family: 'Noto Sans KR', 'Sans-serif';
-  transform: translateX(5vw);
+  transform: translateX(10vw);
 }
 
 /* conclusion */
@@ -210,5 +220,5 @@ td {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height:60vh;
+  height:85vh;
 }

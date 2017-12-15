@@ -6,7 +6,7 @@
   <meta name="Description" content="Description" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title><더알아보기>성폭력 피해자 상세 통계</title>
-  <link rel="stylesheet" href="_scripts/moreHtml.css">
+  <link rel="stylesheet" href="./scripts/morecss.css">
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
   <div id="chart_div"></div>
   <script type="text/javascript">
@@ -88,50 +88,48 @@
 </head>
 
 
-<body>
-  <div id="page">
- <section id="main-title">
+<body style= "background-color : rgb(242, 229, 255)">
+ <section id="more_title">
    <h1>성폭력 피해자 상세 통계</h1>
-   <p>최근 2년간 일어난 성폭력 피해자에 대한 상세 통계입니다.<br>
-        [2014~2015년 전국 성폭력 상세 현황[데이터출처: 대검찰청]
-   </p>
+   <h4>최근 2년간 일어난 성폭력 피해자에 대한 상세 통계입니다.</h4>
+   <p>[2014~2015년 전국 성폭력 상세 현황[데이터출처: 대검찰청]</p>
+   <hr>
  </section>
 
+   <section>
+     <table class="columns">
+       <tr>
+         <td><img src="scripts/demographic_img/hist_both.png" width="95%">
+           <div id="hist_bottom"><p> - 성폭력 피해자 대부분은 여성이었고, 그 가운데 절반 이상은 10~20대인 것으로 나타났다.
 
-  <section>
-    <img src="hist_both.png">
-  </section>
+           </div>
+         </td>
+         <td><img src="scripts/demographic_img/hist_harm.png" width="98%">
+           <div id="hist_bottom"><p> - 성폭력 범죄로 인해 상해를 입거나 목숨을 잃은 피해자 중 여성의 비율이 높았습니다.<div>
+         </td>
+       </tr>
+    <section>
 
    <section>
      <table class="columns">
       <tr>
         <td><div id="bar_situation" style="width: 700px; height: 350px; border: 1px solid #ccc"></div>
-          <div><p>● '담화중', '보행중'이 평균 3750건으로 가장 많이 발생하는 피해시 상황으로 집계됐다.<strong>블라블라</strong><br>
-                  ● 기타/미상에 해당하는 14,099건은
-          </p>
+        <div id="bar_bottom"><p>- '담화중', '보행중'이 평균 3750건으로 가장 많이 발생하는 피해시 상황으로 집계됐다.<br>
+                   (전체 피해자 평균 건수 30,463(부재중 16건, 기타 10,790건, 미상 3310건)
+        </p>
+      </div>
+      </td>
+      <td><div id="bar_relationship" style="width: 700px; height: 350px; border: 1px solid #ccc"></div>
+        <div id="bar_bottom"><p>- '타인'에 의한 피해건수가 평균 15000건 이상으로 가장 높게 나왔다.<br>
+                   (국가 9건, 공무원 18건, 기타 909건, 미상 3869건)</p>
         </div>
-        </td>
-        <td><div id="bar_relationship" style="width: 700px; height: 350px; border: 1px solid #ccc"></div>
-          <div><p>● '타인''에 의한 피해건수가 평균 15000건 이상으로 가장 높게 나왔다.<br>
-                  ● 그 외에 주목할 만한 지표는 '지인'에 의한 피해도
-          </p>
-          </div>
-        </td>
+      </td>
       </tr>
     </table>
    </section>
 
-
-
-     <section>
-       <img src="hist_harm.png">
-     </section>
-
-
-
-</div>
      <section id="back">
-       <a href="index.html">앞으로 돌아가기</a>
+       <a href = "index.html#demographics_page">앞으로 돌아가기</a>
      </section>
 </body>
 </html>

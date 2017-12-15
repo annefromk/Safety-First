@@ -1,6 +1,6 @@
-let demographic_selectedInfo = {}
-const criminal_data = [[6, 24], [20, 129], [20, 264], [57, 1237], [130, 3867],
-                       [56, 940], [41, 449], [24, 282], [10, 88]]
+let selectedInfo = {}
+const criminal_data = [[32, 154], [129, 923], [122, 2035], [250, 5627], [369, 9948],
+                       [185, 3229], [158, 2259], [94, 1376], [44, 484]]
 
 $('#question-age').hide()
 
@@ -8,11 +8,11 @@ const showQuestion = (type) => {
   if (type === 'age') {
     $('#question-gender').hide()
     $('#question-age').show()
-    $(`.selector-item[value="${ demographic_demographic_selectedInfo.age }"]`).addClass('selected')
+    $(`.selector-item[value="${ selectedInfo.age }"]`).addClass('selected')
   } else if (type === 'gender'){
     $('#question-age').hide()
     $('#question-gender').show()
-    $(`.selector-item[value="${ demographic_selectedInfo.gender }"]`).addClass('selected')
+    $(`.selector-item[value="${ selectedInfo.gender }"]`).addClass('selected')
   }
 }
 
@@ -44,33 +44,33 @@ const styleBreadcomb = (type, value) => {
   }
 }
 
-const transferValueToIndex = (demographic_selectedInfo) => {
+const transferValueToIndex = (selectedInfo) => {
   result = {}
-  if (demographic_selectedInfo.gender === '남성') {
+  if (selectedInfo.gender === '남성') {
     result.gIndex = 0
-  } else if (demographic_selectedInfo.gender === '여성') {
+  } else if (selectedInfo.gender === '여성') {
     result.gIndex = 1
   } else {
     result.gIndex = -1
   }
 
-  if (demographic_selectedInfo.age === '6세 이하') {
+  if (selectedInfo.age === '6세 이하') {
     result.aIndex = 0
-  } else if (demographic_selectedInfo.age === '12세 이하') {
+  } else if (selectedInfo.age === '7세~12세') {
     result.aIndex = 1
-  } else if (demographic_selectedInfo.age === '15세 이하') {
+  } else if (selectedInfo.age === '13세~15세') {
     result.aIndex = 2
-  } else if (demographic_selectedInfo.age === '20세 이하') {
+  } else if (selectedInfo.age === '16세~20세') {
     result.aIndex = 3
-  } else if (demographic_selectedInfo.age === '30세 이하') {
+  } else if (selectedInfo.age === '21세~30세') {
     result.aIndex = 4
-  } else if (demographic_selectedInfo.age === '40세 이하') {
+  } else if (selectedInfo.age === '31세~40세') {
     result.aIndex = 5
-  } else if (demographic_selectedInfo.age === '50세 이하') {
+  } else if (selectedInfo.age === '41세~50세') {
     result.aIndex = 6
-  } else if (demographic_selectedInfo.age === '60세 이하') {
+  } else if (selectedInfo.age === '51세~60세') {
     result.aIndex = 7
-  } else if (demographic_selectedInfo.age === '60세 초과') {
+  } else if (selectedInfo.age === '61세 이상') {
     result.aIndex = 8
   } else {
     result.aIndex = -1
@@ -80,7 +80,7 @@ const transferValueToIndex = (demographic_selectedInfo) => {
 }
 
 const getVictim = () => {
-  const indices = transferValueToIndex(demographic_selectedInfo)
+  const indices = transferValueToIndex(selectedInfo)
   console.log(indices)
   g = indices.gIndex
   a = indices.aIndex
@@ -102,21 +102,21 @@ const getVictim = () => {
 $('.selector-item').on('click', function(){
   if ($(this).attr('qtype') === 'gender') {
     if ($(this).hasClass('selected')) {
-      demographic_selectedInfo.gender = undefined
+      selectedInfo.gender = undefined
       styleBreadcomb('gender', 'unstyle')
     } else {
-      demographic_selectedInfo.gender = $(this).attr('value')
+      selectedInfo.gender = $(this).attr('value')
       showQuestion('age')
-      styleBreadcomb('gender', demographic_selectedInfo.gender)
+      styleBreadcomb('gender', selectedInfo.gender)
     }
   } else {
     if ($(this).hasClass('selected')) {
-      demographic_selectedInfo.age = undefined
+      selectedInfo.age = undefined
       styleBreadcomb('age', 'unstyle')
     } else {
-      demographic_selectedInfo.age = $(this).attr('value')
+      selectedInfo.age = $(this).attr('value')
       showQuestion('gender')
-      styleBreadcomb('age', demographic_selectedInfo.age)
+      styleBreadcomb('age', selectedInfo.age)
     }
   }
   $(this).toggleClass('selected')

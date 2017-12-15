@@ -110,78 +110,75 @@
       </table>
       </td>
 
-      <td id="demographics_page">
-        <div class="slide_backdrop"></div>
-        <h1 class="page_header">대한민국에 사는 우리들, 성범죄로부터 안전한가?</h2>
-          <section class="demographics_explaining">
-            <p>당신의 인적 사항 정보를 알려주세요.<br>
-              입력된 정보와 일치하는 <u>최근 2년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br>
-            </p><br><br>
-            <h6>2014~2015년 전국 성폭력 피해자 성별/연령 현황[데이터출처: 대검찰청]</h6>
-          </section>
-          <hr class="my-4">
-          <section id="question-container">
+      <td id="demographics_page" class="jumbotron">
+        <h2>대한민국에 사는 우리들, 성범죄로부터 안전한가?</h2>
+        <p class="lead">당신의 인적 사항 정보를 알려주세요.<br>
+          입력된 정보와 일치하는 <u>최근 2년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br>
+        </p>
+        <h6>2014~2015년 전국 성폭력 피해자 성별/연령 현황[데이터출처: 대검찰청]</h6>
+        <hr class="my-4">
+        <section id="question-container">
           <div id="question-gender">
             <div class="question">
-              <div>1. 당신의 성별은?</div>
+              <div><strong>1. 당신의 성별은?</strong></div>
               <div class="question-navi">
                 <span class="navi-current">성별</span> ➡ <span class="navi-none-age">연령</span>
               </div>
             </div>
             <div class="image-selector">
               <div class="selector-item" qtype="gender" value="여성">
-                <img src="scripts/demographic_img/female_selected.png" alt="female">
+                <img src="scripts/demographic_img/female.png" alt="female">
                 <p>여성</p>
               </div>
               <div class="selector-item" qtype="gender" value="남성">
-                <img src="scripts/demographic_img/male_selected.png" alt="male">
+                <img src="scripts/demographic_img/male.png" alt="male">
                 <p>남성</p>
               </div>
             </div>
           </div>
           <div id="question-age">
             <div class="question">
-              <div>2. 당신의 연령은?</div>
+              <div><strong>2. 당신의 연령은?</strong></div>
               <div class="question-navi">
                 <span class="navi-none-gender">성별</span> ➡ <span class="navi-current">연령</span>
               </div>
             </div>
             <div class="image-selector-age">
               <div class="selector-item" qtype="age" value="6세 이하">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
+                <img src="scripts/demographic_img/under12.png" alt="">
                 <p>6세 이하</p>
               </div>
-              <div class="selector-item" qtype="age" value="12세 이하">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
-                <p>12세 이하</p>
+              <div class="selector-item" qtype="age" value="7세~12세">
+                <img src="scripts/demographic_img/under12.png" alt="">
+                <p>7세~12세</p>
               </div>
-              <div class="selector-item" qtype="age" value="15세 이하">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
-                <p>15세 이하</p>
+              <div class="selector-item" qtype="age" value="13세~15세">
+                <img src="scripts/demographic_img/under20.png" alt="">
+                <p>13세~15세</p>
               </div>
-              <div class="selector-item" qtype="age" value="20세 이하">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
-                <p>20세 이하</p>
+              <div class="selector-item" qtype="age" value="16세~20세">
+                <img src="scripts/demographic_img/under20.png" alt="">
+                <p>16세~20세</p>
               </div>
-              <div class="selector-item" qtype="age" value="30세 이하">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
-                <p>30세 이하</p>
+              <div class="selector-item" qtype="age" value="21세~30세">
+                <img src="scripts/demographic_img/under40.png" alt="">
+                <p>21세~30세</p>
               </div>
-              <div class="selector-item" qtype="age" value="40세 이하">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
-                <p>40세 이하</p>
+              <div class="selector-item" qtype="age" value="31세~40세">
+                <img src="scripts/demographic_img/under40.png" alt="">
+                <p>31세~40세</p>
               </div>
-              <div class="selector-item" qtype="age" value="50세 이하">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
-                <p>50세 이하</p>
+              <div class="selector-item" qtype="age" value="41세~50세">
+                <img src="scripts/demographic_img/under40.png" alt="">
+                <p>41세~50세</p>
               </div>
-              <div class="selector-item" qtype="age" value="60세 이하">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
-                <p>60세 이하</p>
+              <div class="selector-item" qtype="age" value="51세~60세">
+                <img src="scripts/demographic_img/under50.png" alt="">
+                <p>51세~60세</p>
               </div>
               <div class="selector-item" qtype="age" value="60세 초과">
-                <img src="scripts/demographic_img/20_selected.png" alt="">
-                <p>60세 초과</p>
+                <img src="scripts/demographic_img/over51.png" alt="">
+                <p>61세 이상</p>
               </div>
             </div>
           </div>
@@ -195,9 +192,11 @@
             "당신과 같은 조건의 피해자는 <span id="victim">30463</span>명입니다"
           </div>
         </section>
-        <p class="lead">최근 2년간(2014-2015년) 성폭력 피해자 상세 통계
-          <a class="btn" href="more.html" role="button">더 알아보기</a>
+        <section id="next">
+        <p class="lead"><strong>최근 2년간(2014-2015년) 성폭력 피해자 상세 통계</strong>
+          <a class="btn" href="more.html" role="button"><strong>더 알아보기</strong></a>
         </p>
+        </section>
       </td>
 
       <td id="analysis_page">
@@ -205,7 +204,6 @@
         <div class="container">
           <h2 class="page_header_chart">서울시 성범죄 현황</h2>
           <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
-
             <!-- Indicators -->
             <ol class="carousel-indicators">
               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -216,58 +214,57 @@
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                <table class="columns">
+                <div class="chartWithOverlay">
                   <div id="pieChart1" class="chart"></div>
-                  <div class="chartText">
-                    <p>- 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”<br>
+                  <div class="overlay analysis_text">
+                    - 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”
                       (* 5대 범죄란? 살인, 강도, 절도, 강간, 폭력)<br>
                       - 2011년~2016년, 5년 동안 몰카 범죄 구속자수 5배로 급증<br>
-                      [출처: 카메라 등을 이용한 촬영범죄 현황/법무부, 경찰정/ 2017년]
-                    </p>
-                  </div>
-                </table>
-              </div>
-              <div class="carousel-item">
-                <table class="columns">
-                  <div id="line_year" class="chart"></div>
-                  <div class="chartText">
-                    <p>- 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
-                      (비교) 성폭력 10년간 117% 급증, 반면 살인·강도·방화 등 다른 흉악범죄는 뚜렷한 감소 추세<br>
-                      [출처: 2016년 범죄백서/법무부 산하 법무연수원/2016년]
-                    </p>
-                  </div>
-                </table>
-              </div>
-              <div class="carousel-item">
-                <table class="columns">
-                  <div id="line_week" class="chart"></div>
-                  <div class="chartText">
-                    <p>- 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)
-                    </p>
-                  </div>
-                </table>
-              </div>
-              <div class="carousel-item">
-                <table class="columns">
-                  <div id="line_time" class="chart"></div>
-                  <div class="chartText">
-                    <p>- 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)
-                    </p>
+                      [출처: 카메라 등을 이용한 촬영범죄 현황/법무부, 경찰청/ 2017년]
+                    </div>
                   </div>
                 </div>
-              </table>
-            </div>
-            <!-- Controls -->
-            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </td>
+
+                <div class="carousel-item">
+                  <div class="chartWithOverlay">
+                    <div id="line_year" class="chart"></div>
+                    <div class="overlay analysis_text">
+                      - 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
+                        (비교) 성폭력 10년간 117% 급증, 반면 살인·강도·방화 등 다른 흉악범죄는 뚜렷한 감소 추세<br>
+                        [출처: 2016년 범죄백서/법무부 산하 법무연수원/2016년]
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="chartWithOverlay">
+                      <div id="line_week" class="chart"></div>
+                      <div class="overlay" id="analysis_text">
+                        - 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)<br>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="carousel-item">
+                    <div class="chartWithOverlay">
+                      <div id="line_time" class="chart"></div>
+                      <div class="overlay analysis_text">
+                        - 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)<br>
+                      </div>
+                    </div>
+                  </div>
+
+                 <!-- Controls -->
+                 <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                   <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                   <span class="sr-only">Previous</span>
+                 </a>
+                 <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                   <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                   <span class="sr-only">Next</span>
+                 </a>
+               </div>
+             </td>
 
       <td id="map_vis_page">
           <svg class="slide_backdrop" />
@@ -322,7 +319,6 @@
 
       <td id="conclusion_page">
         <div class="slide_backdrop" style="position: absolute; top: 20px;"></div>
-        <h2 class="page_header_chart">결론</h2>
         <img class="conclusion_image" src="scripts/demographic_img/conclusion.png">
       </td>
     </td>
