@@ -1,12 +1,12 @@
 function initMap() {
   map = new L.Map('map');
 
-  var osmUrl='http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
-  var osmAttrib='Map data © <a href="http://openstreetmap.org">OpenStreetMap</a> contributors';
-  var osm = new L.TileLayer(osmUrl, {minZoom: 8, maxZoom: 12, attribution: osmAttrib});
-
+  var OpenStreetMap_BlackAndWhite = L.tileLayer('http://{s}.tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
+   maxZoom: 18,
+   attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+});
   map.setView(new L.LatLng(37.562296, 126.994345), 11);
-  map.addLayer(osm);
+  map.addLayer(OpenStreetMap_BlackAndWhite);
 }
 
 function getColor(d) {

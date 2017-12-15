@@ -17,9 +17,8 @@ function drawPieChart1() {
 
   var options = {
    title:'서울시 성범죄 유형별 발생률 (2014년-2016년)',
-   width:800,
-   height:300,
-   backgroundColor: '#f1f8e9',
+   width:900,
+   height:500,
    legend:'right',
    pieHole: 0.4,
    colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f']
@@ -48,13 +47,12 @@ function drawLineYear() {
 
   var options = {
     title : '서울시 연도별 성범죄 발생 건수 (2014년-2016년)',
-    width:800,
-    height:300,
+    width:900,
+    height:500,
     hAxis: {
       textStyle: {
         color: 'black',
         fontSize: 11,
-      //fontName: 'Arial',
       bold: false,
       italic: false
     },
@@ -76,8 +74,7 @@ function drawLineYear() {
   lineWidth: 2,
   colors: ['#a52714'],
   pointSize: 8,
-  pointShape: 'square',
-  backgroundColor: '#f1f8e9'
+  pointShape: 'square'
 };
 
 var chart = new google.visualization.LineChart(document.getElementById('line_year'));
@@ -108,8 +105,8 @@ role: "annotation" },
 
 var options = {
 title : '서울시 요일별 성범죄 발생 건수 (2014년-2016년)',
-width:800,
-height:300,
+width:900,
+height:500,
 hAxis: {
 textStyle: {
   color: 'black',
@@ -136,8 +133,7 @@ textStyle: {
   lineWidth: 2,
   colors: ['#a52714'],
   pointSize: 8,
-  pointShape: 'square',
-  backgroundColor: '#f1f8e9'
+  pointShape: 'square'
 };
 
 var chart = new google.visualization.LineChart(document.getElementById('line_week'));
@@ -167,8 +163,8 @@ role: "annotation" },
 
 var options = {
 title : '서울시 시간대별 성범죄 발생 건수 (2014년-2016년)',
-width:800,
-height:300,
+width:900,
+height:500,
 hAxis: {
 textStyle: {
   color: 'black',
@@ -195,8 +191,7 @@ textStyle: {
   lineWidth: 2,
   colors: ['#a52714'],
   pointSize: 8,
-  pointShape: 'square',
-  backgroundColor: '#f1f8e9'
+  pointShape: 'square'
 };
 
 var chart = new google.visualization.LineChart(document.getElementById('line_time'));

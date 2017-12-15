@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <title>Safety-First | 서울은 성범죄로부터 안전한 곳인가</title>
     <link rel="stylesheet" href="scripts/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/earlyaccess/notosanskr.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.2.0/dist/leaflet.css" integrity="sha512-M2wvCLH6DSRazYeZRIm1JnYyh22purTM+FDB5CsyxtQJYeKq83arPe5wgbNmcFXGqiSH2XR8dT/fJISVA1r/zQ==" crossorigin=""/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <script src="https://d3js.org/d3.v4.min.js"></script>
@@ -16,10 +17,10 @@
   </head>
   <body>
     <svg id="background_gradient" />
-    <nav class="navbar fixed-bottom">
+    <nav class="navbar fixed-top">
       <ul class="nav nav-pills">
         <li class="nav-item"><a class="nav-link" href="#home_page">HOME</a></li>
-        <li class="nav-item dropup">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">INTRO</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#project_introduction_page">Project</a>
@@ -27,7 +28,7 @@
           </div>
         </li>
         <li class="nav-item"><a class="nav-link" href="#demographics_page">What About You?</a></li>
-        <li class="nav-item dropup">
+        <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ANALYSIS</a>
           <div class="dropdown-menu">
             <a class="dropdown-item" href="#analysis_page">Charts</a>
@@ -41,66 +42,78 @@
 
     <table id="content_wrapper">
 
-      <td id="home_page" class="jumbotron">
-        <h1 class="display-3">Safety First</h1>
-        <p class="lead">서울시, 성범죄로부터 안전한가?</p>
-        <hr class="my-4">
-        <h6>[과학기술정보통신부, 한국정보화진흥원, 데잇걸즈]</h6>
-        <a class="btn" href="#project_introduction_page" role="button"></a>
+      <td id="home_page" class="jumbotron" style="background: transparent !important;">
+        <h1 class="home_page_title">Safety First</h1>
+        <p class="home_page_text"><strong>서울시, 성범죄로부터 안전한가?</strong></p>
       </td>
 
       <td id="project_introduction_page">
-        <svg class="slide_backdrop" />
-        <h1 class="display-4">About the Project</h1>
+        <div class="slide_backdrop"></div>
+        <h1 class="page_header">About the Project</h1>
         <table>
-          <tbody>
-            <tr>
-              <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon1.png">
-                <h6> 안전 서울? </h6><br>
-                <p>서울의 밤길은 안전한가?<br>
-                  안전을 위해 받을 수 있는 도움은 무엇인가<br>
-                  <b>데이터로 살펴보는 안전한 서울</b></p>
+          <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon1.png">
+            <h4> 안전 서울? </h4><br>
+            <p>서울의 밤길은 안전한가?<br>
+              안전을 위해 받을 수 있는 도움은 무엇인가<br>
+              <b>데이터로 살펴보는 안전한 서울</b></p>
+            </td>
+            <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon2.png">
+              <h4> 분석 및 시각화 </h4><br>
+              <p>요일별/시간대별/자치구별<br>
+                성범죄율과 예방 정책<br>
+                <b>상관관계 분석 및 시각화</b></p>
+              </td>
+              <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon3.png">
+                <h4> All of us </h4><br>
+                <p>우리가 알지 못했던 일<br>
+                  그리고<br>
+                  우리가 할 수 있는 일</p>
                 </td>
-                <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon2.png">
-                  <h6> 분석 및 시각화 </h6><br>
-                  <p>요일별/시간대별/자치구별<br>
-                    성범죄율과 예방 정책<br>
-                    <b>상관관계 분석 및 시각화</b></p>
-                  </td>
-                  <td class="project_intro_section"><img src="scripts/demographic_img/intro_icon3.png">
-                    <h6> All of us </h6><br>
-                    <p>우리가 알지 못했던 일<br>
-                      그리고<br>
-                      우리가 할 수 있는 일</p>
-                </td>
-            </tr>
-          </tbody>
-        </table>
-    </td>
+              </table>
+            </td>
 
       <td id="team_introduction_page">
-        <svg class="slide_backdrop" />
-        <h1 class="display-4">The Team Members</h1>
+        <div class="slide_backdrop"></div>
+        <h1 class="page_header">The Team Members</h1>
         <table class="content">
         <tbody>
           <tr style="height: 20em;">
-            <td><img class="team_image align-top" src="scripts/demographic_img/team_sujin.png"></td>
-            <td><img class="team_image align-top" src="scripts/demographic_img/team_jihae.png"></td>
-            <td><img class="team_image align-bottom" src="scripts/demographic_img/team_hijung.png"></td>
-            <td><img class="team_image align-bottom" src="scripts/demographic_img/team_eunchae.png"></td>
+            <td><img class="team_image align-top" src="scripts/demographic_img/team_sujin.png">
+              <h2>오수진</h2>
+              <p>Team Leader, Planning, Visualization<br>
+              &nbsp;</p>
+            </td>
+            <td><img class="team_image align-top" src="scripts/demographic_img/team_jihae.png">
+              <h2>신지혜</h2>
+              <p>Planning, Storytelling, Front-end developer(What about You?)<br>
+              anne.jh.shin@gmail.com</p>
+            </td>
+            <td><img class="team_image align-bottom" src="scripts/demographic_img/team_hijung.png">
+              <h2>정희정</h2>
+              <p>Analysis, Map Visualization, Presenter<br>
+              jhj7347@naver.com</p>
+            </td>
+            <td><img class="team_image align-bottom" src="scripts/demographic_img/team_eunchae.png">
+              <h2>김은채</h2>
+              <p>Main Front-end-developer, Planning, Web design<br>
+                echaekim219@gmail.com</p>
+            </td>
           </tr>
         </tbody>
       </table>
       </td>
 
-      <td id="demographics_page" class="jumbotron">
-        <h2>대한민국에 사는 우리들, 성범죄로부터 안전한가?</h2>
-        <p class="lead">당신의 인적 사항 정보를 알려주세요.<br>
-          입력된 정보와 일치하는 <u>최근 2년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br>
-        </p>
-        <h6>2014~2015년 전국 성폭력 피해자 성별/연령 현황[데이터출처: 대검찰청]</h6>
-        <hr class="my-4">
-        <section id="question-container">
+      <td id="demographics_page">
+        <div class="slide_backdrop"></div>
+        <h1 class="page_header">대한민국에 사는 우리들, 성범죄로부터 안전한가?</h2>
+          <section class="demographics_explaining">
+            <p>당신의 인적 사항 정보를 알려주세요.<br>
+              입력된 정보와 일치하는 <u>최근 2년간 일어난 성폭력 피해자</u> 숫자를 공개합니다.<br>
+            </p><br><br>
+            <h6>2014~2015년 전국 성폭력 피해자 성별/연령 현황[데이터출처: 대검찰청]</h6>
+          </section>
+          <hr class="my-4">
+          <section id="question-container">
           <div id="question-gender">
             <div class="question">
               <div>1. 당신의 성별은?</div>
@@ -181,8 +194,9 @@
       </td>
 
       <td id="analysis_page">
-        <div class="container-fluid">
-          <h2>서울시 성범죄 현황</h2>
+        <div class="slide_backdrop" style="position: absolute; top: 20px;"></div>
+        <div class="container">
+          <h2 class="page_header_chart">서울시 성범죄 현황</h2>
           <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false">
 
             <!-- Indicators -->
@@ -192,117 +206,120 @@
               <li data-target="#myCarousel" data-slide-to="2"></li>
               <li data-target="#myCarousel" data-slide-to="3"></li>
             </ol>
-
             <!-- Wrapper for slides -->
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
                 <table class="columns">
                   <div id="pieChart1" class="chart"></div>
                   <div class="chartText">
-                    <p>&nbsp;&nbsp;&nbsp;- 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”
+                    <p>- 성범죄 중 64% 는 5대 범죄에 해당하는 “강간 및 강제추행”<br>
                       (* 5대 범죄란? 살인, 강도, 절도, 강간, 폭력)<br>
-                      &nbsp;&nbsp;&nbsp;- 2011년~2016년, 5년 동안 몰카 범죄 구속자수 5배로 급증<br>
-                      &nbsp;&nbsp;&nbsp;[출처: 카메라 등을 이용한 촬영범죄 현황/법무부, 경찰정/ 2017년]
-                    </p></div>
-                  </table>
+                      - 2011년~2016년, 5년 동안 몰카 범죄 구속자수 5배로 급증<br>
+                      [출처: 카메라 등을 이용한 촬영범죄 현황/법무부, 경찰정/ 2017년]
+                    </p>
+                  </div>
+                </table>
+              </div>
+              <div class="carousel-item">
+                <table class="columns">
+                  <div id="line_year" class="chart"></div>
+                  <div class="chartText">
+                    <p>- 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
+                      (비교) 성폭력 10년간 117% 급증, 반면 살인·강도·방화 등 다른 흉악범죄는 뚜렷한 감소 추세<br>
+                      [출처: 2016년 범죄백서/법무부 산하 법무연수원/2016년]
+                    </p>
+                  </div>
+                </table>
+              </div>
+              <div class="carousel-item">
+                <table class="columns">
+                  <div id="line_week" class="chart"></div>
+                  <div class="chartText">
+                    <p>- 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)
+                    </p>
+                  </div>
+                </table>
+              </div>
+              <div class="carousel-item">
+                <table class="columns">
+                  <div id="line_time" class="chart"></div>
+                  <div class="chartText">
+                    <p>- 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)
+                    </p>
+                  </div>
                 </div>
+              </table>
+            </div>
+            <!-- Controls -->
+            <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+        </td>
 
-                <div class="carousel-item">
-                  <table class="columns">
-                    <div id="line_year" class="chart"></div>
-                    <div class="chartText">
-                      <p>&nbsp;&nbsp;&nbsp;- 최근 3년, 서울시 성범죄 발생 건수는 큰 변화 없음<br>
-                        &nbsp;&nbsp;&nbsp;(비교) 성폭력 10년간 117% 급증, 반면 살인·강도·방화 등 다른 흉악범죄는 뚜렷한 감소 추세<br>
-                        &nbsp;&nbsp;&nbsp;[출처: 2016년 범죄백서/법무부 산하 법무연수원/2016년]
-                      </p></div>
-                    </table>
-                  </div>
-
-                  <div class="carousel-item">
-                    <table class="columns">
-                      <div id="line_week" class="chart"></div>
-                      <div class="chartText">
-                        <p><br>&nbsp;&nbsp;&nbsp;- 요일별 성범죄 발생 순위 : 1. 금요일, 2. 토요일, 3. 화요일 (유의미하지 않은 데이터)<br><br>
-                        </p></div>
-                      </table>
-                    </div>
-
-                    <div class="carousel-item">
-                      <table class="columns">
-                        <div id="line_time" class="chart"></div>
-                        <div class="chartText">
-                          <p><br>&nbsp;&nbsp;&nbsp;- 시간대별 성범죄 발생 순위 : 1. 심야, 2. 초저녁, 3. 밤 (유의미한 데이터)<br><br>
-                          </p></div>
-                        </div>
-                      </table>
-                    </div>
-
-                    <!-- Controls -->
-                    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>
-                  <!-- Carousel -->
-                </td>
-
-        <td id="map_vis_page">
-                      <h1 class="section_title">서울시 구별 현황 비교</h1>
-                      <svg class="slide_backdrop" /> 
-
-                        <div id="map"></div>
-                        <div class="buttons">
-                          <div class="btn-group" role="group" aria-label="navi-year">
-                            <button id="year_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2014</button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="changeLayer('2014', '')">2014</a>
-                              <a class="dropdown-item" onclick="changeLayer('2015', '')">2015</a>
-                              <a class="dropdown-item" onclick="changeLayer('2016', '')">2016</a>
-                            </div>
-                          </div>
-
-                          <div class="btn-group" role="group" aria-label="navi-policy">
-                            <button id="choice_drop" class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CCTV 설치대 수</button>
-                            <div class="dropdown-menu">
-                              <a class="dropdown-item" onclick="changeLayer('', 'CCTV 설치대 수')">CCTV 설치대 수</a>
-                              <a class="dropdown-item" onclick="changeLayer('', '여성안심지킴이 집')">여성안심지킴이 집</a>
-                              <a class="dropdown-item" onclick="changeLayer('', '안심귀가스카우트 이용자 수')">안심귀가스카우트 이용자 수</a>
-                              <a class="dropdown-item" onclick="changeLayer('', '구별 성범죄 수')">구별 성범죄 수</a>
-                            </div>
-                          </div>
-                        </div>
-                        <div class="section_text">
-                          <p>CTV 설치 대수는 점차 증가했고 2016년에는 대다수의 자치구가  CCTV 300대 이상을 보유하고 있습니다.<br>
-                            -  여성 안심 지킴이집도 점차 증가하여 2016년에는 대다수의 자치구들이 40곳 이상을 보유하고 있습니다.<br>
-                            - 안심귀가스카우트 이용자 수도 점차 증가하여 2016년에는 대다수의 자치구에서 만명 이상의 이용자가 생겼습니다.<br>
-                            - 하지만 이 모든 변수는 범죄와 큰 상관관계가 없었고, 어떤 자치구인지가 범죄율과 가장 큰 상관관계가 있었습니다.</p>
-                          </div>
-                  </td>
-
-          <td id="crime_analysis_page">
-                    <div id="barChart"></div>
-                    <div id="barText">
-                      <p>- 요일보다는 시간대가 범죄율과 상관관계가 높다.<br>
-                        - 자치구와 범죄율의 상관관계만 유의미하다.</p><br>
-                        <p><h2>IDEA</h2>
-                          - 범죄율이 가장 높은 0~4시를 위한 정책 필요<br>
-                          - 범죄율이 높은 자치구는 주로 유동인구가 많은 곳으로 판단되어 더 많은 대중적 관심 및 정책 필요</p>
-                        </div>
-                      </td>
-
-            <td id="conclusion_page">
-              <h2 class="display-3">결론</h2>
-              <img class="conclusion_image" src="scripts/demographic_img/conclusion.png">
-            </td>
-
+      <td id="map_vis_page">
+          <svg class="slide_backdrop" />
+          <h1 class="page_header">서울시 구별 현황 비교</h1>
+          <table>
+            <td>
+              <div class="btn-group" role="group" aria-label="navi-year">
+                <button id="year_drop" class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">2014</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" onclick="changeLayer('2014', '')">2014</a>
+                  <a class="dropdown-item" onclick="changeLayer('2015', '')">2015</a>
+                  <a class="dropdown-item" onclick="changeLayer('2016', '')">2016</a>
+                </div>
+              </div>
+              <div class="btn-group" role="group" aria-label="navi-policy">
+                <button id="choice_drop" class="btn btn-secondary btn-md dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CCTV 설치대 수</button>
+                <div class="dropdown-menu">
+                  <a class="dropdown-item" onclick="changeLayer('', 'CCTV 설치대 수')">CCTV 설치대 수</a>
+                  <a class="dropdown-item" onclick="changeLayer('', '여성안심지킴이 집')">여성안심지킴이 집</a>
+                  <a class="dropdown-item" onclick="changeLayer('', '안심귀가스카우트 이용자 수')">안심귀가스카우트 이용자 수</a>
+                  <a class="dropdown-item" onclick="changeLayer('', '구별 성범죄 수')">구별 성범죄 수</a>
+                </div>
+              </div>
+              <div id="map"></div>
           </td>
-        </tr>
-      </table>
-    </div>
+          <td class="map_section_text">
+            -  CCTV 설치 대수 증가 : 2016년 대다수의 자치구가 CCTV 300대 이상을 보유<br>
+            -  여성 안심 지킴이집 개수 증가 : 2016년 대다수의 자치구가 40곳 이상을 보유<br>
+            - 안심귀가스카우트 이용자 수 증가 : 2016년 대다수의 자치구에서 만명 이상의 이용자 발생<br><br><br>
+            <strong>위 변수들이 성범죄 발생률 증감에 미치는 영향은 크지 않습니다. 자치구별 다른 특징이 보다 큰 상관관계가 있는 것으로 판단됩니다.</strong>
+          </td>
+        </table>
+      </td>
+
+
+      <td id="crime_analysis_page">
+        <div class="slide_backdrop" style="position: absolute; top: 20px;"></div>
+        <h2 class="page_header_chart">서울시 구별 현황 비교</h2>
+        <div class="container">
+          <div id="barChart"></div>
+          <div id="barText">
+           <p>- 요일보다는 시간대가 범죄율과 상관관계가 높다.<br>
+              - 자치구와 범죄율의 상관관계만 유의미하다.<br>
+           <h2>IDEA</h2>
+              - 범죄율이 가장 높은 0~4시를 위한 정책 필요<br>
+              - 범죄율이 높은 자치구는 주로 유동인구가 많은 곳으로 판단되어 더 많은 대중적 관심 및 정책 필요</p>
+            </div>
+          </div>
+        </td>
+
+
+      <td id="conclusion_page">
+        <h2 class="page_header">결론</h2>
+        <img class="conclusion_image" src="scripts/demographic_img/conclusion.png">
+      </td>
+    </td>
+  </tr>
+</table>
+</div>
 
     <script src="scripts/demographic_script.js"></script>
     <script src="scripts/analysis_script.js"></script>
