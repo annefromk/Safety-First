@@ -16,15 +16,20 @@ html, body {
   background: linear-gradient(rgb(47, 108, 158), rgba(255, 135, 84, 0.3));
 }
 .slide_backdrop {
+  margin: 0 auto;
+  padding: 0 auto;
   z-index: -10;
   position: absolute;
-  width: 90vw;
-  height:80vh;
-  background-color: whitesmoke;
+  width: 80em;
+  height:100em;
+  background-color: rgba(255, 231, 198, 0.3);
+}
+.display-4 {
+  transform: translateY(8vh);
 }
 /* team */
 .team_image {
-  width:auto;
+  width:13em;
 }
 /* navbar */
 .navbar {
@@ -114,8 +119,8 @@ tr, td {
 
 /* map-vis */
 #map {
-  width: 80vw;
-  height: 60vh;
+  width: 60em;
+  height: 40em;
 }
 .info {
   padding: 6px 8px;
@@ -139,7 +144,7 @@ tr, td {
   opacity: 0.9;
   font: 14px/16px Arial, Helvetica, sans-serif;
   cursor: pointer;
-  transform: translateX(5vw) translateY(-64vh);
+  transform: translateX(5vw) translateY();
 }
 
 /* conclusion */
@@ -147,5 +152,5 @@ tr, td {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height:70vh;
+  height:60vh;
 }
